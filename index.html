@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Riviera Private Residential Club · Sea Breeze, Bakı</title>
+<meta name="description" content="Riviera Private Residential Club — Sea Breeze, Bakı. Xəzər sahilində üç 12 mərtəbəli bina: mərtəbə planları, mənzil seçimi və ödəniş kalkulyatoru.">
+<meta name="theme-color" content="#0f1a20">
+<meta property="og:title" content="Riviera Private Residential Club">
+<meta property="og:description" content="Sea Breeze, Bakı — Xəzər sahilində mənzillər. Mərtəbə planları və ödəniş kalkulyatoru.">
+<meta property="og:image" content="img/r0.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1a20'/%3E%3Ctext x='32' y='45' font-family='Georgia' font-size='38' fill='%23d2a965' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&amp;family=Jost:wght@300;400;500;600&amp;display=swap">
+<style>
+/* Layout: full-bleed sunset hero → render strip → dark "drafting table" explorer (elevation | plan | unit sheet) → closing CTA */
+:root{
+  --ink:#0f1a20;        /* evening sea */
+  --ink-2:#16242c;
+  --ink-3:#1e313a;
+  --stone:#ece3d2;      /* travertine facade */
+  --stone-dim:#b8b0a2;
+  --mute:#7f8e92;
+  --gilt:#d2a965;       /* sunset gold */
+  --line:rgba(236,227,210,.14);
+  --t1:#6fb3b0; --t2:#d2a965; --t3:#d77f62; --t4:#a48bd0;
+  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Jost","Avenir Next","Futura","Segoe UI",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--stone);font-family:var(--f-body);font-size:16px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gilt);outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gilt);font-weight:500}
+h2{font-family:var(--f-display);font-weight:400;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.05;margin:.35em 0 0;text-wrap:balance;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--gilt)}
+.lede{color:var(--stone-dim);max-width:58ch;margin:1rem 0 0;font-weight:300;font-size:1.06rem}
+
+/* NAV */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:background .4s,backdrop-filter .4s}
+.nav.solid{background:rgba(15,26,32,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.mark{font-family:var(--f-display);letter-spacing:.42em;font-size:1rem;text-decoration:none;padding-left:.42em}
+.nav nav{display:flex;gap:28px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.nav nav a{text-decoration:none;color:var(--stone-dim);transition:color .2s}
+.nav nav a:hover{color:var(--stone)}
+.btn{display:inline-flex;align-items:center;gap:.6em;border:1px solid var(--gilt);color:var(--stone);background:transparent;padding:.72em 1.3em;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s,color .25s;border-radius:0}
+.btn:hover{background:var(--gilt);color:var(--ink)}
+.btn.solid{background:var(--gilt);color:var(--ink)}
+.btn.solid:hover{background:var(--stone)}
+@media (max-width:760px){.nav nav{display:none}}
+
+/* HERO */
+.hero{position:relative;height:min(92svh,860px);min-height:560px;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end}
+.hero .bg{position:absolute;inset:-4%;background:url(img/r0.webp) center 60%/cover no-repeat;animation:drift 26s ease-in-out infinite alternate;z-index:-3}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  linear-gradient(180deg,rgba(15,26,32,.55) 0%,rgba(15,26,32,0) 28%,rgba(15,26,32,0) 48%,rgba(15,26,32,.92) 100%)}
+.mist{position:absolute;inset:-20% -40%;z-index:-1;pointer-events:none;opacity:.55;mix-blend-mode:screen;
+  background:radial-gradient(40% 18% at 30% 40%,rgba(255,236,205,.35),transparent 70%),radial-gradient(30% 14% at 70% 30%,rgba(255,226,190,.28),transparent 70%),radial-gradient(50% 20% at 55% 62%,rgba(255,240,220,.18),transparent 70%);
+  animation:mist 34s linear infinite}
+@keyframes drift{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(-1.5%,-1%,0)}}
+@keyframes mist{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
+.hero-in{width:100%;padding-block:0 clamp(40px,7vh,72px)}
+.hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(3.6rem,13vw,10.5rem);line-height:.9;margin:0;letter-spacing:.14em;padding-left:.14em;animation:rise 1.8s cubic-bezier(.2,.7,.2,1) both}
+.hero .sub{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:22px;border-top:1px solid rgba(236,227,210,.28);padding-top:20px}
+.hero .sub p{margin:0;max-width:40ch;font-size:1.1rem;font-weight:300;color:var(--stone)}
+.facts{display:flex;gap:clamp(20px,4vw,48px)}
+.facts div{display:grid}
+.facts b{font-family:var(--f-display);font-weight:400;font-size:2rem;line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.facts span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--stone-dim);margin-top:6px}
+@keyframes rise{from{letter-spacing:.5em;opacity:.15;filter:blur(6px)}to{letter-spacing:.14em;opacity:1;filter:blur(0)}}
+
+/* GALLERY */
+.gallery{padding-block:clamp(64px,10vw,120px) 0}
+.g-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.g-ctrl{display:flex;gap:8px}
+.g-ctrl button{width:46px;height:46px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:1.1rem;transition:border-color .2s}
+.g-ctrl button:hover{border-color:var(--gilt)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:36px;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:var(--ink-3) transparent;
+  padding-left:max(16px,env(safe-area-inset-left,0px),calc((100vw - 1320px)/2 + 16px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.strip figure{margin:0;flex:0 0 min(78vw,620px);scroll-snap-align:start;position:relative;overflow:hidden}
+.strip figure:nth-child(3n+2){flex-basis:min(62vw,440px)}
+.strip img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.strip figure:hover img{transform:scale(1.05)}
+.strip figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:12px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone-dim)}
+.strip figcaption i{font-style:normal;color:var(--gilt);font-variant-numeric:tabular-nums}
+
+/* EXPLORER */
+.explore{padding-block:clamp(72px,11vw,140px)}
+.blocks{display:flex;gap:0;margin-top:36px;border-bottom:1px solid var(--line);overflow-x:auto}
+.blocks button{background:none;border:0;padding:14px 22px 16px;cursor:pointer;font-family:var(--f-display);font-size:1.25rem;color:var(--mute);position:relative;white-space:nowrap}
+.blocks button small{display:block;font-family:var(--f-body);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;margin-top:2px}
+.blocks button[aria-selected="true"]{color:var(--stone)}
+.blocks button[aria-selected="true"]::after{content:"";position:absolute;left:22px;right:22px;bottom:-1px;height:2px;background:var(--gilt)}
+.blocks button:disabled{cursor:default}
+.board{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;margin-top:28px}
+@media (max-width:900px){.board{grid-template-columns:minmax(0,1fr)}}
+
+.elev{position:relative}
+.elev svg{width:100%;height:auto;display:block}
+.elev .fl{cursor:pointer}
+.elev .fl rect.band{fill:var(--ink-2);stroke:var(--line);transition:fill .25s}
+.elev .fl .win{fill:rgba(236,227,210,.13);transition:fill .25s}
+.elev .fl text{fill:var(--stone-dim);font-family:var(--f-body);font-size:11px;letter-spacing:.08em}
+.elev .fl:hover rect.band{fill:var(--ink-3)}
+.elev .fl:hover .win{fill:rgba(236,227,210,.35)}
+.elev .fl.on rect.band{fill:rgba(210,169,101,.22);stroke:var(--gilt)}
+.elev .fl.on .win{fill:var(--gilt)}
+.elev .fl.on text{fill:var(--stone)}
+.elev-cap{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:10px;text-align:center}
+.chips{display:none;gap:6px;overflow-x:auto;padding-bottom:6px}
+.chips button{flex:0 0 auto;min-width:46px;height:42px;border:1px solid var(--line);background:var(--ink-2);cursor:pointer;font-variant-numeric:tabular-nums}
+.chips button.on{border-color:var(--gilt);background:rgba(210,169,101,.2)}
+
+.sheet{min-width:0}
+.sheet-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px}
+.sheet-head h3{font-family:var(--f-display);font-weight:400;font-size:2rem;margin:0;font-variant-numeric:lining-nums}
+.sheet-head h3 span{color:var(--mute);font-size:1rem;font-family:var(--f-body);letter-spacing:.06em;margin-left:10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px}
+.legend button{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;padding:7px 12px;cursor:pointer;font-size:.8rem;letter-spacing:.04em;transition:opacity .2s,border-color .2s}
+.legend button i{width:10px;height:10px;display:inline-block}
+.legend button b{font-weight:500;font-variant-numeric:tabular-nums;color:var(--stone-dim)}
+.legend button[aria-pressed="false"]{opacity:.38}
+.legend button:hover{border-color:var(--stone-dim)}
+
+.planbox{position:relative;margin-top:18px;background:#101b21;border:1px solid var(--line);overflow:hidden}
+.planbox svg{display:block;width:100%;height:auto}
+.planbox .grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;opacity:.25}
+.u{cursor:pointer;fill-opacity:.26;stroke-width:2.2;transition:fill-opacity .25s,stroke-width .25s,opacity .3s}
+.u.t1{fill:var(--t1);stroke:var(--t1)} .u.t2{fill:var(--t2);stroke:var(--t2)} .u.t3{fill:var(--t3);stroke:var(--t3)} .u.t4{fill:var(--t4);stroke:var(--t4)}
+.u:hover,.u.hot{fill-opacity:.62;stroke-width:3.4}
+.u.off{opacity:.08;pointer-events:none}
+.ulabel{pointer-events:none;font-family:var(--f-body);font-weight:600;font-size:15px;fill:#fff;paint-order:stroke;stroke:rgba(10,18,22,.75);stroke-width:4px;text-anchor:middle;letter-spacing:.04em}
+.ulabel.off{opacity:0}
+.planbox .scroller{overflow-x:auto;scrollbar-width:thin}
+@media (max-width:700px){.planbox svg{min-width:760px}.planbox .compass{display:none}}
+.planbox .compass{position:absolute;right:12px;bottom:10px;font-size:.66rem;letter-spacing:.2em;color:var(--mute);text-transform:uppercase}
+.planbox.swap svg{animation:planin .7s cubic-bezier(.2,.7,.2,1)}
+@keyframes planin{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+.planbox.swap .u{animation:unitin .9s ease both}
+@keyframes unitin{from{fill-opacity:0;stroke-opacity:0}}
+
+.tip{position:fixed;z-index:70;pointer-events:none;background:rgba(15,26,32,.94);border:1px solid var(--gilt);padding:10px 14px;min-width:150px;transform:translate(-50%,calc(-100% - 14px));opacity:0;transition:opacity .15s;backdrop-filter:blur(6px)}
+.tip.show{opacity:1}
+.tip b{font-family:var(--f-display);font-weight:400;font-size:1.5rem;display:block;line-height:1}
+.tip span{font-size:.8rem;color:var(--stone-dim);font-variant-numeric:tabular-nums}
+
+.ulist{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:16px}
+.ulist button{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:baseline;text-align:left;background:var(--ink-2);border:1px solid transparent;border-left:3px solid var(--c);padding:10px 12px;cursor:pointer;transition:border-color .2s,background .2s}
+.ulist button:hover,.ulist button.hot{background:var(--ink-3);border-color:var(--line);border-left-color:var(--c)}
+.ulist b{font-family:var(--f-display);font-weight:500;font-size:1.15rem;font-variant-numeric:lining-nums tabular-nums}
+.ulist span{font-size:.78rem;color:var(--stone-dim);font-variant-numeric:tabular-nums;justify-self:end}
+.ulist em{grid-column:1/-1;font-style:normal;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.ulist button.off{display:none}
+
+/* UNIT DRAWER */
+.scrim{position:fixed;inset:0;z-index:80;background:rgba(6,11,14,.6);opacity:0;pointer-events:none;transition:opacity .35s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:90;top:0;right:0;bottom:0;width:min(560px,100%);background:var(--ink);border-left:1px solid var(--line);transform:translateX(102%);transition:transform .55s cubic-bezier(.2,.75,.15,1);overflow-y:auto;
+  padding:calc(env(safe-area-inset-top,0px) + 22px) max(22px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 28px) 28px}
+.drawer.open{transform:none}
+.dr-top{display:flex;justify-content:space-between;align-items:center}
+.x{width:44px;height:44px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:1.2rem}
+.x:hover{border-color:var(--gilt)}
+.dr-title{font-family:var(--f-display);font-weight:400;font-size:clamp(3.2rem,9vw,4.6rem);line-height:1;margin:18px 0 4px;font-variant-numeric:lining-nums}
+.dr-sub{color:var(--stone-dim);letter-spacing:.06em}
+.tag{display:inline-block;padding:3px 10px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--c);margin-left:8px;vertical-align:middle}
+.zoom{margin-top:22px;background:#101b21;border:1px solid var(--line)}
+.zoom svg{display:block;width:100%;height:auto}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:22px}
+.specs div{background:var(--ink);padding:16px 18px}
+.specs dt{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.specs dd{margin:6px 0 0;font-family:var(--f-display);font-size:1.7rem;font-variant-numeric:lining-nums tabular-nums}
+.specs dd small{font-family:var(--f-body);font-size:.85rem;color:var(--stone-dim);margin-left:3px}
+.price{margin-top:22px;padding:18px;border:1px dashed rgba(210,169,101,.5);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.price p{margin:0;color:var(--stone-dim);font-size:.95rem}
+.dr-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.dr-cta .btn{justify-content:center}
+.phone{margin-top:14px;font-size:.85rem;color:var(--mute);text-align:center}
+.phone span{color:var(--stone);user-select:all;font-variant-numeric:tabular-nums}
+.dr-nav{display:flex;justify-content:space-between;margin-top:22px;gap:10px}
+.dr-nav button{flex:1;background:transparent;border:1px solid var(--line);padding:12px;cursor:pointer;letter-spacing:.08em;font-size:.85rem}
+.dr-nav button:hover{border-color:var(--gilt)}
+
+/* CLOSE */
+.closing{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(90px,14vw,180px)}
+.closing .bg{position:absolute;inset:0;background:url(img/r11.webp) center/cover;z-index:-2;transform:scale(1.06);animation:drift 30s ease-in-out infinite alternate}
+.closing::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,26,32,.94) 0%,rgba(15,26,32,.7) 45%,rgba(15,26,32,.15) 100%)}
+.closing h2{max-width:14ch}
+.closing .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+footer{border-top:1px solid var(--line);padding-block:26px;color:var(--mute);font-size:.78rem;letter-spacing:.08em}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== v3: mobile building, statuses, editor ===== */
+@media (max-width:900px){
+  .board{grid-template-columns:112px minmax(0,1fr);gap:16px 18px;align-items:center}
+  .sheet{display:contents}
+  .elev{grid-column:1;grid-row:1}
+  .sheet-head{grid-column:2;grid-row:1;flex-direction:column;align-items:flex-start}
+  .sheet-head h3{font-size:1.7rem}
+  .planbox,.ulist,.planhint{grid-column:1/-1}
+  .elev .fl text{font-size:13px}
+  .elev-cap{display:none}
+}
+.avail{font-size:.82rem;color:var(--stone-dim);letter-spacing:.04em;display:flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.planhint{font-size:.78rem;color:var(--mute);margin-top:8px}
+@media (min-width:701px){.planhint{display:none}}
+:root{--ok:#7fc39a;--res:#f08a24;--sold:#3fbf72;--pend:#9aa6b2}
+.u.sold{fill:url(#hSold)!important;fill-opacity:1!important;stroke:var(--sold)!important;stroke-width:2.8}
+.u.res{fill:url(#hRes)!important;fill-opacity:1!important;stroke:var(--res)!important;stroke-width:2.8}
+.u.pend{fill:#9aa6b2!important;fill-opacity:.12!important;stroke:var(--pend)!important;stroke-dasharray:8 6;stroke-width:2.2}
+.emk.pend{fill:#ff9a3c;color:#ff9a3c}.emk.saved{fill:#58d68d;color:#58d68d}
+.ulist b .emk{font-family:var(--f-body);font-size:.9rem;font-weight:700}
+.ulabel.st{font-size:11px;letter-spacing:.14em;font-weight:700}
+.ulabel.st.sold{fill:#4fd585}.ulabel.st.res{fill:#ffa244}.ulabel.st.pend{fill:#c3ccd6}
+.legend .lg{display:inline-flex;align-items:center;gap:8px;padding:7px 4px;font-size:.8rem;color:var(--stone-dim)}
+.legend .lg i{width:13px;height:13px;display:inline-block}
+.sw-sold{background:repeating-linear-gradient(45deg,var(--sold) 0 2px,transparent 2px 5px);border:1.5px solid var(--sold)}
+.sw-res{background:repeating-linear-gradient(0deg,var(--res) 0 2px,transparent 2px 5px);border:1.5px solid var(--res)}
+.sw-pend{border:1.5px dashed var(--pend)}
+.elev .fl .free{fill:var(--ok);font-size:10px}
+.ulist button.sold{opacity:.55}
+.ulist button i,.chip{font-style:normal;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:2px 6px;border:1px solid currentColor;justify-self:end}
+.chip.res,.ulist i.res{color:var(--res)}
+.chip.sold,.ulist i.sold{color:var(--sold)}
+.chip.pend,.ulist i.pend{color:var(--pend)}
+.chip.free{color:var(--ok)}
+.onlyfree{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;padding:7px 12px;cursor:pointer;font-size:.8rem}
+.onlyfree[aria-pressed="true"]{border-color:var(--ok);color:var(--ok)}
+.u.hide,.ulabel.hide{opacity:.07;pointer-events:none}
+.ulist button.hide{display:none}
+.stbar{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:.85rem;color:var(--stone-dim)}
+.stbar b{font-family:var(--f-display);font-weight:400;font-size:1.5rem;color:var(--stone);margin-right:6px;font-variant-numeric:lining-nums}
+.dr-status{margin-top:14px}
+/* editor */
+.edbtn{display:none}
+.can-edit .edbtn{display:inline-flex}
+.edmode .edbtn{background:var(--res);border-color:var(--res);color:var(--ink)}
+.editor{margin-top:22px;border:1px solid var(--res);padding:18px;display:grid;gap:14px;background:rgba(231,184,79,.06)}
+.editor h4{margin:0;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--res);font-weight:500}
+.erow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.editor label{display:grid;gap:6px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.editor input,.editor select{background:var(--ink);border:1px solid var(--line);color:var(--stone);padding:10px;font:inherit;font-size:1rem;letter-spacing:0;text-transform:none;min-width:0;width:100%}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+.seg button{background:transparent;border:0;padding:11px 6px;cursor:pointer;font-size:.82rem;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"][data-s="free"]{background:var(--ok);color:var(--ink)}
+.seg button[aria-pressed="true"][data-s="res"]{background:var(--res);color:var(--ink)}
+.seg button[aria-pressed="true"][data-s="sold"]{background:var(--sold);color:var(--ink)}
+.seg button[aria-pressed="true"][data-s="pend"]{background:var(--pend);color:var(--ink)}
+.ednote{font-size:.8rem;color:var(--mute);margin:0}
+.savebar{position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--res);color:var(--ink);transform:translateY(110%);transition:transform .35s;padding-bottom:env(safe-area-inset-bottom,0px)}
+.savebar.show{transform:none}
+.savebar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px;flex-wrap:wrap}
+.savebar b{font-weight:600}
+.savebar .btn{border-color:var(--ink);color:var(--ink)}
+.savebar .btn.solid{background:var(--ink);color:var(--stone)}
+@media (max-width:520px){.nav .btn{padding:.6em .9em;font-size:.72rem}.can-edit .nav a.btn{display:none}}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 80px);transform:translateX(-50%);z-index:99;background:var(--stone);color:var(--ink);padding:10px 18px;font-size:.9rem;opacity:0;transition:opacity .3s;pointer-events:none;max-width:90vw}
+.toast.show{opacity:1}
+/* v4: blocks 2-3 + sales app link */
+.appbtn{border-color:var(--ok)!important}
+.mark{display:flex;flex-direction:column;line-height:1.1}
+.mark small{font-family:var(--f-body);font-size:.52rem;letter-spacing:.32em;color:var(--gilt);text-transform:uppercase;margin-top:5px;white-space:nowrap}
+.hero .club{font-family:var(--f-body);font-size:clamp(.8rem,2.4vw,1.15rem);letter-spacing:.42em;text-transform:uppercase;color:#f3dcaa;margin:14px 0 0;padding-left:.42em;font-weight:500;text-shadow:0 1px 14px rgba(0,0,0,.75),0 0 2px rgba(0,0,0,.5)}
+.hero .eyebrow{text-shadow:0 1px 10px rgba(0,0,0,.7)}
+@media (max-width:520px){.nav .appbtn{display:none}}
+/* v5: calculator, selection, shape editor */
+.calc{margin-top:22px;border:1px solid rgba(210,169,101,.5);padding:18px;display:grid;gap:14px}
+.calc h4{margin:0;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gilt);font-weight:500}
+.calc label{display:grid;gap:6px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.calc input{background:var(--ink-2);border:1px solid var(--line);color:var(--stone);padding:11px;font:inherit;font-size:1rem;letter-spacing:0;min-width:0;width:100%}
+.calc .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc .opt{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+.calc .opt button{background:transparent;border:0;padding:11px 6px;cursor:pointer;font-size:.82rem;line-height:1.3}
+.calc .opt button+button{border-left:1px solid var(--line)}
+.calc .opt button[aria-pressed="true"]{background:var(--gilt);color:var(--ink);font-weight:500}
+.calc .res{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:12px}
+.calc .res div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.9rem;color:var(--stone-dim)}
+.calc .res b{font-family:var(--f-display);font-weight:400;font-size:1.5rem;color:var(--stone);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.calc .res .hl b{color:var(--gilt)}
+.drawer{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 110px)!important}
+#c-planf label{display:grid;gap:6px}
+.calc .note{font-size:.78rem;color:var(--mute);margin:0}
+.pickbtn{width:100%;justify-content:center;margin-top:4px}
+.selfab{position:fixed;z-index:85;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:none;align-items:center;gap:10px;background:var(--gilt);color:var(--ink);border:0;padding:14px 20px;font:inherit;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.selfab.show{display:inline-flex}
+.selfab b{background:var(--ink);color:var(--gilt);min-width:24px;height:24px;border-radius:12px;display:grid;place-items:center;font-size:.8rem}
+.savebar.show~.selfab{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+.sel h3{font-family:var(--f-display);font-weight:400;font-size:2.4rem;margin:16px 0 4px}
+.selitem{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.selitem b{font-family:var(--f-display);font-weight:400;font-size:1.5rem}
+.selitem small{grid-column:1/-1;color:var(--stone-dim);font-size:.85rem;font-variant-numeric:tabular-nums;line-height:1.5}
+.selitem button{background:transparent;border:1px solid var(--line);width:36px;height:36px;cursor:pointer}
+.selform{display:grid;gap:10px;margin-top:18px}
+.selform label{display:grid;gap:6px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.selform input,.selform textarea{background:var(--ink-2);border:1px solid var(--line);color:var(--stone);padding:11px;font:inherit;font-size:1rem;width:100%}
+.selacts{display:grid;gap:10px;margin-top:16px}
+.selacts .btn{justify-content:center}
+.btn.wa{background:#1f8f5a;border-color:#1f8f5a;color:#fff}
+.shapebar{display:none;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--ink-2);border:1px solid var(--line);border-top:2px solid var(--gilt);grid-column:1/-1}
+.shapebar.show{display:flex}
+.shapebar .sh-h{display:grid;gap:2px;flex:1 1 240px;min-width:0}
+.shapebar .sh-h b{color:var(--gilt);font-weight:500;letter-spacing:.06em;font-size:1rem}
+.shapebar .sh-h span{font-size:.82rem;color:var(--stone-dim)}
+.shapebar .sh-b{display:flex;gap:8px;flex-wrap:wrap}
+.shapebar .btn{padding:.6em 1em}
+.planbox{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 120px)}
+.planbox svg.closeup{min-width:0!important;max-height:72vh;width:100%;height:auto}
+.planbox svg.closeup .ulabel{opacity:.35}
+.planbox:has(svg.closeup) .zoombtns{display:none}
+.zoombtns{position:absolute;right:10px;bottom:30px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.zoombtns button{width:44px;height:44px;background:rgba(15,26,32,.9);border:1px solid var(--line);font-size:1.3rem;cursor:pointer}
+.ed-mid-t{fill:var(--ink);font-family:var(--f-body);font-weight:700;text-anchor:middle;pointer-events:none}
+.teambtn{background:none;border:0;padding:0;color:var(--stone);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:inherit;letter-spacing:inherit}
+.teamlink{color:var(--gilt);text-decoration:none}
+.edbanner{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 72px);transform:translateX(-50%);z-index:55;background:var(--gilt);color:var(--ink);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;display:flex;gap:12px;align-items:center;white-space:nowrap}
+.edbanner[hidden]{display:none}
+.edbanner button{background:none;border:1px solid rgba(15,26,32,.6);color:var(--ink);padding:3px 9px;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.pinbox{position:fixed;inset:0;z-index:150;display:grid;place-items:center;background:rgba(6,11,14,.72);padding:16px}
+.pinbox[hidden]{display:none}
+.pinbox form{background:var(--ink-2);padding:28px;width:min(380px,100%);display:grid;gap:12px;border-top:3px solid var(--gilt)}
+.pinbox h4{margin:0;font-family:var(--f-display);font-size:1.8rem;font-weight:400}
+.pinbox input{height:56px;border:1px solid var(--line);background:var(--ink);color:var(--stone);font-size:1.6rem;letter-spacing:.5em;text-align:center;width:100%}
+.pinbox .err{min-height:1.2em;color:#e0876f;font-size:.85rem}
+.pinbox .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pinbox .btn{justify-content:center}
+.ed-poly{fill:rgba(231,184,79,.22);stroke:var(--res);stroke-width:2px;vector-effect:non-scaling-stroke;stroke-dasharray:8 5;pointer-events:none}
+.ed-pt{fill:var(--res);stroke:#fff;stroke-width:2px;vector-effect:non-scaling-stroke;cursor:grab;touch-action:none}
+.ed-pt.sel{fill:#fff;stroke:var(--res);stroke-width:3px}
+.ed-hit{fill:transparent;cursor:grab;touch-action:none}
+.ed-mid{fill:rgba(231,184,79,.85);cursor:copy;touch-action:none}
+.editing .u,.editing .ulabel{opacity:.25;pointer-events:none}
+.edshape{margin-top:4px;border-color:var(--res)!important;color:var(--res)}
+.blocks button:not([aria-selected="true"]):hover{color:var(--stone-dim)}
+</style>
+
+</head>
+<body>
+<div id="page-head" hidden></div>
+<div id="root"></div>
+<script type="application/json" id="floors-data">[{"f":1,"vb":[100,340,1430,545],"units":[{"u":101,"polys":[[[583.1,575.5],[743.1,575.5],[743.1,500.5],[754.6,500.5],[754.6,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1],[583.1,491.1]]],"t":77.9,"r":1,"n":77.9,"cad":1},{"u":102,"polys":[[[480.2,491.1],[481.2,575.5],[583.1,575.5],[583.1,491.1],[625.9,491.1],[625.9,361.0],[503.1,361.0],[503.1,491.1]]],"t":96.4,"r":2,"n":66.9,"cad":1},{"u":103,"polys":[[[389.8,493.0],[389.8,575.5],[481.2,575.5],[480.2,491.1],[503.1,491.1],[503.1,361.0],[380.2,361.0],[380.2,493.0]]],"t":93.6,"r":2,"n":65.3,"cad":1},{"u":104,"polys":[[[380.2,361.0],[256.5,361.0],[256.5,491.0],[311.7,491.0],[310.7,575.5],[308.9,575.5],[389.8,575.5],[389.8,493.0],[380.2,493.0]]],"t":91.7,"r":2,"n":62.8,"cad":1},{"u":105,"polys":[[[120.3,357.2],[120.3,616.4],[265.1,616.4],[265.1,575.6],[310.7,575.6],[311.7,491.1],[256.4,491.1],[256.4,357.2]]],"t":214.1,"r":3,"n":105.4,"cad":1},{"u":106,"polys":[[[120.3,616.3],[120.3,735.0],[300.2,735.9],[300.2,667.6],[378.3,668.6],[378.4,662.9],[381.2,662.9],[381.2,613.5],[265.1,613.5],[265.1,616.3]]],"t":94.6,"r":2,"n":68.0,"cad":1},{"u":107,"polys":[[[418.4,866.0],[418.4,662.9],[378.3,662.9],[378.3,668.6],[300.2,667.6],[300.2,735.9],[120.3,735.0],[120.3,869.8],[255.5,869.8],[255.5,866.0]]],"t":243.6,"r":3,"n":126.4,"cad":1},{"u":108,"polys":[[[499.2,613.6],[499.3,866.0],[571.7,866.0],[571.7,741.8],[626.0,741.8],[626.0,613.5],[627.8,613.5]]],"t":103.0,"r":1,"n":72.7,"cad":1},{"u":109,"polys":[[[627,612],[750,612],[750,832],[680,832],[655,862],[627,862]]],"t":62.4,"r":2,"n":62.4},{"u":110,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.5],[938.3,735.9],[926.9,735.9],[926.9,661.0],[923.1,661.0],[923.1,657.2],[876.5,657.2],[876.5,693.2],[783.2,693.2],[783.2,613.5],[706.0,613.5],[705.0,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.5,"r":3,"n":110.5,"cad":1},{"u":111,"polys":[[[923.1,661.0],[926.9,661.0],[926.9,735.9],[938.4,735.9],[938.4,799.5],[953.7,815.0],[953.7,824.2],[948.8,824.2],[948.8,835.6],[979.3,866.0],[1059.3,866.0],[1059.3,741.6],[1005.0,741.6],[1005.0,613.5],[919.3,613.5],[919.3,657.2],[923.1,657.2]]],"t":79.6,"r":1,"n":66.0,"cad":1},{"u":112,"polys":[[[1131.7,613.5],[1003.1,613.5],[1005.0,613.5],[1005.0,741.6],[1059.3,741.6],[1059.3,866.0],[1131.7,866.0]]],"t":86.2,"r":2,"n":69.4,"cad":1},{"u":113,"polys":[[[1212.6,866.0],[1375.5,866.0],[1375.5,869.8],[1510.7,869.8],[1510.7,735.0],[1330.8,735.9],[1330.8,667.6],[1252.7,668.6],[1252.7,662.9],[1212.6,662.9]]],"t":243.4,"r":3,"n":126.6,"cad":1},{"u":114,"polys":[[[1510.7,616.4],[1365.9,616.4],[1365.9,613.6],[1249.8,613.6],[1249.8,663.0],[1252.6,663.0],[1252.7,668.7],[1330.8,667.7],[1330.8,736.0],[1510.7,735.1]]],"t":97.2,"r":2,"n":69.7,"cad":1},{"u":115,"polys":[[[1510.7,357.2],[1374.5,357.2],[1374.6,491.1],[1319.3,491.1],[1320.3,575.5],[1365.9,575.5],[1365.9,616.3],[1510.7,616.3]]],"t":213.4,"r":3,"n":105.1,"cad":1},{"u":116,"polys":[[[1241.1,575.6],[1320.2,575.6],[1319.3,491.0],[1374.5,491.0],[1374.5,361.0],[1250.7,361.0],[1250.7,493.0],[1241.1,493.0]]],"t":90.9,"r":2,"n":62.2,"cad":1},{"u":117,"polys":[[[1241.2,493.0],[1250.7,493.0],[1250.7,361.0],[1127.9,361.0],[1127.9,491.1],[1149.7,491.1],[1149.7,575.6],[1241.2,575.6]]],"t":93.8,"r":2,"n":65.5,"cad":1},{"u":118,"polys":[[[1005.0,491.1],[1047.8,491.1],[1047.8,575.6],[1149.7,575.6],[1149.7,491.1],[1127.9,491.1],[1127.9,361.0],[1005.0,361.0]]],"t":96.3,"r":2,"n":66.9,"cad":1},{"u":119,"polys":[[[1047.8,575.5],[1047.8,491.1],[1005.0,491.1],[1005.0,362.9],[979.3,362.9],[950.7,391.4],[950.7,402.8],[876.5,402.8],[876.5,500.5],[887.9,500.5],[887.9,575.5]]],"t":77.7,"r":1,"n":77.7,"cad":1}]},{"f":2,"vb":[100,340,1430,545],"units":[{"u":201,"polys":[[[579.3,575.4],[740.3,575.4],[740.3,490.9],[750.7,490.9],[750.7,402.6],[680.3,402.6],[680.3,391.2],[651.7,362.8],[626.0,362.8],[626.0,491.8],[579.3,491.8]]],"t":78.0,"r":1,"n":78.0,"cad":1},{"u":202,"polys":[[[481.2,492.8],[481.2,575.4],[579.3,575.4],[579.3,491.8],[626.0,491.8],[626.0,362.8],[630.7,362.8],[630.7,343.8],[504.1,343.8],[504.1,492.8]]],"t":96.2,"r":2,"n":72.9,"cad":1},{"u":203,"polys":[[[389.8,491.8],[389.8,575.4],[481.2,575.4],[481.2,492.8],[504.1,492.8],[504.1,343.8],[380.3,343.8],[380.3,491.8]]],"t":93.8,"r":2,"n":71.0,"cad":1},{"u":204,"polys":[[[380.3,343.8],[254.6,343.8],[254.6,458.6],[312.6,458.6],[310.8,575.4],[389.8,575.4],[389.8,492.0],[380.3,492.0]]],"t":90.8,"r":2,"n":68.0,"cad":1},{"u":205,"polys":[[[265.1,616.2],[265.1,575.4],[310.8,575.4],[312.6,458.6],[254.6,458.6],[254.6,343.8],[107.0,343.8],[107.0,616.2]]],"t":212.8,"r":3,"n":123.6,"cad":1},{"u":206,"polys":[[[125,612],[380,612],[380,738],[125,738]]],"t":96.9,"r":2,"n":75.0},{"u":207,"polys":[[[125,738],[405,738],[432,862],[125,862]]],"t":235.0,"r":3,"n":145.0},{"u":208,"polys":[[[499.2,613.4],[499.3,882.9],[630.8,882.9],[630.7,863.9],[627.9,863.9],[627.9,762.4],[571.7,762.4],[571.7,657.0],[627.9,657.0],[627.9,613.4]]],"t":103.4,"r":1,"n":79.3,"cad":1},{"u":209,"polys":[[[571.6,657.0],[571.6,762.4],[627.9,762.4],[627.9,863.9],[651.7,863.9],[680.2,832.6],[682.2,832.6],[682.2,824.1],[750.8,824.1],[751.7,659.8],[781.2,659.8],[781.2,657.0],[783.2,657.0],[783.2,613.4],[627.9,613.4],[627.9,657.0]]],"t":96.8,"r":3,"n":96.8,"cad":1},{"u":210,"polys":[[[751.7,659.8],[750.8,824.1],[953.7,824.1],[948.8,824.1],[948.8,832.6],[950.9,832.6],[979.3,863.9],[1006.9,863.9],[1006.9,735.8],[1047.9,735.8],[1047.9,657.0],[1003.2,657.0],[1003.2,613.4],[919.3,613.4],[919.3,656.2],[876.5,657.0],[876.5,693.1],[781.2,693.1],[781.2,659.8]]],"t":132.6,"r":3,"n":132.6,"cad":1},{"u":211,"polys":[[[1000.3,882.9],[1131.7,882.9],[1131.8,613.4],[1003.2,613.4],[1003.2,657.0],[1047.9,657.0],[1047.9,735.8],[1007.0,735.8],[1006.9,863.9],[1000.3,863.9]]],"t":109.1,"r":1,"n":85.0,"cad":1},{"u":212,"polys":[[[1505,862],[1198,862],[1225,738],[1505,738]]],"t":235.3,"r":3,"n":144.8},{"u":213,"polys":[[[1505,738],[1250,738],[1250,612],[1505,612]]],"t":96.6,"r":2,"n":75.2},{"u":214,"polys":[[[1318.4,458.6],[1320.2,575.4],[1365.9,575.4],[1365.9,613.3],[1370.7,613.3],[1370.7,616.2],[1365.9,616.2],[1524.0,616.2],[1524.0,343.8],[1376.4,343.8],[1376.4,458.6]]],"t":213.4,"r":3,"n":124.2,"cad":1},{"u":215,"polys":[[[1241.2,575.4],[1320.2,575.4],[1318.4,458.6],[1376.4,458.6],[1376.4,343.8],[1250.7,343.8],[1250.7,490.9],[1241.2,490.9]]],"t":90.8,"r":2,"n":68.1,"cad":1},{"u":216,"polys":[[[1241.2,490.9],[1250.8,490.9],[1250.8,343.8],[1126.9,343.8],[1127.9,490.9],[1149.8,490.9],[1149.8,575.4],[1241.2,575.4]]],"t":94.0,"r":2,"n":71.3,"cad":1},{"u":217,"polys":[[[1127.0,343.8],[1000.3,343.8],[1000.3,362.8],[1005.1,362.8],[1005.1,492.8],[1051.8,492.8],[1051.8,575.4],[1149.8,575.4],[1149.8,491.0],[1127.0,491.0]]],"t":96.1,"r":2,"n":72.9,"cad":1},{"u":218,"polys":[[[1051.8,575.4],[1051.8,491.8],[1005.0,491.8],[1005.0,362.8],[979.3,362.8],[950.7,391.2],[950.7,402.6],[880.3,402.6],[880.3,490.9],[890.7,490.9],[891.7,575.4]]],"t":77.8,"r":1,"n":77.8,"cad":1}]},{"f":3,"vb":[100,340,1430,545],"units":[{"u":301,"polys":[[[579.3,575.4],[740.3,575.4],[740.3,490.9],[750.7,490.9],[750.7,402.6],[680.3,402.6],[680.3,391.2],[651.7,362.8],[626.0,362.8],[626.0,491.8],[579.3,491.8]]],"t":73.4,"r":1,"n":73.4,"cad":1},{"u":302,"polys":[[[481.2,575.4],[579.3,575.4],[579.3,491.8],[626.0,491.8],[626.0,362.8],[630.7,362.8],[630.7,343.8],[504.1,343.8],[504.1,492.8],[481.2,492.8]]],"t":75.8,"r":2,"n":72.3,"cad":1},{"u":303,"polys":[[[380.3,343.8],[380.3,491.8],[389.8,491.8],[389.8,575.4],[481.2,575.4],[481.2,492.8],[504.1,492.8],[504.1,343.8]]],"t":73.9,"r":2,"n":70.4,"cad":1},{"u":304,"polys":[[[254.6,343.8],[254.6,458.6],[312.6,458.6],[310.8,575.4],[389.8,575.4],[389.8,492.0],[380.3,492.0],[380.3,343.8]]],"t":70.9,"r":2,"n":67.4,"cad":1},{"u":305,"polys":[[[107.0,616.1],[265.1,616.2],[265.1,575.4],[310.8,575.4],[312.6,458.6],[254.6,458.6],[254.6,343.8],[107.0,343.8]]],"t":132.4,"r":3,"n":122.8,"cad":1},{"u":306,"polys":[[[125,612],[380,612],[380,738],[125,738]]],"t":78.1,"r":2,"n":75.0},{"u":307,"polys":[[[125,738],[405,738],[432,862],[125,862]]],"t":154.3,"r":3,"n":145.1},{"u":308,"polys":[[[499.3,882.9],[630.8,882.9],[630.7,863.9],[627.9,863.9],[627.9,762.4],[571.7,762.4],[571.7,657.0],[627.9,657.0],[627.9,613.4],[499.2,613.4]]],"t":82.3,"r":1,"n":79.2,"cad":1},{"u":309,"polys":[[[571.6,657.0],[571.6,762.4],[627.9,762.4],[627.9,863.9],[651.7,863.9],[680.2,832.6],[682.2,832.6],[682.2,824.1],[750.8,824.1],[751.7,659.8],[781.2,659.8],[781.2,657.0],[783.2,657.0],[783.2,613.4],[627.9,613.4],[627.9,657.0]]],"t":96.8,"r":3,"n":96.8,"cad":1},{"u":310,"polys":[[[751.7,659.8],[750.8,824.1],[953.7,824.1],[948.8,824.1],[948.8,832.6],[950.9,832.6],[979.3,863.9],[1006.9,863.9],[1006.9,735.8],[1047.9,735.8],[1047.9,657.0],[1003.2,657.0],[1003.2,613.4],[919.3,613.4],[919.3,656.2],[876.5,657.0],[876.5,693.1],[781.2,693.1],[781.2,659.8]]],"t":130.6,"r":3,"n":130.6,"cad":1},{"u":311,"polys":[[[1000.3,882.9],[1131.7,882.9],[1131.8,613.4],[1003.2,613.4],[1003.2,657.0],[1047.9,657.0],[1047.9,735.8],[1007.0,735.8],[1006.9,863.9],[1000.3,863.9]]],"t":88.0,"r":1,"n":85.0,"cad":1},{"u":312,"polys":[[[1505,862],[1198,862],[1225,738],[1505,738]]],"t":153.8,"r":3,"n":144.6},{"u":313,"polys":[[[1505,738],[1250,738],[1250,612],[1505,612]]],"t":78.3,"r":2,"n":75.2},{"u":314,"polys":[[[1318.4,458.6],[1320.2,575.4],[1365.9,575.4],[1365.9,613.3],[1370.7,613.3],[1370.7,616.2],[1524.0,616.1],[1524.0,343.8],[1376.4,343.8],[1376.4,458.6]]],"t":133.0,"r":3,"n":123.3,"cad":1},{"u":315,"polys":[[[1241.2,575.4],[1320.2,575.4],[1318.4,458.6],[1376.4,458.6],[1376.4,343.8],[1250.7,343.8],[1250.7,490.9],[1241.2,490.9]]],"t":71.0,"r":2,"n":67.4,"cad":1},{"u":316,"polys":[[[1126.9,343.8],[1127.9,490.9],[1149.8,490.9],[1149.8,575.4],[1241.2,575.4],[1241.2,490.9],[1250.8,490.9],[1250.8,343.8]]],"t":74.1,"r":2,"n":70.6,"cad":1},{"u":317,"polys":[[[1000.3,362.8],[1005.1,362.8],[1005.1,492.8],[1051.8,492.8],[1051.8,575.4],[1149.8,575.4],[1149.8,491.0],[1127.0,491.0],[1127.0,343.8],[1000.3,343.8]]],"t":75.7,"r":2,"n":72.2,"cad":1},{"u":318,"polys":[[[1051.8,575.4],[1051.8,491.8],[1005.0,491.8],[1005.0,362.8],[979.3,362.8],[950.7,391.2],[950.7,402.6],[880.3,402.6],[880.3,490.9],[890.7,490.9],[891.7,575.4]]],"t":74.6,"r":1,"n":74.6,"cad":1},{"u":319,"polys":[[[740.3,490.9],[740.3,575.4],[891.7,575.4],[890.7,490.9],[880.3,490.9],[880.3,402.6],[750.7,402.6],[750.7,490.9]]],"t":65.8,"r":2,"n":65.8,"cad":1}]},{"f":4,"vb":[100,340,1430,545],"units":[{"u":401,"polys":[[[578.4,491.8],[578.4,575.4],[740.3,575.4],[740.3,497.5],[751.7,497.5],[751.7,402.6],[680.3,402.6],[680.3,391.2],[651.7,362.8],[626.0,362.8],[626.0,491.8]]],"t":74.1,"r":2,"n":74.1,"cad":1},{"u":402,"polys":[[[481.2,491.8],[481.2,575.4],[578.4,575.4],[578.4,491.8],[626.0,491.8],[626.0,360.9],[504.1,360.9],[504.1,491.8]]],"t":72.8,"r":2,"n":61.0,"cad":1},{"u":403,"polys":[[[389.8,492.0],[389.8,575.4],[481.2,575.4],[481.2,491.8],[504.1,491.8],[504.1,360.9],[380.3,360.9],[380.3,492.0]]],"t":70.9,"r":2,"n":59.3,"cad":1},{"u":404,"polys":[[[380.3,360.9],[256.5,360.9],[256.5,490.9],[312.1,490.9],[312.1,575.4],[389.8,575.4],[389.8,492.0],[380.3,492.0]]],"t":68.2,"r":2,"n":56.5,"cad":1},{"u":405,"polys":[[[114.6,351.4],[114.6,616.2],[265.1,616.2],[265.1,575.4],[311.1,575.4],[311.1,490.9],[256.5,490.9],[256.5,351.4]]],"t":124.8,"r":3,"n":93.6,"cad":1},{"u":406,"polys":[[[125,612],[380,612],[380,738],[125,738]]],"t":76.1,"r":2,"n":69.8},{"u":407,"polys":[[[125,738],[405,738],[432,862],[125,862]]],"t":154.2,"r":2,"n":109.3},{"u":408,"polys":[[[499.2,613.4],[499.3,863.9],[570.7,863.9],[570.7,760.5],[626.0,760.5],[626.0,613.4],[627.8,613.4]]],"t":72.6,"r":2,"n":65.4,"cad":1},{"u":409,"polys":[[[570.7,760.5],[570.7,865.8],[651.7,865.8],[682.2,835.5],[682.2,824.1],[677.3,824.1],[677.3,814.9],[694.6,797.7],[692.6,797.7],[692.6,734.8],[706.0,734.8],[706.0,654.2],[740.3,654.1],[740.3,613.4],[626.0,613.4],[626.0,760.5]]],"t":69.7,"r":1,"n":64.1,"cad":1},{"u":410,"polys":[[[750,695],[880,695],[880,832],[750,832]]],"t":110.9,"r":3,"n":110.9},{"u":411,"polys":[[[922.2,613.4],[922.2,657.0],[924.9,657.0],[924.9,712.1],[938.4,712.1],[938.4,797.8],[953.7,814.9],[953.7,824.1],[948.8,824.1],[948.8,835.5],[977.9,865.8],[1060.2,865.8],[1060.3,760.4],[1005.0,760.4],[1005.0,613.4]]],"t":68.8,"r":1,"n":63.2,"cad":1},{"u":412,"polys":[[[1003.1,613.4],[1005.0,613.4],[1005.0,760.4],[1060.3,760.4],[1060.2,863.9],[1131.7,863.9],[1131.7,613.4]]],"t":73.3,"r":2,"n":66.0,"cad":1},{"u":413,"polys":[[[1505,862],[1198,862],[1225,738],[1505,738]]],"t":154.2,"r":4,"n":109.2},{"u":414,"polys":[[[1505,738],[1250,738],[1250,612],[1505,612]]],"t":76.1,"r":2,"n":69.8},{"u":415,"polys":[[[1516.4,351.4],[1374.6,351.4],[1374.5,491.0],[1319.9,491.0],[1319.9,575.5],[1366.0,575.5],[1366.0,617.2],[1516.4,617.2]]],"t":125.0,"r":3,"n":93.8,"cad":1},{"u":416,"polys":[[[1374.6,362.8],[1250.8,362.7],[1250.8,492.0],[1241.2,492.0],[1241.2,575.4],[1319.9,575.5],[1319.9,491.0],[1374.5,491.0]]],"t":68.1,"r":2,"n":56.4,"cad":1},{"u":417,"polys":[[[1241.2,491.9],[1250.8,491.9],[1250.8,362.8],[1128.8,362.7],[1128.8,491.9],[1149.8,491.9],[1149.8,575.4],[1241.2,575.4]]],"t":71.2,"r":2,"n":59.6,"cad":1},{"u":418,"polys":[[[1149.8,491.9],[1128.8,491.9],[1128.8,360.9],[1005.1,360.9],[1005.1,491.9],[1052.1,491.9],[1052.1,575.4],[1149.8,575.4]]],"t":71.8,"r":2,"n":60.0,"cad":1},{"u":419,"polys":[[[1052.1,575.4],[1052.1,491.9],[1005.1,491.9],[1005.1,362.8],[979.4,362.8],[950.8,391.3],[950.8,402.6],[879.4,402.6],[879.4,497.5],[890.8,497.6],[890.8,575.4]]],"t":75.6,"r":1,"n":75.6,"cad":1},{"u":420,"polys":[[[740.3,497.5],[740.3,575.4],[890.7,575.4],[890.7,497.5],[879.3,497.5],[879.3,402.6],[751.7,402.6],[751.7,497.5]]],"t":65.5,"r":2,"n":65.5,"cad":1}]},{"f":5,"vb":[100,340,1430,545],"units":[{"u":501,"polys":[[[583.2,491.1],[583.2,575.5],[740.3,575.5],[740.3,493.0],[751.7,493.0],[751.7,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1]]],"t":73.6,"r":1,"n":73.6,"cad":1},{"u":502,"polys":[[[480.3,491.1],[481.2,575.5],[583.2,575.5],[583.2,491.1],[626.0,491.1],[626.0,362.9],[502.2,362.9],[502.2,491.1]]],"t":67.0,"r":2,"n":61.2,"cad":1},{"u":503,"polys":[[[389.8,492.1],[389.8,575.5],[481.2,575.5],[481.2,491.1],[502.2,491.1],[502.2,362.9],[380.3,362.9],[380.3,492.1]]],"t":65.1,"r":2,"n":59.3,"cad":1},{"u":504,"polys":[[[256.5,362.9],[256.5,491.0],[311.7,491.0],[310.8,575.5],[389.8,575.5],[389.8,492.1],[380.3,492.1],[380.3,362.9]]],"t":62.2,"r":2,"n":56.4,"cad":1},{"u":505,"polys":[[[126.0,478.2],[126.0,616.3],[265.1,616.3],[265.1,575.5],[310.8,575.5],[311.7,491.0],[256.5,491.0],[256.5,362.9],[238.4,362.9],[238.4,380.0],[231.7,380.0],[231.7,367.7],[159.3,367.7],[159.3,380.0],[152.7,380.0],[152.7,362.9],[126.0,362.9],[126.0,389.5],[143.2,389.5],[143.2,397.8],[128.9,397.8],[128.9,469.9],[143.2,469.9],[143.2,478.2]]],"t":100.7,"r":3,"n":96.2,"cad":1},{"u":506,"polys":[[[126.0,616.3],[126.0,735.9],[300.3,735.9],[300.3,667.6],[381.2,667.6],[381.2,613.5],[265.1,613.5],[265.1,616.3]]],"t":69.6,"r":2,"n":69.6,"cad":1},{"u":507,"polys":[[[143.2,847.0],[440.3,847.0],[418.4,788.9],[418.4,667.6],[300.3,667.6],[300.3,735.9],[143.2,736.0]]],"t":125.8,"r":4,"n":111.8,"cad":1},{"u":508,"polys":[[[499.3,864.0],[571.7,864.0],[571.7,736.0],[626.0,735.9],[626.0,613.5],[499.2,613.6]]],"t":69.0,"r":2,"n":65.6,"cad":1},{"u":509,"polys":[[[571.7,736.0],[571.7,864.1],[651.7,864.1],[680.3,835.6],[680.3,824.2],[677.3,824.2],[677.3,815.0],[692.6,799.6],[692.6,735.9],[704.1,736.0],[706.0,613.5],[707.9,613.5],[626.0,613.5],[626.0,735.9]]],"t":66.4,"r":1,"n":63.9,"cad":1},{"u":510,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.6],[938.4,700.8],[926.9,700.8],[926.9,657.2],[876.5,657.2],[876.5,691.3],[781.2,691.3],[783.2,613.5],[706.0,613.5],[704.1,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.7,"r":3,"n":110.7,"cad":1},{"u":511,"polys":[[[922.2,613.5],[922.2,662.9],[926.9,662.9],[926.9,700.8],[938.4,700.8],[938.4,799.6],[953.7,815.0],[953.7,824.2],[950.7,824.2],[950.7,835.6],[979.3,864.1],[1059.3,864.0],[1059.3,741.6],[1005.0,741.6],[1005.0,613.5]]],"t":65.9,"r":1,"n":63.4,"cad":1},{"u":512,"polys":[[[1003.1,613.5],[1005.0,613.5],[1005.0,741.6],[1059.3,741.6],[1059.3,864.1],[1131.7,864.1],[1131.7,613.5]]],"t":69.3,"r":2,"n":65.9,"cad":1},{"u":513,"polys":[[[1190.7,864.1],[1392.6,864.1],[1392.6,847.0],[1399.3,847.0],[1399.3,859.3],[1471.7,859.3],[1471.7,847.0],[1478.3,847.0],[1478.3,864.1],[1505.0,864.1],[1505.0,837.5],[1487.9,837.5],[1487.9,829.2],[1502.1,829.2],[1502.1,757.1],[1487.9,757.1],[1487.9,748.7],[1505.0,748.7],[1505.0,735.9],[1330.7,735.9],[1330.7,667.6],[1252.6,667.6],[1252.6,665.7],[1212.6,665.7],[1212.6,789.0],[1190.8,843.9]]],"t":125.3,"r":4,"n":112.3,"cad":1},{"u":514,"polys":[[[1249.8,613.5],[1249.8,665.7],[1252.6,665.7],[1252.6,667.6],[1330.7,667.6],[1330.7,735.9],[1505.0,735.9],[1505.0,616.3],[1366.0,616.3],[1366.0,613.5]]],"t":69.9,"r":2,"n":69.9,"cad":1},{"u":515,"polys":[[[1319.9,491.0],[1319.8,575.5],[1365.9,575.5],[1365.9,616.2],[1505.0,616.3],[1505.0,478.1],[1487.8,478.1],[1487.8,469.8],[1502.1,469.8],[1502.1,397.7],[1487.8,397.7],[1487.8,389.4],[1505.0,389.4],[1505.0,362.9],[1478.3,362.9],[1478.3,379.9],[1471.6,379.9],[1471.6,367.6],[1399.2,367.6],[1399.2,379.9],[1392.6,379.9],[1392.6,362.9],[1374.5,362.9],[1374.5,491.0]]],"t":100.8,"r":3,"n":96.3,"cad":1},{"u":516,"polys":[[[1241.2,575.6],[1319.9,575.6],[1319.9,491.1],[1374.5,491.1],[1374.6,363.0],[1250.8,363.0],[1250.8,492.2],[1241.2,492.2]]],"t":62.2,"r":2,"n":56.4,"cad":1},{"u":517,"polys":[[[1128.8,491.1],[1149.8,491.1],[1149.8,575.6],[1241.2,575.6],[1241.2,492.1],[1250.8,492.1],[1250.8,363.0],[1128.8,363.0]]],"t":65.4,"r":2,"n":59.6,"cad":1},{"u":518,"polys":[[[1149.8,491.1],[1128.8,491.1],[1128.8,363.0],[1005.1,362.9],[1005.1,492.0],[1047.8,492.0],[1047.8,575.6],[1149.8,575.6]]],"t":67.1,"r":2,"n":61.1,"cad":1},{"u":519,"polys":[[[1047.8,575.6],[1047.8,492.0],[1005.1,492.0],[1005.1,362.9],[979.4,362.9],[950.8,391.4],[950.8,402.8],[879.4,402.8],[879.4,493.0],[890.8,493.0],[890.8,575.5]]],"t":74.8,"r":1,"n":74.8,"cad":1},{"u":520,"polys":[[[740.3,493.0],[740.3,575.5],[890.7,575.5],[890.7,493.0],[879.3,493.0],[879.3,402.8],[751.7,402.8],[751.7,493.0]]],"t":65.5,"r":2,"n":65.5,"cad":1}]},{"f":6,"vb":[100,340,1430,545],"units":[{"u":601,"polys":[[[583.2,491.1],[583.2,575.5],[740.3,575.5],[740.3,493.0],[751.7,493.0],[751.7,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1]]],"t":73.8,"r":1,"n":73.8,"cad":1},{"u":602,"polys":[[[480.3,491.1],[481.2,575.5],[583.2,575.5],[583.2,491.1],[626.0,491.1],[626.0,362.9],[502.2,362.9],[502.2,491.1]]],"t":67.3,"r":2,"n":61.5,"cad":1},{"u":603,"polys":[[[389.8,492.1],[389.8,575.5],[481.2,575.5],[481.2,491.1],[502.2,491.1],[502.2,362.9],[380.3,362.9],[380.3,492.1]]],"t":64.8,"r":2,"n":59.0,"cad":1},{"u":604,"polys":[[[256.5,362.9],[256.5,491.0],[311.7,491.0],[310.8,575.5],[389.8,575.5],[389.8,492.1],[380.3,492.1],[380.3,362.9]]],"t":62.3,"r":2,"n":56.4,"cad":1},{"u":605,"polys":[[[126.0,478.2],[126.0,616.3],[265.1,616.3],[265.1,575.5],[310.8,575.5],[311.7,491.0],[256.5,491.0],[256.5,362.9],[238.4,362.9],[238.4,380.0],[231.7,380.0],[231.7,367.7],[159.3,367.7],[159.3,380.0],[152.7,380.0],[152.7,362.9],[126.0,362.9],[126.0,389.5],[143.2,389.5],[143.2,397.8],[128.9,397.8],[128.9,469.9],[143.2,469.9],[143.2,478.2]]],"t":104.5,"r":3,"n":96.3,"cad":1},{"u":606,"polys":[[[126.0,616.3],[126.0,735.9],[300.3,735.9],[300.3,667.6],[381.2,667.6],[381.2,613.5],[265.1,613.5],[265.1,616.3]]],"t":69.7,"r":2,"n":69.7,"cad":1},{"u":607,"polys":[[[143.2,847.0],[440.3,847.0],[418.4,788.9],[418.4,667.6],[300.3,667.6],[300.3,735.9],[143.2,736.0]]],"t":128.8,"r":4,"n":111.7,"cad":1},{"u":608,"polys":[[[499.3,864.0],[571.7,864.0],[571.7,736.0],[626.0,735.9],[626.0,613.5],[499.2,613.6]]],"t":69.0,"r":2,"n":65.6,"cad":1},{"u":609,"polys":[[[571.7,736.0],[571.7,864.1],[651.7,864.1],[680.3,835.6],[680.3,824.2],[677.3,824.2],[677.3,815.0],[692.6,799.6],[692.6,735.9],[704.1,736.0],[706.0,613.5],[707.9,613.5],[626.0,613.5],[626.0,735.9]]],"t":66.3,"r":1,"n":63.9,"cad":1},{"u":610,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.6],[938.4,700.8],[926.9,700.8],[926.9,657.2],[876.5,657.2],[876.5,691.3],[781.2,691.3],[783.2,613.5],[706.0,613.5],[704.1,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.8,"r":3,"n":110.8,"cad":1},{"u":611,"polys":[[[922.2,613.5],[922.2,662.9],[926.9,662.9],[926.9,700.8],[938.4,700.8],[938.4,799.6],[953.7,815.0],[953.7,824.2],[950.7,824.2],[950.7,835.6],[979.3,864.1],[1059.3,864.0],[1059.3,741.6],[1005.0,741.6],[1005.0,613.5]]],"t":65.7,"r":1,"n":63.3,"cad":1},{"u":612,"polys":[[[1003.1,613.5],[1005.0,613.5],[1005.0,741.6],[1059.3,741.6],[1059.3,864.1],[1131.7,864.1],[1131.7,613.5]]],"t":69.5,"r":2,"n":66.0,"cad":1},{"u":613,"polys":[[[1190.7,864.1],[1392.6,864.1],[1392.6,847.0],[1399.3,847.0],[1399.3,859.3],[1471.7,859.3],[1471.7,847.0],[1478.3,847.0],[1478.3,864.1],[1505.0,864.1],[1505.0,837.5],[1487.9,837.5],[1487.9,829.2],[1502.1,829.2],[1502.1,757.1],[1487.9,757.1],[1487.9,748.7],[1505.0,748.7],[1505.0,735.9],[1330.7,735.9],[1330.7,667.6],[1252.6,667.6],[1252.6,665.7],[1212.6,665.7],[1212.6,789.0],[1190.8,843.9]]],"t":128.7,"r":4,"n":112.3,"cad":1},{"u":614,"polys":[[[1249.8,613.5],[1249.8,665.7],[1252.6,665.7],[1252.6,667.6],[1330.7,667.6],[1330.7,735.9],[1505.0,735.9],[1505.0,616.3],[1366.0,616.3],[1366.0,613.5]]],"t":70.0,"r":2,"n":70.0,"cad":1},{"u":615,"polys":[[[1319.9,491.0],[1319.8,575.5],[1365.9,575.5],[1365.9,616.2],[1505.0,616.3],[1505.0,478.1],[1487.8,478.1],[1487.8,469.8],[1502.1,469.8],[1502.1,397.7],[1487.8,397.7],[1487.8,389.4],[1505.0,389.4],[1505.0,362.9],[1478.3,362.9],[1478.3,379.9],[1471.6,379.9],[1471.6,367.6],[1399.2,367.6],[1399.2,379.9],[1392.6,379.9],[1392.6,362.9],[1374.5,362.9],[1374.5,491.0]]],"t":104.3,"r":3,"n":96.7,"cad":1},{"u":616,"polys":[[[1241.2,575.6],[1319.9,575.6],[1319.9,491.1],[1374.5,491.1],[1374.6,363.0],[1250.8,363.0],[1250.8,492.2],[1241.2,492.2]]],"t":62.3,"r":2,"n":56.4,"cad":1},{"u":617,"polys":[[[1128.8,491.1],[1149.8,491.1],[1149.8,575.6],[1241.2,575.6],[1241.2,492.1],[1250.8,492.1],[1250.8,363.0],[1128.8,363.0]]],"t":65.4,"r":2,"n":59.6,"cad":1},{"u":618,"polys":[[[1149.8,491.1],[1128.8,491.1],[1128.8,363.0],[1005.1,362.9],[1005.1,492.0],[1047.8,492.0],[1047.8,575.6],[1149.8,575.6]]],"t":66.9,"r":2,"n":61.1,"cad":1},{"u":619,"polys":[[[1047.8,575.6],[1047.8,492.0],[1005.1,492.0],[1005.1,362.9],[979.4,362.9],[950.8,391.4],[950.8,402.8],[879.4,402.8],[879.4,493.0],[890.8,493.0],[890.8,575.5]]],"t":74.8,"r":1,"n":74.8,"cad":1},{"u":620,"polys":[[[740.3,493.0],[740.3,575.5],[890.7,575.5],[890.7,493.0],[879.3,493.0],[879.3,402.8],[751.7,402.8],[751.7,493.0]]],"t":65.3,"r":2,"n":65.3,"cad":1}]},{"f":7,"vb":[100,340,1430,545],"units":[{"u":701,"polys":[[[583.2,491.1],[583.2,575.5],[740.3,575.5],[740.3,493.0],[751.7,493.0],[751.7,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1]]],"t":73.6,"r":1,"n":73.6,"cad":1},{"u":702,"polys":[[[480.3,491.1],[481.2,575.5],[583.2,575.5],[583.2,491.1],[626.0,491.1],[626.0,362.9],[502.2,362.9],[502.2,491.1]]],"t":67.0,"r":2,"n":61.2,"cad":1},{"u":703,"polys":[[[389.8,492.1],[389.8,575.5],[481.2,575.5],[481.2,491.1],[502.2,491.1],[502.2,362.9],[380.3,362.9],[380.3,492.1]]],"t":65.1,"r":2,"n":59.3,"cad":1},{"u":704,"polys":[[[256.5,362.9],[256.5,491.0],[311.7,491.0],[310.8,575.5],[389.8,575.5],[389.8,492.1],[380.3,492.1],[380.3,362.9]]],"t":62.2,"r":2,"n":56.4,"cad":1},{"u":705,"polys":[[[126.0,478.2],[126.0,616.3],[265.1,616.3],[265.1,575.5],[310.8,575.5],[311.7,491.0],[256.5,491.0],[256.5,362.9],[238.4,362.9],[238.4,380.0],[231.7,380.0],[231.7,367.7],[159.3,367.7],[159.3,380.0],[152.7,380.0],[152.7,362.9],[126.0,362.9],[126.0,389.5],[143.2,389.5],[143.2,397.8],[128.9,397.8],[128.9,469.9],[143.2,469.9],[143.2,478.2]]],"t":100.7,"r":3,"n":96.2,"cad":1},{"u":706,"polys":[[[126.0,616.3],[126.0,735.9],[300.3,735.9],[300.3,667.6],[381.2,667.6],[381.2,613.5],[265.1,613.5],[265.1,616.3]]],"t":69.6,"r":2,"n":69.6,"cad":1},{"u":707,"polys":[[[143.2,847.0],[440.3,847.0],[418.4,788.9],[418.4,667.6],[300.3,667.6],[300.3,735.9],[143.2,736.0]]],"t":125.8,"r":4,"n":111.8,"cad":1},{"u":708,"polys":[[[499.3,864.0],[571.7,864.0],[571.7,736.0],[626.0,735.9],[626.0,613.5],[499.2,613.6]]],"t":69.0,"r":2,"n":65.6,"cad":1},{"u":709,"polys":[[[571.7,736.0],[571.7,864.1],[651.7,864.1],[680.3,835.6],[680.3,824.2],[677.3,824.2],[677.3,815.0],[692.6,799.6],[692.6,735.9],[704.1,736.0],[706.0,613.5],[707.9,613.5],[626.0,613.5],[626.0,735.9]]],"t":66.4,"r":1,"n":63.9,"cad":1},{"u":710,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.6],[938.4,700.8],[926.9,700.8],[926.9,657.2],[876.5,657.2],[876.5,691.3],[781.2,691.3],[783.2,613.5],[706.0,613.5],[704.1,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.7,"r":3,"n":110.7,"cad":1},{"u":711,"polys":[[[922.2,613.5],[922.2,662.9],[926.9,662.9],[926.9,700.8],[938.4,700.8],[938.4,799.6],[953.7,815.0],[953.7,824.2],[950.7,824.2],[950.7,835.6],[979.3,864.1],[1059.3,864.0],[1059.3,741.6],[1005.0,741.6],[1005.0,613.5]]],"t":65.9,"r":1,"n":63.4,"cad":1},{"u":712,"polys":[[[1003.1,613.5],[1005.0,613.5],[1005.0,741.6],[1059.3,741.6],[1059.3,864.1],[1131.7,864.1],[1131.7,613.5]]],"t":69.3,"r":2,"n":65.9,"cad":1},{"u":713,"polys":[[[1190.7,864.1],[1392.6,864.1],[1392.6,847.0],[1399.3,847.0],[1399.3,859.3],[1471.7,859.3],[1471.7,847.0],[1478.3,847.0],[1478.3,864.1],[1505.0,864.1],[1505.0,837.5],[1487.9,837.5],[1487.9,829.2],[1502.1,829.2],[1502.1,757.1],[1487.9,757.1],[1487.9,748.7],[1505.0,748.7],[1505.0,735.9],[1330.7,735.9],[1330.7,667.6],[1252.6,667.6],[1252.6,665.7],[1212.6,665.7],[1212.6,789.0],[1190.8,843.9]]],"t":125.3,"r":4,"n":112.3,"cad":1},{"u":714,"polys":[[[1249.8,613.5],[1249.8,665.7],[1252.6,665.7],[1252.6,667.6],[1330.7,667.6],[1330.7,735.9],[1505.0,735.9],[1505.0,616.3],[1366.0,616.3],[1366.0,613.5]]],"t":69.9,"r":2,"n":69.9,"cad":1},{"u":715,"polys":[[[1319.9,491.0],[1319.8,575.5],[1365.9,575.5],[1365.9,616.2],[1505.0,616.3],[1505.0,478.1],[1487.8,478.1],[1487.8,469.8],[1502.1,469.8],[1502.1,397.7],[1487.8,397.7],[1487.8,389.4],[1505.0,389.4],[1505.0,362.9],[1478.3,362.9],[1478.3,379.9],[1471.6,379.9],[1471.6,367.6],[1399.2,367.6],[1399.2,379.9],[1392.6,379.9],[1392.6,362.9],[1374.5,362.9],[1374.5,491.0]]],"t":100.8,"r":3,"n":96.3,"cad":1},{"u":716,"polys":[[[1241.2,575.6],[1319.9,575.6],[1319.9,491.1],[1374.5,491.1],[1374.6,363.0],[1250.8,363.0],[1250.8,492.2],[1241.2,492.2]]],"t":62.2,"r":2,"n":56.4,"cad":1},{"u":717,"polys":[[[1128.8,491.1],[1149.8,491.1],[1149.8,575.6],[1241.2,575.6],[1241.2,492.1],[1250.8,492.1],[1250.8,363.0],[1128.8,363.0]]],"t":65.4,"r":2,"n":59.6,"cad":1},{"u":718,"polys":[[[1149.8,491.1],[1128.8,491.1],[1128.8,363.0],[1005.1,362.9],[1005.1,492.0],[1047.8,492.0],[1047.8,575.6],[1149.8,575.6]]],"t":67.1,"r":2,"n":61.1,"cad":1},{"u":719,"polys":[[[1047.8,575.6],[1047.8,492.0],[1005.1,492.0],[1005.1,362.9],[979.4,362.9],[950.8,391.4],[950.8,402.8],[879.4,402.8],[879.4,493.0],[890.8,493.0],[890.8,575.5]]],"t":74.8,"r":1,"n":74.8,"cad":1},{"u":720,"polys":[[[740.3,493.0],[740.3,575.5],[890.7,575.5],[890.7,493.0],[879.3,493.0],[879.3,402.8],[751.7,402.8],[751.7,493.0]]],"t":65.5,"r":2,"n":65.5,"cad":1}]},{"f":8,"vb":[100,340,1430,545],"units":[{"u":801,"polys":[[[583.2,491.1],[583.2,575.5],[740.3,575.5],[740.3,493.0],[751.7,493.0],[751.7,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1]]],"t":73.8,"r":1,"n":73.8,"cad":1},{"u":802,"polys":[[[480.3,491.1],[481.2,575.5],[583.2,575.5],[583.2,491.1],[626.0,491.1],[626.0,362.9],[502.2,362.9],[502.2,491.1]]],"t":67.3,"r":2,"n":61.5,"cad":1},{"u":803,"polys":[[[389.8,492.1],[389.8,575.5],[481.2,575.5],[481.2,491.1],[502.2,491.1],[502.2,362.9],[380.3,362.9],[380.3,492.1]]],"t":64.8,"r":2,"n":59.0,"cad":1},{"u":804,"polys":[[[256.5,362.9],[256.5,491.0],[311.7,491.0],[310.8,575.5],[389.8,575.5],[389.8,492.1],[380.3,492.1],[380.3,362.9]]],"t":62.3,"r":2,"n":56.4,"cad":1},{"u":805,"polys":[[[126.0,478.2],[126.0,616.3],[265.1,616.3],[265.1,575.5],[310.8,575.5],[311.7,491.0],[256.5,491.0],[256.5,362.9],[238.4,362.9],[238.4,380.0],[231.7,380.0],[231.7,367.7],[159.3,367.7],[159.3,380.0],[152.7,380.0],[152.7,362.9],[126.0,362.9],[126.0,389.5],[143.2,389.5],[143.2,397.8],[128.9,397.8],[128.9,469.9],[143.2,469.9],[143.2,478.2]]],"t":104.5,"r":3,"n":96.3,"cad":1},{"u":806,"polys":[[[126.0,616.3],[126.0,735.9],[300.3,735.9],[300.3,667.6],[381.2,667.6],[381.2,613.5],[265.1,613.5],[265.1,616.3]]],"t":69.7,"r":2,"n":69.7,"cad":1},{"u":807,"polys":[[[143.2,847.0],[440.3,847.0],[418.4,788.9],[418.4,667.6],[300.3,667.6],[300.3,735.9],[143.2,736.0]]],"t":128.8,"r":4,"n":111.7,"cad":1},{"u":808,"polys":[[[499.3,864.0],[571.7,864.0],[571.7,736.0],[626.0,735.9],[626.0,613.5],[499.2,613.6]]],"t":69.0,"r":2,"n":65.6,"cad":1},{"u":809,"polys":[[[571.7,736.0],[571.7,864.1],[651.7,864.1],[680.3,835.6],[680.3,824.2],[677.3,824.2],[677.3,815.0],[692.6,799.6],[692.6,735.9],[704.1,736.0],[706.0,613.5],[707.9,613.5],[626.0,613.5],[626.0,735.9]]],"t":66.3,"r":1,"n":63.9,"cad":1},{"u":810,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.6],[938.4,700.8],[926.9,700.8],[926.9,657.2],[876.5,657.2],[876.5,691.3],[781.2,691.3],[783.2,613.5],[706.0,613.5],[704.1,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.8,"r":3,"n":110.8,"cad":1},{"u":811,"polys":[[[922.2,613.5],[922.2,662.9],[926.9,662.9],[926.9,700.8],[938.4,700.8],[938.4,799.6],[953.7,815.0],[953.7,824.2],[950.7,824.2],[950.7,835.6],[979.3,864.1],[1059.3,864.0],[1059.3,741.6],[1005.0,741.6],[1005.0,613.5]]],"t":65.7,"r":1,"n":63.3,"cad":1},{"u":812,"polys":[[[1003.1,613.5],[1005.0,613.5],[1005.0,741.6],[1059.3,741.6],[1059.3,864.1],[1131.7,864.1],[1131.7,613.5]]],"t":69.5,"r":2,"n":66.0,"cad":1},{"u":813,"polys":[[[1190.7,864.1],[1392.6,864.1],[1392.6,847.0],[1399.3,847.0],[1399.3,859.3],[1471.7,859.3],[1471.7,847.0],[1478.3,847.0],[1478.3,864.1],[1505.0,864.1],[1505.0,837.5],[1487.9,837.5],[1487.9,829.2],[1502.1,829.2],[1502.1,757.1],[1487.9,757.1],[1487.9,748.7],[1505.0,748.7],[1505.0,735.9],[1330.7,735.9],[1330.7,667.6],[1252.6,667.6],[1252.6,665.7],[1212.6,665.7],[1212.6,789.0],[1190.8,843.9]]],"t":128.7,"r":4,"n":112.3,"cad":1},{"u":814,"polys":[[[1249.8,613.5],[1249.8,665.7],[1252.6,665.7],[1252.6,667.6],[1330.7,667.6],[1330.7,735.9],[1505.0,735.9],[1505.0,616.3],[1366.0,616.3],[1366.0,613.5]]],"t":70.0,"r":2,"n":70.0,"cad":1},{"u":815,"polys":[[[1319.9,491.0],[1319.8,575.5],[1365.9,575.5],[1365.9,616.2],[1505.0,616.3],[1505.0,478.1],[1487.8,478.1],[1487.8,469.8],[1502.1,469.8],[1502.1,397.7],[1487.8,397.7],[1487.8,389.4],[1505.0,389.4],[1505.0,362.9],[1478.3,362.9],[1478.3,379.9],[1471.6,379.9],[1471.6,367.6],[1399.2,367.6],[1399.2,379.9],[1392.6,379.9],[1392.6,362.9],[1374.5,362.9],[1374.5,491.0]]],"t":104.3,"r":3,"n":96.7,"cad":1},{"u":816,"polys":[[[1241.2,575.6],[1319.9,575.6],[1319.9,491.1],[1374.5,491.1],[1374.6,363.0],[1250.8,363.0],[1250.8,492.2],[1241.2,492.2]]],"t":62.3,"r":2,"n":56.4,"cad":1},{"u":817,"polys":[[[1128.8,491.1],[1149.8,491.1],[1149.8,575.6],[1241.2,575.6],[1241.2,492.1],[1250.8,492.1],[1250.8,363.0],[1128.8,363.0]]],"t":65.4,"r":2,"n":59.6,"cad":1},{"u":818,"polys":[[[1149.8,491.1],[1128.8,491.1],[1128.8,363.0],[1005.1,362.9],[1005.1,492.0],[1047.8,492.0],[1047.8,575.6],[1149.8,575.6]]],"t":66.9,"r":2,"n":61.1,"cad":1},{"u":819,"polys":[[[1047.8,575.6],[1047.8,492.0],[1005.1,492.0],[1005.1,362.9],[979.4,362.9],[950.8,391.4],[950.8,402.8],[879.4,402.8],[879.4,493.0],[890.8,493.0],[890.8,575.5]]],"t":74.8,"r":1,"n":74.8,"cad":1},{"u":820,"polys":[[[740.3,493.0],[740.3,575.5],[890.7,575.5],[890.7,493.0],[879.3,493.0],[879.3,402.8],[751.7,402.8],[751.7,493.0]]],"t":65.3,"r":2,"n":65.3,"cad":1}]},{"f":9,"vb":[100,340,1430,545],"units":[{"u":901,"polys":[[[583.2,491.1],[583.2,575.5],[740.3,575.5],[740.3,493.0],[751.7,493.0],[751.7,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1]]],"t":73.6,"r":1,"n":73.6,"cad":1},{"u":902,"polys":[[[480.3,491.1],[481.2,575.5],[583.2,575.5],[583.2,491.1],[626.0,491.1],[626.0,362.9],[502.2,362.9],[502.2,491.1]]],"t":67.0,"r":2,"n":61.2,"cad":1},{"u":903,"polys":[[[389.8,492.1],[389.8,575.5],[481.2,575.5],[481.2,491.1],[502.2,491.1],[502.2,362.9],[380.3,362.9],[380.3,492.1]]],"t":65.1,"r":2,"n":59.3,"cad":1},{"u":904,"polys":[[[256.5,362.9],[256.5,491.0],[311.7,491.0],[310.8,575.5],[389.8,575.5],[389.8,492.1],[380.3,492.1],[380.3,362.9]]],"t":62.2,"r":2,"n":56.4,"cad":1},{"u":905,"polys":[[[126.0,478.2],[126.0,616.3],[265.1,616.3],[265.1,575.5],[310.8,575.5],[311.7,491.0],[256.5,491.0],[256.5,362.9],[238.4,362.9],[238.4,380.0],[231.7,380.0],[231.7,367.7],[159.3,367.7],[159.3,380.0],[152.7,380.0],[152.7,362.9],[126.0,362.9],[126.0,389.5],[143.2,389.5],[143.2,397.8],[128.9,397.8],[128.9,469.9],[143.2,469.9],[143.2,478.2]]],"t":100.7,"r":3,"n":96.2,"cad":1},{"u":906,"polys":[[[126.0,616.3],[126.0,735.9],[300.3,735.9],[300.3,667.6],[381.2,667.6],[381.2,613.5],[265.1,613.5],[265.1,616.3]]],"t":69.6,"r":2,"n":69.6,"cad":1},{"u":907,"polys":[[[143.2,847.0],[440.3,847.0],[418.4,788.9],[418.4,667.6],[300.3,667.6],[300.3,735.9],[143.2,736.0]]],"t":125.8,"r":4,"n":111.8,"cad":1},{"u":908,"polys":[[[499.3,864.0],[571.7,864.0],[571.7,736.0],[626.0,735.9],[626.0,613.5],[499.2,613.6]]],"t":69.0,"r":2,"n":65.6,"cad":1},{"u":909,"polys":[[[571.7,736.0],[571.7,864.1],[651.7,864.1],[680.3,835.6],[680.3,824.2],[677.3,824.2],[677.3,815.0],[692.6,799.6],[692.6,735.9],[704.1,736.0],[706.0,613.5],[707.9,613.5],[626.0,613.5],[626.0,735.9]]],"t":66.4,"r":1,"n":63.9,"cad":1},{"u":910,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.6],[938.4,700.8],[926.9,700.8],[926.9,657.2],[876.5,657.2],[876.5,691.3],[781.2,691.3],[783.2,613.5],[706.0,613.5],[704.1,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.7,"r":3,"n":110.7,"cad":1},{"u":911,"polys":[[[922.2,613.5],[922.2,662.9],[926.9,662.9],[926.9,700.8],[938.4,700.8],[938.4,799.6],[953.7,815.0],[953.7,824.2],[950.7,824.2],[950.7,835.6],[979.3,864.1],[1059.3,864.0],[1059.3,741.6],[1005.0,741.6],[1005.0,613.5]]],"t":65.9,"r":1,"n":63.4,"cad":1},{"u":912,"polys":[[[1003.1,613.5],[1005.0,613.5],[1005.0,741.6],[1059.3,741.6],[1059.3,864.1],[1131.7,864.1],[1131.7,613.5]]],"t":69.3,"r":2,"n":65.9,"cad":1},{"u":913,"polys":[[[1190.7,864.1],[1392.6,864.1],[1392.6,847.0],[1399.3,847.0],[1399.3,859.3],[1471.7,859.3],[1471.7,847.0],[1478.3,847.0],[1478.3,864.1],[1505.0,864.1],[1505.0,837.5],[1487.9,837.5],[1487.9,829.2],[1502.1,829.2],[1502.1,757.1],[1487.9,757.1],[1487.9,748.7],[1505.0,748.7],[1505.0,735.9],[1330.7,735.9],[1330.7,667.6],[1252.6,667.6],[1252.6,665.7],[1212.6,665.7],[1212.6,789.0],[1190.8,843.9]]],"t":125.3,"r":4,"n":112.3,"cad":1},{"u":914,"polys":[[[1249.8,613.5],[1249.8,665.7],[1252.6,665.7],[1252.6,667.6],[1330.7,667.6],[1330.7,735.9],[1505.0,735.9],[1505.0,616.3],[1366.0,616.3],[1366.0,613.5]]],"t":69.9,"r":2,"n":69.9,"cad":1},{"u":915,"polys":[[[1319.9,491.0],[1319.8,575.5],[1365.9,575.5],[1365.9,616.2],[1505.0,616.3],[1505.0,478.1],[1487.8,478.1],[1487.8,469.8],[1502.1,469.8],[1502.1,397.7],[1487.8,397.7],[1487.8,389.4],[1505.0,389.4],[1505.0,362.9],[1478.3,362.9],[1478.3,379.9],[1471.6,379.9],[1471.6,367.6],[1399.2,367.6],[1399.2,379.9],[1392.6,379.9],[1392.6,362.9],[1374.5,362.9],[1374.5,491.0]]],"t":100.8,"r":3,"n":96.3,"cad":1},{"u":916,"polys":[[[1241.2,575.6],[1319.9,575.6],[1319.9,491.1],[1374.5,491.1],[1374.6,363.0],[1250.8,363.0],[1250.8,492.2],[1241.2,492.2]]],"t":62.2,"r":2,"n":56.4,"cad":1},{"u":917,"polys":[[[1128.8,491.1],[1149.8,491.1],[1149.8,575.6],[1241.2,575.6],[1241.2,492.1],[1250.8,492.1],[1250.8,363.0],[1128.8,363.0]]],"t":65.4,"r":2,"n":59.6,"cad":1},{"u":918,"polys":[[[1149.8,491.1],[1128.8,491.1],[1128.8,363.0],[1005.1,362.9],[1005.1,492.0],[1047.8,492.0],[1047.8,575.6],[1149.8,575.6]]],"t":67.1,"r":2,"n":61.1,"cad":1},{"u":919,"polys":[[[1047.8,575.6],[1047.8,492.0],[1005.1,492.0],[1005.1,362.9],[979.4,362.9],[950.8,391.4],[950.8,402.8],[879.4,402.8],[879.4,493.0],[890.8,493.0],[890.8,575.5]]],"t":74.8,"r":1,"n":74.8,"cad":1},{"u":920,"polys":[[[740.3,493.0],[740.3,575.5],[890.7,575.5],[890.7,493.0],[879.3,493.0],[879.3,402.8],[751.7,402.8],[751.7,493.0]]],"t":65.5,"r":2,"n":65.5,"cad":1}]},{"f":10,"vb":[100,340,1430,545],"units":[{"u":1001,"polys":[[[583.2,491.1],[583.2,575.5],[740.3,575.5],[740.3,493.0],[751.7,493.0],[751.7,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1]]],"t":73.8,"r":1,"n":73.8,"cad":1},{"u":1002,"polys":[[[480.3,491.1],[481.2,575.5],[583.2,575.5],[583.2,491.1],[626.0,491.1],[626.0,362.9],[502.2,362.9],[502.2,491.1]]],"t":67.3,"r":2,"n":61.5,"cad":1},{"u":1003,"polys":[[[389.8,492.1],[389.8,575.5],[481.2,575.5],[481.2,491.1],[502.2,491.1],[502.2,362.9],[380.3,362.9],[380.3,492.1]]],"t":64.8,"r":2,"n":59.0,"cad":1},{"u":1004,"polys":[[[256.5,362.9],[256.5,491.0],[311.7,491.0],[310.8,575.5],[389.8,575.5],[389.8,492.1],[380.3,492.1],[380.3,362.9]]],"t":62.3,"r":2,"n":56.4,"cad":1},{"u":1005,"polys":[[[126.0,478.2],[126.0,616.3],[265.1,616.3],[265.1,575.5],[310.8,575.5],[311.7,491.0],[256.5,491.0],[256.5,362.9],[238.4,362.9],[238.4,380.0],[231.7,380.0],[231.7,367.7],[159.3,367.7],[159.3,380.0],[152.7,380.0],[152.7,362.9],[126.0,362.9],[126.0,389.5],[143.2,389.5],[143.2,397.8],[128.9,397.8],[128.9,469.9],[143.2,469.9],[143.2,478.2]]],"t":105.2,"r":3,"n":93.2,"cad":1},{"u":1006,"polys":[[[126.0,616.3],[126.0,735.9],[300.3,735.9],[300.3,667.6],[381.2,667.6],[381.2,613.5],[265.1,613.5],[265.1,616.3]]],"t":69.7,"r":2,"n":69.7,"cad":1},{"u":1007,"polys":[[[143.2,847.0],[440.3,847.0],[418.4,788.9],[418.4,667.6],[300.3,667.6],[300.3,735.9],[143.2,736.0]]],"t":129.7,"r":4,"n":109.4,"cad":1},{"u":1008,"polys":[[[499.3,864.0],[571.7,864.0],[571.7,736.0],[626.0,735.9],[626.0,613.5],[499.2,613.6]]],"t":69.0,"r":2,"n":65.6,"cad":1},{"u":1009,"polys":[[[571.7,736.0],[571.7,864.1],[651.7,864.1],[680.3,835.6],[680.3,824.2],[677.3,824.2],[677.3,815.0],[692.6,799.6],[692.6,735.9],[704.1,736.0],[706.0,613.5],[707.9,613.5],[626.0,613.5],[626.0,735.9]]],"t":66.3,"r":1,"n":63.9,"cad":1},{"u":1010,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.6],[938.4,700.8],[926.9,700.8],[926.9,657.2],[876.5,657.2],[876.5,691.3],[781.2,691.3],[783.2,613.5],[706.0,613.5],[704.1,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.8,"r":3,"n":110.8,"cad":1},{"u":1011,"polys":[[[922.2,613.5],[922.2,662.9],[926.9,662.9],[926.9,700.8],[938.4,700.8],[938.4,799.6],[953.7,815.0],[953.7,824.2],[950.7,824.2],[950.7,835.6],[979.3,864.1],[1059.3,864.0],[1059.3,741.6],[1005.0,741.6],[1005.0,613.5]]],"t":65.7,"r":1,"n":63.3,"cad":1},{"u":1012,"polys":[[[1003.1,613.5],[1005.0,613.5],[1005.0,741.6],[1059.3,741.6],[1059.3,864.1],[1131.7,864.1],[1131.7,613.5]]],"t":69.5,"r":2,"n":66.0,"cad":1},{"u":1013,"polys":[[[1190.7,864.1],[1392.6,864.1],[1392.6,847.0],[1399.3,847.0],[1399.3,859.3],[1471.7,859.3],[1471.7,847.0],[1478.3,847.0],[1478.3,864.1],[1505.0,864.1],[1505.0,837.5],[1487.9,837.5],[1487.9,829.2],[1502.1,829.2],[1502.1,757.1],[1487.9,757.1],[1487.9,748.7],[1505.0,748.7],[1505.0,735.9],[1330.7,735.9],[1330.7,667.6],[1252.6,667.6],[1252.6,665.7],[1212.6,665.7],[1212.6,789.0],[1190.8,843.9]]],"t":129.5,"r":4,"n":109.0,"cad":1},{"u":1014,"polys":[[[1249.8,613.5],[1249.8,665.7],[1252.6,665.7],[1252.6,667.6],[1330.7,667.6],[1330.7,735.9],[1505.0,735.9],[1505.0,616.3],[1366.0,616.3],[1366.0,613.5]]],"t":70.0,"r":2,"n":70.0,"cad":1},{"u":1015,"polys":[[[1319.9,491.0],[1319.8,575.5],[1365.9,575.5],[1365.9,616.2],[1505.0,616.3],[1505.0,478.1],[1487.8,478.1],[1487.8,469.8],[1502.1,469.8],[1502.1,397.7],[1487.8,397.7],[1487.8,389.4],[1505.0,389.4],[1505.0,362.9],[1478.3,362.9],[1478.3,379.9],[1471.6,379.9],[1471.6,367.6],[1399.2,367.6],[1399.2,379.9],[1392.6,379.9],[1392.6,362.9],[1374.5,362.9],[1374.5,491.0]]],"t":104.9,"r":3,"n":93.7,"cad":1},{"u":1016,"polys":[[[1241.2,575.6],[1319.9,575.6],[1319.9,491.1],[1374.5,491.1],[1374.6,363.0],[1250.8,363.0],[1250.8,492.2],[1241.2,492.2]]],"t":62.3,"r":2,"n":56.4,"cad":1},{"u":1017,"polys":[[[1128.8,491.1],[1149.8,491.1],[1149.8,575.6],[1241.2,575.6],[1241.2,492.1],[1250.8,492.1],[1250.8,363.0],[1128.8,363.0]]],"t":65.1,"r":2,"n":59.3,"cad":1},{"u":1018,"polys":[[[1149.8,491.1],[1128.8,491.1],[1128.8,363.0],[1005.1,362.9],[1005.1,492.0],[1047.8,492.0],[1047.8,575.6],[1149.8,575.6]]],"t":67.2,"r":2,"n":61.4,"cad":1},{"u":1019,"polys":[[[1047.8,575.6],[1047.8,492.0],[1005.1,492.0],[1005.1,362.9],[979.4,362.9],[950.8,391.4],[950.8,402.8],[879.4,402.8],[879.4,493.0],[890.8,493.0],[890.8,575.5]]],"t":74.8,"r":1,"n":74.8,"cad":1},{"u":1020,"polys":[[[740.3,493.0],[740.3,575.5],[890.7,575.5],[890.7,493.0],[879.3,493.0],[879.3,402.8],[751.7,402.8],[751.7,493.0]]],"t":65.4,"r":2,"n":65.4,"cad":1}]},{"f":11,"vb":[100,340,1430,545],"units":[{"u":1101,"polys":[[[583.2,575.5],[740.3,575.5],[740.3,491.0],[751.7,491.0],[751.7,402.8],[680.3,402.8],[680.3,391.4],[651.7,362.9],[626.0,362.9],[626.0,491.1],[583.2,491.1]]],"t":73.8,"r":1,"n":73.8,"cad":1},{"u":1102,"polys":[[[481.2,492.0],[481.2,575.5],[583.2,575.5],[583.2,491.1],[626.0,491.1],[626.0,387.6],[502.3,387.6],[502.3,492.0]]],"t":67.3,"r":2,"n":57.6,"cad":1},{"u":1103,"polys":[[[389.8,493.0],[389.8,575.5],[481.2,575.5],[481.2,492.0],[502.3,492.0],[502.3,387.6],[380.3,387.6],[380.3,493.0]]],"t":64.8,"r":2,"n":55.8,"cad":1},{"u":1104,"polys":[[[380.3,387.6],[256.5,387.6],[256.5,491.1],[311.1,491.1],[311.1,575.5],[389.8,575.5],[389.8,493.0],[380.3,493.0]]],"t":62.3,"r":2,"n":53.2,"cad":1},{"u":1105,"polys":[[[150.8,387.6],[150.8,616.3],[265.1,616.3],[265.1,575.5],[311.1,575.5],[311.1,491.1],[256.5,491.1],[256.5,387.6]]],"t":104.5,"r":3,"n":78.1,"cad":1},{"u":1106,"polys":[[[300.4,735.9],[300.4,667.6],[381.2,667.6],[381.2,613.5],[265.1,613.5],[265.1,616.3],[150.8,616.3],[150.8,736.0]]],"t":69.7,"r":2,"n":60.6,"cad":1},{"u":1107,"polys":[[[150.8,839.4],[435.4,839.4],[435.4,831.8],[418.4,788.9],[418.4,664.9],[373.6,664.9],[373.6,667.6],[300.4,667.6],[300.4,735.9],[150.8,736.0]]],"t":129.3,"r":3,"n":98.9,"cad":1},{"u":1108,"polys":[[[499.3,839.4],[571.7,839.4],[571.6,741.8],[626.0,741.8],[626.0,613.5],[627.8,613.5],[499.2,613.6]]],"t":69.0,"r":2,"n":63.7,"cad":1},{"u":1109,"polys":[[[571.7,741.8],[571.7,839.5],[625.0,839.5],[625.0,866.0],[651.7,866.0],[682.2,835.6],[682.2,824.2],[677.3,824.2],[677.3,815.0],[692.6,799.6],[692.6,735.9],[704.2,735.9],[706.0,613.5],[707.9,613.5],[626.0,613.5],[626.0,741.8]]],"t":66.6,"r":1,"n":62.7,"cad":1},{"u":1110,"polys":[[[677.3,815.0],[677.3,824.2],[953.7,824.2],[953.7,815.0],[938.4,799.7],[938.4,735.9],[926.9,735.9],[926.9,657.2],[876.5,657.2],[876.5,691.3],[781.2,691.3],[781.2,613.5],[706.0,613.5],[704.2,735.9],[692.6,735.9],[692.6,799.6]]],"t":110.1,"r":3,"n":110.1,"cad":1},{"u":1111,"polys":[[[921.2,613.5],[921.2,657.2],[926.9,657.2],[926.9,735.9],[938.4,735.9],[938.4,799.7],[953.7,815.0],[953.7,824.2],[948.8,824.2],[948.8,835.6],[979.3,866.0],[979.3,864.1],[1059.3,864.1],[1059.3,741.7],[1005.0,741.6],[1005.0,613.5]]],"t":66.1,"r":1,"n":62.1,"cad":1},{"u":1112,"polys":[[[1005.0,613.5],[1005.0,741.6],[1059.3,741.7],[1059.3,864.1],[1131.7,864.1],[1131.7,613.5],[1003.1,613.5]]],"t":69.5,"r":2,"n":64.1,"cad":1},{"u":1113,"polys":[[[1194.1,835.6],[1194.1,864.1],[1505.0,864.1],[1505.0,735.9],[1330.8,735.9],[1330.8,668.0],[1212.6,668.0],[1212.6,613.5],[1212.6,789.0]]],"t":128.7,"r":3,"n":98.5,"cad":1},{"u":1114,"polys":[[[1252.7,613.5],[1252.7,667.6],[1330.8,667.6],[1330.8,735.9],[1505.0,735.9],[1505.0,616.4],[1366.1,616.4],[1366.1,613.5]]],"t":69.9,"r":2,"n":61.1,"cad":1},{"u":1115,"polys":[[[1319.9,575.5],[1366.1,575.5],[1366.1,616.4],[1505.0,616.4],[1505.1,363.0],[1374.6,363.0],[1374.5,491.1],[1319.9,491.1]]],"t":104.8,"r":3,"n":78.4,"cad":1},{"u":1116,"polys":[[[1374.6,363.0],[1250.8,363.0],[1250.8,492.2],[1241.2,492.2],[1241.2,575.6],[1319.9,575.6],[1319.9,491.1],[1374.5,491.1]]],"t":62.2,"r":2,"n":53.2,"cad":1},{"u":1117,"polys":[[[1241.2,492.1],[1250.8,492.1],[1250.8,388.5],[1128.9,388.0],[1128.9,492.0],[1149.8,492.1],[1149.8,575.6],[1241.2,575.6]]],"t":65.0,"r":2,"n":56.0,"cad":1},{"u":1118,"polys":[[[1149.8,492.1],[1128.9,492.0],[1128.9,363.0],[1005.1,362.9],[1005.1,491.0],[1048.0,491.1],[1047.9,575.6],[1149.8,575.6]]],"t":67.9,"r":2,"n":58.7,"cad":1},{"u":1119,"polys":[[[1047.9,575.6],[1048.0,491.1],[1005.1,491.0],[1005.1,362.9],[979.4,362.9],[950.8,391.4],[950.8,402.8],[879.4,402.8],[879.4,491.1],[890.8,491.1],[890.8,575.5]]],"t":74.1,"r":1,"n":74.1,"cad":1},{"u":1120,"polys":[[[740.3,497.7],[740.3,575.5],[890.7,575.5],[890.7,497.7],[879.3,497.7],[879.3,402.8],[751.7,402.8],[751.7,497.7]]],"t":65.3,"r":2,"n":65.3,"cad":1}]},{"f":12,"vb":[165,350,1410,465],"units":[{"u":1201,"polys":[[[616.1,552.8],[787.9,552.8],[787.9,466.1],[800.4,466.1],[800.4,382.4],[662.8,382.4],[662.8,466.1],[616.1,466.1]]],"t":73.7,"r":1,"n":63.8,"cad":1},{"u":1202,"polys":[[[505.6,464.1],[504.5,552.8],[616.1,552.8],[616.1,466.1],[662.8,466.1],[662.8,355.5],[527.3,355.5],[527.3,464.1]]],"t":58.5,"r":2,"n":49.7,"cad":1},{"u":1203,"polys":[[[404.3,466.1],[404.3,552.8],[504.5,552.8],[505.6,464.1],[527.3,464.1],[527.3,382.4],[417.0,382.4],[417.0,466.1]]],"t":49.8,"r":1,"n":42.7,"cad":1},{"u":1204,"polys":[[[404.3,466.1],[417.0,466.1],[417.0,382.4],[319.8,382.4],[319.8,552.9],[404.3,552.8]]],"t":43.5,"r":1,"n":37.2,"cad":1},{"u":1205,"polys":[[[319.8,552.9],[319.8,382.4],[179.6,382.4],[179.6,595.6],[286.5,595.6],[286.5,552.8]]],"t":96.3,"r":3,"n":65.9,"cad":1},{"u":1206,"polys":[[[180,585],[392,585],[392,630],[300,630],[300,705],[317,705],[317,800],[180,800]]],"t":110.8,"r":3,"n":80.9},{"u":1207,"polys":[[[435.6,829.8],[435.6,647.5],[394.9,647.5],[394.9,650.4],[341.7,650.4],[341.7,693.3],[329.2,693.3],[329.2,829.8]]],"t":48.0,"r":1,"n":40.5,"cad":1},{"u":1208,"polys":[[[662.8,829.8],[662.8,719.2],[603.3,719.2],[603.3,638.5],[652.4,638.5],[652.3,592.7],[524.1,592.7],[524.1,829.8]]],"t":67.1,"r":2,"n":58.1,"cad":1},{"u":1209,"polys":[[[750.5,686.3],[750.5,637.5],[756.6,637.5],[756.6,592.7],[652.3,592.7],[652.4,638.5],[603.3,638.5],[603.3,719.2],[662.8,719.2],[662.8,857.7],[690.9,857.7],[724.3,825.8],[724.3,813.9],[737.9,813.9],[735.8,813.9],[735.8,686.3]]],"t":59.9,"r":2,"n":52.3,"cad":1},{"u":1210,"polys":[[[1004.7,721.2],[992.2,721.2],[991.2,637.5],[952.6,637.5],[952.6,592.7],[907.8,592.7],[907.8,674.4],[803.5,674.4],[803.5,638.5],[750.5,637.5],[750.5,686.3],[735.8,686.3],[735.8,813.9],[1004.7,813.9]]],"t":107.7,"r":3,"n":100.9,"cad":1},{"u":1211,"polys":[[[1137.2,638.5],[1077.7,638.5],[1077.7,592.7],[952.6,592.7],[952.6,637.5],[991.2,637.5],[992.2,721.2],[1004.7,721.2],[1004.7,813.9],[1016.2,813.9],[1016.2,825.8],[1049.6,857.7],[1078.8,857.7],[1077.7,721.2],[1137.2,721.2]]],"t":62.3,"r":1,"n":50.8,"cad":1},{"u":1212,"polys":[[[1216.4,829.8],[1216.4,592.7],[1075.7,592.7],[1077.7,592.7],[1077.7,638.5],[1137.2,638.5],[1137.2,721.2],[1077.7,721.2],[1077.7,829.8]]],"t":63.6,"r":2,"n":58.4,"cad":1},{"u":1213,"polys":[[[1303.9,829.8],[1418.5,829.8],[1418.5,721.2],[1406.0,721.2],[1406.0,649.6],[1345.6,649.6],[1345.6,644.5],[1303.9,644.5]]],"t":47.4,"r":1,"n":40.0,"cad":1},{"u":1214,"polys":[[[1560.0,595.6],[1426.9,595.6],[1426.9,592.7],[1345.6,592.7],[1345.6,649.6],[1406.0,649.6],[1406.0,721.2],[1418.5,721.2],[1418.5,803.0],[1560.0,803.0]]],"t":111.2,"r":3,"n":81.2,"cad":1},{"u":1215,"polys":[[[1561,585],[1454,585],[1454,535],[1441,535],[1441,368],[1561,368]]],"t":96.7,"r":3,"n":66.3},{"u":1216,"polys":[[[1441,535],[1326,535],[1326,368],[1441,368]]],"t":43.2,"r":1,"n":37.0},{"u":1217,"polys":[[[1348.8,476.0],[1348.8,382.4],[1213.2,382.6],[1213.2,464.1],[1236.2,464.1],[1236.2,552.8],[1336.2,552.8],[1336.2,476.0]]],"t":50.2,"r":1,"n":43.1,"cad":1},{"u":1218,"polys":[[[1236.2,464.1],[1213.2,464.1],[1213.2,382.6],[1077.7,382.8],[1077.7,466.1],[1124.6,466.1],[1124.6,552.8],[1236.2,552.8]]],"t":58.2,"r":2,"n":49.4,"cad":1},{"u":1219,"polys":[[[1124.6,552.8],[1124.6,466.1],[1077.7,466.1],[1077.7,329.6],[1049.6,329.6],[1018.3,359.5],[1018.3,371.5],[940.1,371.5],[940.1,466.1],[952.6,466.1],[952.6,552.8]]],"t":74.6,"r":1,"n":64.8,"cad":1},{"u":1220,"polys":[[[952.6,466.1],[940.1,466.1],[940.1,371.5],[800.4,371.5],[800.4,466.1],[787.9,466.1],[787.9,552.8],[952.6,552.8]]],"t":65.6,"r":2,"n":60.9,"cad":1}]}]</script>
+<script type="application/json" id="state-data">{"units":{"105":{},"501":{"polys":[[[583.2,491.1],[581.7,574.4],[739.9,574.4],[741,492.7],[751.2,493.7],[752.2,400.8],[679.2,400.8],[677.7,386.5],[670.5,375.3],[649.6,363.5],[626,362.9],[626,491.1]]]},"502":{"polys":[[[480,491],[480.5,572.4],[583.2,572.4],[583.2,491.1],[626,491.1],[626,362.9],[502.2,362.9],[502.2,491.1]]]},"503":{"polys":[[[380.4,490.9],[390.1,491.7],[389.7,572.9],[481.4,572.4],[479.7,491.3],[502.2,491.1],[502.2,362.9],[380.3,362.9]]]},"504":{"polys":[[[256.7,362.8],[256.5,491],[310.9,491.7],[311.3,573.5],[390.5,573.5],[390,492.2],[380.9,492.2],[380.3,362.9]]]},"505":{"polys":[[[126,478.2],[126,616.3],[256.1,617],[258.6,573.2],[310.5,573.7],[311.7,491],[256.5,491],[256.5,362.9],[238.4,362.9],[238.4,380],[231.7,367.7],[159.3,367.7],[159.3,380],[152.7,362.9],[126,362.9],[126,389.5],[143.2,389.5],[128.9,397.8],[128.9,469.9],[143.2,469.9]]],"q":2500,"p":251750},"506":{"polys":[[[126,616.3],[126,735.9],[299.9,737.6],[300.3,667.6],[379.4,671.1],[378.7,617.6],[257.9,616.2]]]},"507":{"polys":[[[146.6,844.8],[160.9,844.5],[160.9,860.3],[230,860.3],[230,846],[264.3,846.4],[263.8,863.9],[301,863.4],[301.1,847],[328.3,847],[328.3,863.8],[364,862.9],[364,846.4],[389.3,846.9],[388.3,862.9],[426.5,863.9],[426,846.9],[438.4,847.4],[423.9,813.8],[415.7,791.1],[415.2,770.9],[415.7,668.2],[300.3,667.6],[300.3,735.9],[146.1,736.9],[146,760.6],[130.2,760.6],[129.7,830.2],[145.6,829.9]]]},"508":{"polys":[[[501.9,846.8],[518.8,846.8],[518.8,864.2],[552.2,864.2],[551.7,847.3],[571.1,846.8],[571.6,739.8],[627.3,740.3],[625.8,616.9],[503.4,616.4]]]},"509":{"polys":[[[572.6,739.8],[571.7,864.1],[595.5,864.3],[617.9,864.3],[651.7,864.1],[677.6,836.9],[678.6,814],[690.6,802.6],[691.1,736.9],[705.1,737],[706.5,616.9],[626.4,615.4],[626.4,739.8]]]},"510":{"polys":[[[677.2,826.4],[816.4,828.2],[954.7,828.2],[955.2,819.9],[952,809.4],[941.4,799.7],[941,737.7],[927.6,736.7],[928.1,700.9],[928.1,663.7],[880.3,664.1],[879.4,697.7],[781,698.6],[781,616.8],[707.5,616.8],[705.7,737.2],[691.9,737.2],[691.4,799.2],[682.2,807.1],[677.2,817.2]]]},"511":{"polys":[[[928,616.9],[927.5,665.2],[928,737.4],[940.5,737.9],[941,801.6],[950.9,807.5],[955.4,823],[954.9,837.4],[958.4,846.0999999999999],[963.9,854.8],[972.3,859.8],[981.3,862.3],[1016.1,862.8],[1059.4,862.8],[1059.3,741.6],[1005,741.6],[1005,613.5]]]},"512":{"polys":[[[1004.7,616.9],[1005,741.6],[1059.3,741.6],[1059.3,864.1],[1128.6,864.3],[1129.1,616.9]]]},"513":{"polys":[[[1195.3,863.3],[1253.1,863.7],[1315.5,863.3],[1369.3,863.8],[1369.3,846.1],[1401.2,846.6],[1400.6,862.8],[1473.8,862.8],[1473.3,844.5],[1486.3,843.5],[1486.3,830.4],[1502.1,829.2],[1502.5,758.8],[1485.8,759.3],[1485.3,736.9],[1331.1,736.9],[1330.1,701.3],[1329,666.8],[1254.3,666.3],[1253.3,671],[1216.7,671],[1215.6,793.8],[1194.7,844.5]]]},"519":{"polys":[[[1048.8,572.8],[1047.8,491.1],[1005.4,490.6],[1004.9,365],[981,364.5],[962.6,373.7],[954.4,389.5],[954.9,401.3],[880.4,400.3],[879.4,493],[886,492.6],[886.5,573.3]]]},"520":{"polys":[[[740.3,493],[740.2,574.2],[886.4,573.3],[887.7,493.2],[879.3,493],[880.2,401],[753.1,401],[751.7,493]]]}},"pricing":{},"updated":"2026-11-19T15:05:38.945Z"}</script>
+<script id="app">const BODY = `<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">RIVIERA<small>Private Residential Club</small></a>
+    <nav><a href="#gallery">Layihə</a><a href="#explore">Mənzil seçimi</a><a href="#contact">Əlaqə</a></nav>
+    <div style="display:flex;gap:10px;align-items:center"><a class="btn" href="#explore">Mənzil seç</a></div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="bg" role="img" aria-label="Riviera kompleksi dənizdən, gün batımında"></div>
+  <div class="mist"></div>
+  <div class="hero-in wrap">
+    <div class="eyebrow">Sea Breeze · Dəniz sahili</div>
+    <h1>RIVIERA</h1>
+    <p class="club">Private Residential Club</p>
+    <div class="sub">
+      <p>Dənizin qarşısında, palmalar arasında üç blokdan ibarət yaşayış kompleksi. Hovuz, çimərlik zonası və bulvar evinizin qapısındadır.</p>
+      <div class="facts">
+        <div><b>3</b><span>Blok</span></div>
+        <div><b>12</b><span>Mərtəbə</span></div>
+        <div><b id="fact-units">705</b><span>Mənzil satışda</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap g-head">
+    <div>
+      <div class="eyebrow">Layihə</div>
+      <h2>Gün batımı <em>pəncərənizdən</em> görünür</h2>
+    </div>
+    <div class="g-ctrl"><button id="gprev" aria-label="Əvvəlki şəkil">←</button><button id="gnext" aria-label="Növbəti şəkil">→</button></div>
+  </div>
+  <div class="strip" id="strip"></div>
+</section>
+
+<section class="explore" id="explore">
+  <div class="wrap">
+    <div class="eyebrow">Mənzil seçimi</div>
+    <h2>Mərtəbəni seçin, <em>mənzilinizi</em> tapın</h2>
+    <p class="lede">Binada mərtəbəni seçin. Planda mənzilin üstünə gəlin və ya toxunun: nömrəsi, otaq sayı və sahəsi açılacaq. Rənglər otaq sayını göstərir.</p>
+
+    <div class="stbar" id="stbar"></div>
+    <div class="blocks" role="tablist">
+      <button role="tab" aria-selected="true" data-blk="1">Riviera 1<small>Blok A · dənizə yaxın</small></button>
+      <button role="tab" aria-selected="false" data-blk="2">Riviera 2<small>Blok B · mərkəz</small></button>
+      <button role="tab" aria-selected="false" data-blk="3">Riviera 3<small>Blok C · arxa sıra</small></button>
+    </div>
+
+    <div class="board">
+      <div class="elev" id="elev"></div>
+      <div class="sheet">
+                <div class="sheet-head">
+          <div><h3 id="fl-title">Mərtəbə 5</h3><div class="avail" id="fl-avail"></div></div>
+          <div class="legend" id="legend"></div>
+        </div>
+        <div class="planbox" id="planbox"><div class="scroller" id="scroller"></div><div class="grid"></div><span class="compass" id="compass">Riviera 1 · Mərtəbə planı</span><div class="zoombtns"><button type="button" id="zin" aria-label="Böyüt">+</button><button type="button" id="zout" aria-label="Kiçilt">−</button></div></div>
+        <div class="shapebar" id="shapebar"><div class="sh-h"><b id="sh-title"></b><span id="sh-hint">Nöqtəni sürüşdürün, xəttin ortasındakı + ilə nöqtə əlavə edin, nöqtəni seçib silin.</span></div><div class="sh-b"><button class="btn" id="sh-del" type="button">Nöqtəni sil</button><button class="btn" id="sh-reset" type="button">İlkin vəziyyət</button><button class="btn" id="sh-cancel" type="button">Ləğv et</button><button class="btn solid" id="sh-ok" type="button">Hazır</button></div></div>
+        <p class="planhint">Planı sağa-sola sürüşdürün.</p>
+        <div class="ulist" id="ulist"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="contact">
+  <div class="bg" role="img" aria-label="Mənzildən dənizə baxış"></div>
+  <div class="wrap">
+    <div class="eyebrow">Əlaqə</div>
+    <h2>Mənzilinizi <em>canlı</em> görmək istəyirsiniz?</h2>
+    <p class="lede">Qiymətlər və ödəniş şərtləri üçün satış ofisi ilə əlaqə saxlayın. Sizə uyğun mənzilləri birlikdə seçək.</p>
+    <div class="row">
+      <a class="btn solid" id="wa-main" href="#" target="_blank" rel="noopener">WhatsApp ilə yaz</a>
+      <a class="btn" href="#explore">Mənzillərə bax</a>
+    </div>
+    <p class="phone" style="text-align:left">Telefon: <span class="ph"></span></p>
+  </div>
+</section>
+<footer><div class="wrap"><span>RIVIERA PRIVATE RESIDENTIAL CLUB · <button type="button" class="teambtn" id="teambtn">Satış komandası</button><span id="teamlink" hidden></span></span><span>Vizuallar təqdimat məqsədlidir. Sahələr mərtəbə planlarına əsasən göstərilib.</span></div></footer>
+
+<div class="tip" id="tip"></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Mənzil məlumatı">
+  <div class="dr-top"><span class="eyebrow" id="dr-eyebrow">Riviera 1</span><button class="x" id="dr-close" aria-label="Bağla">✕</button></div>
+  <h3 class="dr-title" id="dr-title">504</h3>
+  <div class="dr-sub" id="dr-sub"></div>
+  <div class="dr-status" id="dr-status"></div>
+  <div class="zoom" id="dr-zoom"></div>
+  <dl class="specs" id="dr-specs"></dl>
+  <div id="dr-editor"></div>
+  <div id="dr-calc"></div>
+  <div class="dr-cta">
+    <a class="btn solid" id="dr-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn" id="dr-call" href="#">Zəng et</a>
+  </div>
+  <p class="phone">Telefon: <span class="ph"></span></p>
+  <div class="dr-nav"><button id="dr-prev">← Əvvəlki</button><button id="dr-next">Növbəti →</button></div>
+</aside>
+<div class="savebar" id="savebar"><div class="wrap"><span><b id="sv-count">0</b> dəyişiklik yadda saxlanmayıb</span><span style="display:flex;gap:8px"><button class="btn" id="sv-undo" type="button">Ləğv et</button><button class="btn solid" id="sv-save" type="button">Yadda saxla</button></span></div></div>
+<button class="selfab" id="selfab" type="button">Seçimlərim <b id="selcount">0</b></button>
+<aside class="drawer sel" id="seldrawer" aria-hidden="true" aria-label="Seçilmiş mənzillər">
+  <div class="dr-top"><span class="eyebrow">Seçimlərim</span><button class="x" id="sel-close" aria-label="Bağla">✕</button></div>
+  <h3>Seçilmiş mənzillər</h3>
+  <div id="sel-list"></div>
+  <div class="selform">
+    <label for="sel-name">Adınız<input id="sel-name" autocomplete="name"></label>
+    <label for="sel-phone">Telefon<input id="sel-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+994"></label>
+    <label for="sel-note">Qeyd (istəyə bağlı)<textarea id="sel-note" rows="2" placeholder="Məs. baxış üçün uyğun vaxt"></textarea></label>
+  </div>
+  <div class="selacts">
+    <a class="btn wa" id="sel-wa" href="#" target="_blank" rel="noopener">WhatsApp ilə satış ofisinə göndər</a>
+    <button class="btn" id="sel-pdf" type="button" hidden>PDF yüklə</button>
+    <button class="btn" id="sel-copy" type="button">Mətni kopyala</button>
+  </div>
+  <p class="phone" id="sel-hint">WhatsApp mesajı hazır mətnlə açılır, göndərməyi siz təsdiqləyirsiniz. PDF-i yükləyib WhatsApp-da fayl kimi də göndərə bilərsiniz.</p>
+</aside>
+<div class="edbanner" id="edbanner" hidden><span>Redaktə rejimi</span><button type="button" id="edoff">Bağla</button></div>
+<div class="pinbox" id="tokbox" hidden><form id="tokform" autocomplete="off"><h4>Saxlama açarı</h4><p class="ednote">Dəyişiklikləri sayta yazmaq üçün GitHub açarını bir dəfə daxil edin. Açar yalnız bu cihazda saxlanır.</p><input id="tok" type="password" autocomplete="off" aria-label="GitHub açarı" style="letter-spacing:0;font-size:1rem"><div class="err" id="tokerr"></div><div class="two"><button class="btn" type="button" id="tokcancel">Bağla</button><button class="btn solid" type="submit">Yadda saxla</button></div></form></div>
+<div class="pinbox" id="pinbox" hidden><form id="pinform" autocomplete="off"><h4>Satış komandası</h4><p class="ednote">Redaktə üçün kodu daxil edin.</p><input id="pin" type="password" inputmode="numeric" maxlength="8" aria-label="Kod"><div class="err" id="pinerr"></div><div class="two"><button class="btn" type="button" id="pincancel">Bağla</button><button class="btn solid" type="submit">Daxil ol</button></div></form></div>
+<div class="toast" id="toast" role="status"></div>
+`;
+// ===== Satış əlaqəsi: nömrəni buraya yazın (məs. "994501234567") =====
+const CONTACT = { phone: "", display: "+994 __ ___ __ __" };
+
+document.getElementById("root").innerHTML = BODY;
+
+const FLOORS1 = JSON.parse(document.getElementById("floors-data").textContent);
+const BLK = {1:FLOORS1, 2:[], 3:[]};
+FLOORS1.forEach(F=>F.units.forEach(u=>u.k=String(u.u)));
+let blk = 1, FLOORS = FLOORS1;
+const STATE = JSON.parse(document.getElementById("state-data").textContent); // {units:{"504":{t,n,r,s,d}}, updated}
+STATE.units = STATE.units || {};
+
+const ORD = {1:"-ci",2:"-ci",3:"-cü",4:"-cü",5:"-ci",6:"-cı",7:"-ci",8:"-ci",9:"-cu",10:"-cu",11:"-ci",12:"-ci"};
+const TYPES = {1:"t1",2:"t2",3:"t3",4:"t4"};
+const TCOL = {1:"var(--t1)",2:"var(--t2)",3:"var(--t3)",4:"var(--t4)"};
+const STXT = {free:"Satışda",res:"Rezerv",sold:"Satılıb",pend:"Tezliklə"};
+const NS = "http://www.w3.org/2000/svg";
+let byF = {}; FLOORS.forEach(f => byF[f.f] = f);
+let cur = 5, active = {1:true,2:true,3:true,4:true}, onlyFree = false, editMode = false, canEdit = false;
+const pending = {}; // unsaved edits: {"504": {t,n,r,s,d}}
+
+const $ = s => document.querySelector(s);
+const el = (tag, attrs={}, ns) => { const e = ns ? document.createElementNS(NS, tag) : document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+const fmt = n => (+n).toFixed(1).replace(".", ",");
+const roomTxt = r => `${r} otaq`;
+const today = () => new Date().toISOString().slice(0,10);
+
+// merged view of a unit: base plan data + saved overrides + unsaved edits
+function U(u){ const o = {...(STATE.units[u.k]||{}), ...(pending[u.k]||{})}; return {...u, t:o.t ?? u.t, n:o.n ?? u.n, r:o.r ?? u.r, s:o.s || "free", d:o.d || null, p:o.p || null, q:o.q || null, polys:(o.polys&&o.polys[0]&&o.polys[0].length>2)?o.polys:u.polys}; }
+const all = () => FLOORS.flatMap(F=>F.units.map(u=>({...U(u),f:F.f})));
+const allBlocks = () => [1,2,3].flatMap(b=>BLK[b].flatMap(F=>F.units.map(U)));
+const EDK=["polys","t","n","r","p","q","s"];
+function editMark(k){ if(!editMode) return ""; const has=o=>o&&EDK.some(x=>o[x]!=null&&o[x]!==""); if(has(pending[k])) return "pend"; if(has(STATE.units[k])) return "saved"; return ""; }
+function counts(list){ const c={free:0,res:0,sold:0,pend:0}; list.forEach(u=>c[u.s]=(c[u.s]||0)+1); return c; }
+
+// ---- nav
+const nav = $("#nav");
+const onScroll = () => nav.classList.toggle("solid", scrollY > 40);
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+// ---- gallery
+const SHOTS = [[1,"Hovuz və giriş"],[2,"Çimərlik zonası"],[3,"Dəniz tərəfdən"],[4,"Fəvvarəli meydan"],[12,"Daxili həyət"],[9,"Su kanalı və promenad"],[5,"Bulvar"],[11,"Dənizə baxış"],[6,"Küçə fasadı"],[10,"Terraslar"],[7,"Bloklar arası"],[8,"Giriş xiyabanı"]];
+const strip = $("#strip");
+SHOTS.forEach(([i,cap],k) => {
+  const f = el("figure");
+  f.innerHTML = `<img src="img/r${i}.webp" alt="Riviera: ${cap}" loading="lazy" width="1600" height="900"><figcaption><span>${cap}</span><i>${String(k+1).padStart(2,"0")} / ${SHOTS.length}</i></figcaption>`;
+  strip.append(f);
+});
+const step = () => strip.querySelector("figure").getBoundingClientRect().width + 16;
+$("#gprev").onclick = () => strip.scrollBy({left:-step(), behavior:"smooth"});
+$("#gnext").onclick = () => strip.scrollBy({left: step(), behavior:"smooth"});
+
+// ---- elevation (shown on desktop and phone)
+function buildElev(){
+  const W=200, top=40, fh=34, gf=48, H=top+11*fh+gf+30;
+  const s = el("svg",{viewBox:`0 0 ${W} ${H}`,role:"listbox","aria-label":"Mərtəbələr"},1);
+  s.append(el("path",{d:`M34 ${top-4} L166 ${top-4} L160 ${top-18} L40 ${top-18} Z`,fill:"#1e313a",stroke:"rgba(236,227,210,.2)"},1));
+  for (let f=12; f>=1; f--){
+    const y = f===1 ? top+11*fh : top+(12-f)*fh, h = f===1? gf : fh-3;
+    const g = el("g",{class:"fl","data-f":f,tabindex:0,role:"option","aria-label":`Mərtəbə ${f}`},1);
+    g.append(el("rect",{class:"band",x:28,y,width:144,height:h},1));
+    for (let i=0;i<10;i++) g.append(el("rect",{class:"win",x:36+i*13.4,y:y+5,width:8,height:h-10},1));
+    const t = el("text",{x:180,y:y+h/2+4},1); t.textContent = String(f).padStart(2,"0");
+    const t2 = el("text",{x:24,y:y+h/2+4,"text-anchor":"end",class:"free","data-free":f},1);
+    g.append(t,t2);
+    g.addEventListener("click",()=>setFloor(f));
+    g.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();setFloor(f);} });
+    s.append(g);
+  }
+  s.append(el("line",{x1:6,x2:194,y1:top+11*fh+gf+2,y2:top+11*fh+gf+2,stroke:"rgba(210,169,101,.6)"},1));
+  const cap = el("div",{class:"elev-cap"}); cap.textContent = "Yaşıl rəqəm: satışda olan mənzil sayı";
+  $("#elev").append(s,cap);
+}
+function refreshCounts(){
+  document.querySelectorAll("[data-free]").forEach(t=>{ const f=+t.dataset.free; t.textContent = byF[f] ? byF[f].units.map(U).filter(u=>u.s==="free").length : ""; });
+  const c = counts(all()), tot = c.free+c.res+c.sold;
+  $("#stbar").innerHTML = `<span><b>${c.free}</b>satışda</span><span><b>${c.res}</b>rezerv</span><span><b>${c.sold}</b>satılıb</span><span style="color:var(--mute)">Riviera ${blk} · cəmi ${tot} mənzil</span>`;
+  $("#fact-units").textContent = allBlocks().filter(u=>u.s==="free").length;
+  const fc = counts(byF[cur].units.map(U));
+  $("#fl-title").innerHTML = `Mərtəbə ${cur}<span>${byF[cur].units.length} mənzil</span>`;
+  $("#fl-avail").innerHTML = `<i></i>${fc.free} satışda · ${fc.res} rezerv · ${fc.sold} satılıb`;
+}
+
+// ---- legend
+function buildLegend(){
+  const lg = $("#legend"); lg.innerHTML="";
+  const cnt = {}; byF[cur].units.map(U).forEach(u=>cnt[u.r]=(cnt[u.r]||0)+1);
+  [1,2,3,4].forEach(r=>{
+    if(!cnt[r]) return;
+    const b = el("button",{"aria-pressed":active[r]?"true":"false"});
+    b.innerHTML = `<i style="background:${TCOL[r]}"></i>${roomTxt(r)} <b>${cnt[r]}</b>`;
+    b.onclick = ()=>{ active[r]=!active[r]; if(!Object.values(active).some(Boolean)) active={1:true,2:true,3:true,4:true}; buildLegend(); applyFilter(); };
+    lg.append(b);
+  });
+  const of = el("button",{class:"onlyfree","aria-pressed":onlyFree?"true":"false"}); of.textContent = "Yalnız satışda olanlar";
+  of.onclick=()=>{ onlyFree=!onlyFree; buildLegend(); applyFilter(); };
+  lg.append(of);
+  const ex=el("span"); ex.style.cssText="display:contents"; ex.innerHTML=`<span class="lg"><i class="sw-res"></i>Rezerv</span><span class="lg"><i class="sw-sold"></i>Satılıb</span><span class="lg"><i class="sw-pend"></i>Tezliklə işarələnəcək</span>`; lg.append(ex);
+}
+function applyFilter(){
+  document.querySelectorAll("#explore [data-u]").forEach(n=>{
+    const r=+n.dataset.r, s=n.dataset.s;
+    n.classList.toggle("off", !active[r]);
+    n.classList.toggle("hide", onlyFree && s!=="free");
+  });
+}
+
+// ---- plan
+const pathD = polys => polys.map(p=>"M"+p.map(q=>q.join(",")).join("L")+"Z").join("");
+function centroid(polys){
+  let best=null, ba=-1;
+  polys.forEach(p=>{ let a=0,cx=0,cy=0; for(let i=0;i<p.length;i++){const [x1,y1]=p[i],[x2,y2]=p[(i+1)%p.length];const c=x1*y2-x2*y1;a+=c;cx+=(x1+x2)*c;cy+=(y1+y2)*c;} a/=2; if(Math.abs(a)>ba){ba=Math.abs(a);best=[cx/(6*a),cy/(6*a)];} });
+  return best;
+}
+function bbox(polys){ let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9; polys.flat().forEach(([x,y])=>{x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);}); return [x0,y0,x1,y1]; }
+const HATCH = `<defs><pattern id="hSold" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#3fbf72" fill-opacity=".14"/><line x1="0" y1="0" x2="0" y2="10" stroke="#3fbf72" stroke-width="3"/></pattern><pattern id="hRes" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#f08a24" fill-opacity=".12"/><line x1="0" y1="0" x2="9" y2="0" stroke="#f08a24" stroke-width="2.4"/></pattern></defs>`;
+
+const tip = $("#tip");
+function showTip(u, x, y){
+  const st = u.s!=="free" ? ` · <em style="font-style:normal;color:${u.s==="res"?"var(--res)":"#9aa5a8"}">${STXT[u.s]}</em>` : "";
+  tip.innerHTML = `<b>${u.u}</b><span>${roomTxt(u.r)} · ${fmt(u.t)} m²${st}</span>`;
+  tip.style.left = x+"px"; tip.style.top = y+"px"; tip.classList.add("show");
+}
+function hot(u, on){ document.querySelectorAll(`#explore [data-u="${u}"]`).forEach(n=>n.classList.toggle("hot",on)); }
+
+function buildPlan(anim=true){
+  const F = byF[cur], [vx,vy,vw,vh] = F.vb;
+  const sc = $("#scroller"); sc.innerHTML="";
+  let VB = F.vb;
+  if(SHAPE && SHAPE.blk===blk && SHAPE.f===cur){ // close-up on the apartment being edited
+    const all=[...SHAPE.orig,...SHAPE.pts]; let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9; all.forEach(([x,y])=>{x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);});
+    const pad=Math.max(x1-x0,y1-y0)*.18; VB=[x0-pad,y0-pad,x1-x0+2*pad,y1-y0+2*pad];
+  }
+  const s = el("svg",{viewBox:VB.join(" "),"aria-label":`Mərtəbə ${cur} planı`},1);
+  if(VB!==F.vb){ s.classList.add("closeup"); }
+  s.innerHTML = HATCH;
+  const IB = F.W ? [0,0,F.W,F.H] : F.vb;
+  s.append(el("image",{href:F.img||`img/plan-${cur}.webp`,x:IB[0],y:IB[1],width:IB[2],height:IB[3],preserveAspectRatio:"none"},1));
+  $("#compass").textContent = `Riviera ${blk} · Mərtəbə planı`;
+  const fs = vw/90;
+  const lab = el("g",{},1);
+  F.units.map(U).forEach(u=>{
+    const cls = `u ${TYPES[u.r]}${u.s!=="free"?" "+u.s:""}`;
+    const p = el("path",{d:pathD(u.polys),class:cls,"data-u":u.u,"data-r":u.r,"data-s":u.s,tabindex:0,role:"button","aria-label":`Mənzil ${u.u}, ${roomTxt(u.r)}, ${fmt(u.t)} kvadratmetr, ${STXT[u.s]}`},1);
+    p.addEventListener("mousemove",e=>showTip(u,e.clientX,e.clientY));
+    p.addEventListener("mouseenter",()=>hot(u.u,true));
+    p.addEventListener("mouseleave",()=>{tip.classList.remove("show");hot(u.u,false);});
+    p.addEventListener("click",()=>{tip.classList.remove("show");openDrawer(u.u);});
+    p.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();openDrawer(u.u);} });
+    s.append(p);
+    const [cx,cy] = centroid(u.polys);
+    const t = el("text",{x:cx,y:cy+5,class:`ulabel${u.s==="sold"?" sold":""}`,"data-u":u.u,"data-r":u.r,"data-s":u.s},1); t.textContent = u.u;
+    const fz = blk!==1 ? fs : 15;
+    if(blk!==1){ t.setAttribute("style",`font-size:${fs}px;stroke-width:${fs*.28}px`); t.setAttribute("y",cy+fs*.35); }
+    lab.append(t);
+    const mk_=editMark(u.k); if(mk_){ const ts=el("tspan",{class:"emk "+mk_,dx:"3"},1); ts.textContent = mk_==="pend"?"✎":"✓"; t.append(ts); }
+    if(u.s!=="free"){ t.setAttribute("y", cy - fz*.15); const t2=el("text",{x:cx,y:cy+fz*.95,class:`ulabel st ${u.s}`,"data-u":u.u,"data-r":u.r,"data-s":u.s},1); t2.textContent = (u.s==="pend"?"TEZLİKLƏ":STXT[u.s].toLocaleUpperCase("az")); t2.setAttribute("style",`font-size:${fz*.68}px;stroke-width:${fz*.25}px`); lab.append(t2); }
+  });
+  s.append(lab); sc.append(s); if(typeof applyZoom==="function") applyZoom(); if(SHAPE && SHAPE.blk===blk && SHAPE.f===cur) drawShape(s);
+  const box=$("#planbox"); if(anim){ box.classList.remove("swap"); void box.offsetWidth; box.classList.add("swap"); }
+
+  const ul = $("#ulist"); ul.innerHTML="";
+  F.units.map(U).sort((a,b)=>a.u-b.u).forEach(u=>{
+    const b = el("button",{"data-u":u.u,"data-r":u.r,"data-s":u.s,class:u.s,style:`--c:${TCOL[u.r]}`});
+    b.innerHTML = `<b>${u.u}${(m=>m?`<span class="emk ${m}">${m==="pend"?" ✎":" ✓"}</span>`:"")(editMark(u.k))}</b><span>${fmt(u.t)} m²</span><em>${roomTxt(u.r)}</em>${u.s!=="free"?`<i class="${u.s}">${STXT[u.s]}</i>`:""}`;
+    b.onclick=()=>openDrawer(u.u);
+    b.onmouseenter=()=>hot(u.u,true); b.onmouseleave=()=>hot(u.u,false);
+    ul.append(b);
+  });
+  applyFilter();
+}
+
+function setFloor(f, anim=true){
+  if(f!==cur) active={1:true,2:true,3:true,4:true};
+  cur = f;
+  document.querySelectorAll(".fl").forEach(g=>{const on=+g.dataset.f===f; g.classList.toggle("on",on); g.setAttribute("aria-selected",on);});
+  refreshCounts(); buildLegend(); buildPlan(anim);
+}
+function rerender(){ refreshCounts(); buildLegend(); buildPlan(false); if(openUnit) openDrawer(openUnit); }
+
+// ---- drawer
+const drawer=$("#drawer"), scrim=$("#scrim");
+let openUnit=null;
+function waLink(u){
+  const msg = encodeURIComponent(u ? `Salam! Riviera ${blk}, ${u.u} nömrəli mənzil (${roomTxt(u.r)}, ${fmt(u.t)} m²) ilə maraqlanıram.` : "Salam! Riviera Private Residential Club layihəsi ilə maraqlanıram.");
+  return CONTACT.phone ? `https://wa.me/${CONTACT.phone}?text=${msg}` : `https://wa.me/?text=${msg}`;
+}
+document.querySelectorAll(".ph").forEach(s=>s.textContent = CONTACT.phone ? "+"+CONTACT.phone : CONTACT.display);
+$("#wa-main").href = waLink(null);
+$("#dr-call").href = CONTACT.phone ? "tel:+"+CONTACT.phone : "#contact";
+
+function openDrawer(num){
+  const F = byF[cur], list=F.units.map(U).sort((a,b)=>a.u-b.u), u = list.find(x=>x.u===num); if(!u) return;
+  openUnit = num;
+  $("#dr-eyebrow").textContent = `Riviera ${blk} · Mərtəbə ${cur}`;
+  $("#dr-title").innerHTML = `${u.u}<span class="tag" style="--c:${TCOL[u.r]}">${roomTxt(u.r)}</span>`;
+  $("#dr-sub").textContent = `Blok ${"ABC"[blk-1]} · ${cur}${ORD[cur]} mərtəbə`;
+  $("#dr-status").innerHTML = `<span class="chip ${u.s}">${STXT[u.s]}</span>`;
+  const [x0,y0,x1,y1]=bbox(u.polys), pad=Math.max(x1-x0,y1-y0)*.12;
+  const vb=[x0-pad,y0-pad,x1-x0+2*pad,y1-y0+2*pad], [vx,vy,vw,vh]=F.vb;
+  const z = el("svg",{viewBox:vb.join(" ")},1);
+  const IB = F.W ? [0,0,F.W,F.H] : F.vb;
+  z.append(el("image",{href:F.img||`img/plan-${cur}.webp`,x:IB[0],y:IB[1],width:IB[2],height:IB[3],preserveAspectRatio:"none"},1));
+  const mask = el("path",{d:`M${vb[0]-5},${vb[1]-5}h${vb[2]+10}v${vb[3]+10}h-${vb[2]+10}Z`+pathD(u.polys),"fill-rule":"evenodd",fill:"rgba(16,27,33,.72)"},1);
+  const ol = el("path",{d:pathD(u.polys),fill:"none","stroke-width":3},1); ol.style.stroke = TCOL[u.r];
+  z.append(mask, ol);
+  const zb=$("#dr-zoom"); zb.innerHTML=""; zb.append(z);
+  $("#dr-specs").innerHTML = `
+    <div><dt>Ümumi sahə</dt><dd>${fmt(u.t)}<small>m²</small></dd></div>
+    <div><dt>Daxili sahə</dt><dd>${fmt(u.n)}<small>m²</small></dd></div>
+    <div><dt>Otaq sayı</dt><dd>${u.r}</dd></div>
+    <div><dt>Mərtəbə</dt><dd>${cur}<small>/ 12</small></dd></div>`;
+  $("#dr-wa").href = waLink(u);
+  renderEditor(u); renderCalc(u);
+  const i=list.findIndex(x=>x.u===num);
+  $("#dr-prev").onclick=()=>openDrawer(list[(i-1+list.length)%list.length].u);
+  $("#dr-next").onclick=()=>openDrawer(list[(i+1)%list.length].u);
+  drawer.classList.add("open"); scrim.classList.add("open"); drawer.setAttribute("aria-hidden","false");
+  if(!drawer.contains(document.activeElement)) $("#dr-close").focus({preventScroll:true});
+}
+function closeDrawer(){ drawer.classList.remove("open"); scrim.classList.remove("open"); drawer.setAttribute("aria-hidden","true"); openUnit=null; }
+$("#dr-close").onclick=closeDrawer; scrim.onclick=closeDrawer;
+addEventListener("keydown",e=>{ if(e.key==="Escape") closeDrawer(); });
+
+// ---- editor (owner / editors only)
+function renderEditor(u){
+  const box = $("#dr-editor");
+  if(!editMode){ box.innerHTML=""; return; }
+  const base = byF[cur].units.find(x=>x.k===u.k);
+  box.innerHTML = `
+    <div class="editor">
+      <h4>Redaktə · mənzil ${u.u}</h4>
+      <div class="seg" role="group" aria-label="Status">
+        ${["free","res","sold","pend"].map(s=>`<button type="button" data-s="${s}" aria-pressed="${u.s===s}">${STXT[s]}</button>`).join("")}
+      </div>
+      ${u.s==="res"&&u.d?`<p class="ednote">Rezerv tarixi: ${u.d} (${Math.max(0,Math.round((Date.now()-new Date(u.d))/864e5))} gün əvvəl)</p>`:""}
+      <div class="erow">
+        <label for="ed-t">Ümumi m²<input id="ed-t" type="number" step="0.1" min="10" max="500" value="${u.t}"></label>
+        <label for="ed-n">Daxili m²<input id="ed-n" type="number" step="0.1" min="10" max="500" value="${u.n}"></label>
+        <label for="ed-r">Otaq<select id="ed-r">${[1,2,3,4,5].map(r=>`<option ${r===u.r?"selected":""}>${r}</option>`).join("")}</select></label>
+      </div>
+      <div class="erow">
+        <label for="ed-q">1 m² qiyməti, $<input id="ed-q" type="number" inputmode="numeric" step="10" min="0" value="${u.q||(u.p&&u.t?Math.round(u.p/u.t):"")}"></label>
+        <label for="ed-p" style="grid-column:span 2">Ümumi qiymət, $<input id="ed-p" type="number" inputmode="numeric" step="100" min="0" value="${u.p||""}" placeholder="m² qiyməti × ${fmt(u.t)} m²"></label>
+      </div>
+      <button class="btn edshape" id="ed-shape" type="button">Sərhədi planda düzəlt</button>
+      <p class="ednote">Plandakı ilkin dəyər: ${fmt(base.t)} / ${fmt(base.n)} m², ${base.r} otaq. 1 m² qiymətini yazanda ümumi qiymət avtomatik hesablanır (m² qiyməti × ümumi sahə); ümumi qiyməti əl ilə də dəyişmək olar. Dəyişikliklər aşağıdakı "Yadda saxla" ilə hamıya görünəcək.</p>
+    </div>`;
+  box.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
+    const s=b.dataset.s; stage(u.k,{s, d: s==="res" ? (u.s==="res"&&u.d?u.d:today()) : null});
+  });
+  const num = (id,key)=>{ const i=$(id); i.onchange=()=>{ const v=Math.round(parseFloat(i.value)*10)/10; if(v>=10&&v<=500) stage(u.k, key==="t"&&u.q ? {t:v, p:Math.round(u.q*v)} : {[key]:v}); else { i.value=u[key]; toast("Sahə 10 ilə 500 m² arasında olmalıdır."); } }; };
+  num("#ed-t","t"); num("#ed-n","n");
+  $("#ed-r").onchange=e=>stage(u.k,{r:+e.target.value});
+  $("#ed-q").oninput=e=>{ const q=+e.target.value; $("#ed-p").value = q>0 && u.t ? Math.round(q*u.t) : ""; };
+  $("#ed-q").onchange=e=>{ const q=Math.round(+e.target.value)||null; stage(u.k,{q, p: q&&u.t?Math.round(q*u.t):null}); };
+  $("#ed-p").onchange=e=>{ const v=Math.round(+e.target.value)||null; stage(u.k,{p:v, q: v&&u.t?Math.round(v/u.t):null}); };
+  $("#ed-shape").onclick=()=>startShape(u);
+}
+function stage(num, patch){
+  pending[num] = {...(STATE.units[num]||{}), ...(pending[num]||{}), ...patch};
+  if(patch.polys===undefined && "polys" in patch) delete pending[num].polys;
+  try{ sessionStorage.setItem("riv-pending", JSON.stringify(pending)); }catch(e){}
+  updateSavebar(); rerender();
+}
+function updateSavebar(){
+  const n=Object.keys(pending).length;
+  $("#sv-count").textContent=n; $("#savebar").classList.toggle("show", n>0);
+}
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove("show"),3200); }
+$("#sv-undo").onclick=()=>{ for(const k in pending) delete pending[k]; try{sessionStorage.removeItem("riv-pending");}catch(e){} updateSavebar(); rerender(); };
+const PIN_HASH="95e06e6bdfe25f9f988989b743294bd57fd62cad93c23ac3294f142de74e9918";
+function setEdit(on){ editMode=on; setTimeout(()=>{ try{ buildPlan(false); }catch(e){} },0); document.body.classList.toggle("edmode",on); $("#edbanner").hidden=!on; $("#teamlink").hidden=!on; try{ sessionStorage.setItem("riv-edit",on?"1":"0"); }catch(e){} if(!on && SHAPE) endShape(); if(openUnit) openDrawer(openUnit); }
+$("#teambtn").onclick=()=>{ if(editMode){ toast("Redaktə rejimi artıq açıqdır. Mənzilə toxunun."); return; } $("#pinbox").hidden=false; $("#pin").value=""; $("#pinerr").textContent=""; setTimeout(()=>$("#pin").focus(),50); };
+$("#pincancel").onclick=()=>{ $("#pinbox").hidden=true; };
+$("#pinform").onsubmit=async e=>{ e.preventDefault(); let h=""; try{ const d=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("riviera-sales:"+$("#pin").value)); h=[...new Uint8Array(d)].map(x=>x.toString(16).padStart(2,"0")).join(""); }catch(err){}
+  if(h===PIN_HASH){ $("#pinbox").hidden=true; setEdit(true); toast("Redaktə rejimi açıldı. Mənzilə toxunun: status, sahə, qiymət və sərhəd."); document.getElementById("explore").scrollIntoView({behavior:"smooth"}); }
+  else { $("#pinerr").textContent="Kod səhvdir"; $("#pin").value=""; } };
+$("#edoff").onclick=()=>{ setEdit(false); toast("Redaktə rejimi bağlandı."); };
+
+// ---- saving: the shared state lives in data/state.json of the GitHub repo (written with the sales team's token)
+const GH = (()=>{ const h=location.hostname, m=h.match(/^([^.]+)\.github\.io$/i); let owner="__OWNER__", repo="__REPO__";
+  if(m){ owner=m[1]; const seg=location.pathname.split("/").filter(Boolean)[0]; repo=(seg && !/\.html?$/i.test(seg))? seg : h; }
+  return { owner, repo, branch: "main", path: "data/state.json" }; })();
+const tokKey="riv-gh-token";
+const getTok=()=>{ try{ return localStorage.getItem(tokKey)||""; }catch(e){ return ""; } };
+function askToken(){ return new Promise(ok=>{ const box=$("#tokbox"); box.hidden=false; $("#tok").value=""; $("#tokerr").textContent=""; setTimeout(()=>$("#tok").focus(),50);
+  $("#tokcancel").onclick=()=>{ box.hidden=true; ok(""); };
+  $("#tokform").onsubmit=e=>{ e.preventDefault(); const t=$("#tok").value.trim(); if(t.length<20){ $("#tokerr").textContent=/^\d+$/.test(t)?"Bura PIN (211112) yox, GitHub açarı yazılır (github_pat_… ilə başlayır).":"Açar düzgün görünmür — github_pat_… ilə başlamalıdır."; return; } try{ localStorage.setItem(tokKey,t); }catch(err){} box.hidden=true; ok(t); }; }); }
+const b64 = str => { const bytes=new TextEncoder().encode(str); let bin=""; bytes.forEach(c=>bin+=String.fromCharCode(c)); return btoa(bin); };
+async function ghWrite(state, token){
+  const url=`https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${GH.path}`;
+  const hdr={Authorization:`Bearer ${token}`,Accept:"application/vnd.github+json"};
+  const cur=await fetch(`${url}?ref=${GH.branch}&t=${Date.now()}`,{headers:hdr});
+  if(cur.status===401||cur.status===403) throw {code:"auth"};
+  const sha=cur.ok ? (await cur.json()).sha : undefined;
+  const r=await fetch(url,{method:"PUT",headers:hdr,body:JSON.stringify({message:`Mənzil məlumatları yeniləndi · ${new Date().toISOString().slice(0,16).replace("T"," ")}`,content:b64(JSON.stringify(state)),branch:GH.branch,sha})});
+  if(r.status===401||r.status===403) throw {code:"auth"};
+  if(r.status===409) throw {code:"conflict"};
+  if(!r.ok) throw {code:"http"};
+}
+$("#sv-save").onclick = async ()=>{
+  const btn=$("#sv-save");
+  if(GH.owner.startsWith("__")){ toast("Bu önbaxışdır — saxlama sayt GitHub-a qoyulandan sonra işləyəcək."); return; }
+  let token=getTok(); if(!token){ token=await askToken(); if(!token) return; }
+  btn.disabled=true; btn.textContent="Saxlanılır…";
+  const next = {units:{...STATE.units}, pricing:{...(STATE.pricing||{})}, updated:new Date().toISOString()};
+  for(const k in pending){ if(k==="__pricing"){ next.pricing={...next.pricing,...pending[k]}; continue; } const v={...pending[k]}; Object.keys(v).forEach(x=>{ if(v[x]==null) delete v[x]; }); if(v.s==="free") delete v.s; next.units[k]=v; }
+  try{
+    await ghWrite(next, token);
+    STATE.units=next.units; STATE.pricing=next.pricing; STATE.updated=next.updated;
+    for(const k in pending) delete pending[k];
+    try{ sessionStorage.removeItem("riv-pending"); }catch(e){}
+    updateSavebar(); rerender();
+    toast("Yadda saxlanıldı. 1–2 dəqiqəyə hamıda görünəcək.");
+  }catch(err){
+    const c=err&&err.code;
+    if(c==="auth"){ try{ localStorage.removeItem(tokKey); }catch(e){} toast("Açar qəbul olunmadı. Yenidən daxil edin."); }
+    else if(c==="conflict") toast("Məlumat eyni anda başqa yerdə yeniləndi. Bir də \"Yadda saxla\" basın.");
+    else toast("Yadda saxlanmadı. İnterneti yoxlayıb yenidən cəhd edin.");
+  }
+  btn.disabled=false; btn.textContent="Yadda saxla";
+};
+
+// ---- pricing + calculator (20% off for full payment; 10% down + 48 months at 0% on the full price)
+const DISC=20, DOWN=10, MONTHS=48;
+const ppm = b => { const P=(pending.__pricing||STATE.pricing||{}); return (P.ppm&&+P.ppm[b])||null; };
+const priceOf = u => u.p ? +u.p : (ppm(blk) && u.t ? Math.round(ppm(blk)*u.t/10)*10 : null);
+const usd = n => "$"+Math.round(n).toLocaleString("en-US").replace(/,/g,"\u00a0");
+let calcMode = "full";
+function calcFor(price, mode, downPct, months){
+  if(!price) return null;
+  if(mode==="full") return {mode, price, total:Math.round(price*(1-DISC/100)), save:Math.round(price*DISC/100)};
+  const down=Math.round(price*downPct/100); return {mode, price, total:price, down, downPct, months, monthly:Math.round((price-down)/months)};
+}
+function renderCalc(u){
+  const box=$("#dr-calc"), known=priceOf(u), q=u.q||(known&&u.t?Math.round(known/u.t):null);
+  box.innerHTML = `<div class="calc">
+    <h4>Ödəniş şərtləri</h4>
+    ${known ? `<div class="res" style="border:0;padding:0"><div><span>Ümumi qiymət${q?`<br><small style="color:var(--mute)">${usd(q)} × ${fmt(u.t)} m²</small>`:""}</span><b>${usd(known)}</b></div></div><input id="c-price" type="hidden" value="${known}">`
+      : `<label for="c-price">Ümumi qiymət, $<input id="c-price" type="number" inputmode="numeric" min="0" step="1000" placeholder="Qiyməti yazın"></label><p class="note">Bu mənzilin qiyməti hələ saytda göstərilmir. Satış ofisindən aldığınız qiyməti yazın və ya sorğu göndərin.</p>`}
+    <div class="opt" role="group" aria-label="Ödəniş variantı"><button type="button" data-m="full" aria-pressed="${calcMode==="full"}">Tam ödəniş<br>−${DISC}% endirim</button><button type="button" data-m="plan" aria-pressed="${calcMode==="plan"}">Hissə-hissə<br>${DOWN}% ilkin, 0%</button></div>
+    <div id="c-planf" ${calcMode==="plan"?"":"hidden"}>
+      <label for="c-months">Neçə aya (maks. ${MONTHS})<input id="c-months" type="number" inputmode="numeric" min="1" max="${MONTHS}" value="${MONTHS}"></label>
+    </div>
+    <div class="res" id="c-res"></div>
+    <button class="btn solid pickbtn" id="c-pick" type="button"></button>
+  </div>`;
+  const run=()=>{
+    const pr=+$("#c-price").value||null, dp=DOWN, mi=$("#c-months"), m=Math.min(MONTHS,Math.max(1,Math.round(+mi.value||MONTHS)));
+    const r=calcFor(pr,calcMode,dp,m), res=$("#c-res");
+    if(!r){ res.innerHTML=`<p class="note">Hesablamaq üçün qiyməti yazın.</p>`; }
+    else if(r.mode==="full") res.innerHTML=`<div><span>Qiymət</span><b>${usd(r.price)}</b></div><div><span>Endirim ${DISC}%</span><b>−${usd(r.save)}</b></div><div class="hl"><span>Tam ödənişlə</span><b>${usd(r.total)}</b></div>`;
+    else res.innerHTML=`<div><span>Qiymət</span><b>${usd(r.price)}</b></div><div><span>İlkin ödəniş ${DOWN}%</span><b>${usd(r.down)}</b></div><div><span>Qalıq, ${r.months} aya bölünür</span><b>${usd(r.price-r.down)}</b></div><div class="hl"><span>Aylıq ödəniş (0%)</span><b>${usd(r.monthly)}</b></div>`;
+    box._r={pr,dp,m};
+    $("#c-pick").textContent = SEL.some(x=>x.k===u.k) ? "Seçimdə yenilə ✓" : "Bu mənzili seç";
+  };
+  box.querySelectorAll(".opt button").forEach(b=>b.onclick=()=>{ calcMode=b.dataset.m; box.querySelectorAll(".opt button").forEach(x=>x.setAttribute("aria-pressed",x===b)); $("#c-planf").hidden=calcMode!=="plan"; run(); });
+  $("#c-price").addEventListener("input",run);
+  $("#c-months").addEventListener("input",run);
+  $("#c-months").addEventListener("change",e=>{ const v=Math.min(MONTHS,Math.max(1,Math.round(+e.target.value||MONTHS))); e.target.value=v; run(); });
+  $("#c-pick").onclick=()=>{ const {pr,dp,m}=box._r; const item={k:u.k,blk,f:cur,u:u.u,r:u.r,t:u.t,n:u.n,price:pr,mode:calcMode,dp,m};
+    const i=SEL.findIndex(x=>x.k===u.k); if(i<0) SEL.push(item); else SEL[i]=item; saveSel(); run(); toast(`${u.u} seçimlərinizə əlavə olundu`); };
+  run();
+}
+
+// ---- selection → WhatsApp / PDF
+let SEL=[]; try{ SEL=JSON.parse(localStorage.getItem("riv-sel")||"[]"); }catch(e){}
+function saveSel(){ try{ localStorage.setItem("riv-sel", JSON.stringify(SEL)); }catch(e){} renderSel(); }
+["sel-name","sel-phone","sel-note"].forEach(id=>{ try{ const v=localStorage.getItem("riv-"+id); if(v) $("#"+id).value=v; }catch(e){} $("#"+id).addEventListener("input",()=>{ try{localStorage.setItem("riv-"+id,$("#"+id).value)}catch(e){} renderSel(); }); });
+function lineFor(x){
+  const r=calcFor(x.price,x.mode,x.dp,x.m);
+  const head=`Riviera ${x.blk} (Blok ${"ABC"[x.blk-1]}) · ${x.f}${ORD[x.f]} mərtəbə · №${x.u}`;
+  const spec=`${x.r} otaq · ${fmt(x.t)} m² ümumi · ${fmt(x.n)} m² daxili`;
+  let pay = "Qiymət: sorğu ilə";
+  if(r) pay = r.mode==="full" ? `Qiymət ${usd(r.price)} → tam ödənişlə (−${DISC}%) ${usd(r.total)}` : `Qiymət ${usd(r.price)} · ilkin ${r.downPct}% ${usd(r.down)} + ${r.months} ay × ${usd(r.monthly)} (0%)`;
+  return {head,spec,pay};
+}
+function selText(){
+  const nm=$("#sel-name").value.trim(), ph=$("#sel-phone").value.trim(), nt=$("#sel-note").value.trim();
+  const L=["Salam! Riviera Private Residential Club üzrə seçdiyim mənzillər:",""];
+  SEL.forEach((x,i)=>{ const l=lineFor(x); L.push(`${i+1}. ${l.head}`,`   ${l.spec}`,`   ${l.pay}`,""); });
+  if(nm) L.push(`Ad: ${nm}`); if(ph) L.push(`Telefon: ${ph}`); if(nt) L.push(`Qeyd: ${nt}`);
+  L.push("","Zəhmət olmasa, mənimlə əlaqə saxlayın.");
+  return L.join("\n");
+}
+function renderSel(){
+  $("#selcount").textContent=SEL.length; $("#selfab").classList.toggle("show",SEL.length>0);
+  $("#sel-list").innerHTML = SEL.length ? SEL.map((x,i)=>{ const l=lineFor(x); return `<div class="selitem"><div><b>№${x.u}</b> <span style="color:var(--mute);font-size:.8rem;letter-spacing:.1em">RIVIERA ${x.blk} · ${x.f}${ORD[x.f]} MƏRT.</span></div><button type="button" data-rm="${i}" aria-label="Sil">✕</button><small>${l.spec}<br>${l.pay}</small></div>`; }).join("") : `<p class="lede" style="font-size:.95rem">Hələ mənzil seçməmisiniz. Planda mənzilə toxunun, kalkulyatorda hesablayın və "Bu mənzili seç" düyməsini basın.</p>`;
+  $("#sel-list").querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>{ SEL.splice(+b.dataset.rm,1); saveSel(); });
+  const t=selText(); $("#sel-wa").href = CONTACT.phone ? `https://wa.me/${CONTACT.phone}?text=${encodeURIComponent(t)}` : `https://wa.me/?text=${encodeURIComponent(t)}`;
+}
+const seld=$("#seldrawer");
+$("#selfab").onclick=()=>{ closeDrawer(); renderSel(); seld.classList.add("open"); scrim.classList.add("open"); seld.setAttribute("aria-hidden","false"); };
+function closeSel(){ seld.classList.remove("open"); seld.setAttribute("aria-hidden","true"); if(!drawer.classList.contains("open")) scrim.classList.remove("open"); }
+$("#sel-close").onclick=closeSel; scrim.addEventListener("click",closeSel);
+$("#sel-copy").onclick=()=>{ const t=selText(); if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(()=>toast("Mətn kopyalandı"),()=>toast("Kopyalamaq alınmadı")); };
+let dlApi={ save:async({filename,data})=>{ const u=URL.createObjectURL(data); const a=document.createElement("a"); a.href=u; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(u),4000); } };
+function loadJsPDF(){ return window.jspdf ? Promise.resolve(window.jspdf) : new Promise((ok,no)=>{ const sc=document.createElement("script"); sc.src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"; sc.onload=()=>ok(window.jspdf); sc.onerror=no; document.head.appendChild(sc); }); }
+function loadImg(src){ return new Promise(ok=>{ const im=new Image(); im.onload=()=>ok(im); im.onerror=()=>ok(null); im.src=src; }); }
+function wrapText(x,txt,maxW){ const words=txt.split(" "), out=[]; let line=""; for(const w of words){ const t=line?line+" "+w:w; if(x.measureText(t).width>maxW&&line){ out.push(line); line=w; } else line=t; } if(line) out.push(line); return out; }
+async function drawUnitPlan(x,item,bx,by,bw,bh){
+  const F=(BLK[item.blk]||[]).find(f=>f.f===item.f); if(!F) return;
+  const base=F.units.find(u=>u.k===item.k); if(!base) return; const u=U(base), P=u.polys&&u.polys[0]; if(!P||P.length<3) return;
+  const im=await loadImg(F.img||`img/plan-${item.f}.webp`); if(!im) return;
+  const IB=F.W?[0,0,F.W,F.H]:F.vb, sx=im.naturalWidth/IB[2], sy=im.naturalHeight/IB[3];
+  const pts=P.map(q=>[(q[0]-IB[0])*sx,(q[1]-IB[1])*sy]);
+  const xs=pts.map(q=>q[0]), ys=pts.map(q=>q[1]); let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+  const pd=Math.max(x1-x0,y1-y0)*.05; x0-=pd;y0-=pd;x1+=pd;y1+=pd;
+  const sc=Math.min(bw/(x1-x0),bh/(y1-y0)), ox=bx+(bw-(x1-x0)*sc)/2, oy=by+(bh-(y1-y0)*sc)/2;
+  x.save(); x.beginPath(); x.rect(bx,by,bw,bh); x.clip();
+  x.translate(ox,oy); x.scale(sc,sc); x.translate(-x0,-y0);
+  x.beginPath(); pts.forEach((q,i)=>x[i?"lineTo":"moveTo"](q[0],q[1])); x.closePath();
+  x.save(); x.clip(); x.drawImage(im,0,0); x.restore();
+  x.lineWidth=3/sc; x.strokeStyle="#d2a965"; x.stroke(); x.restore();
+}
+async function offerCanvas(){
+  const W=1240, pad=90, RH=440, nm=$("#sel-name").value.trim(), ph=$("#sel-phone").value.trim();
+  const rows=SEL.map(lineFor), H=Math.max(1754, 520+rows.length*RH+220);
+  const cv=document.createElement("canvas"); cv.width=W; cv.height=H; const x=cv.getContext("2d");
+  x.fillStyle="#0f1a20"; x.fillRect(0,0,W,H); x.strokeStyle="rgba(210,169,101,.6)"; x.lineWidth=2; x.strokeRect(40,40,W-80,H-80);
+  x.fillStyle="#ece3d2"; x.font='400 72px "Bodoni Moda",Georgia,serif'; x.fillText("RIVIERA",pad,pad+90);
+  x.fillStyle="#d2a965"; x.font='500 22px Jost,system-ui,sans-serif'; x.fillText("PRIVATE RESIDENTIAL CLUB  ·  SEA BREEZE, BAKI",pad,pad+132);
+  x.fillStyle="#b8b0a2"; x.font='400 24px Jost,system-ui,sans-serif'; x.fillText(`Seçilmiş mənzillər · ${new Date().toLocaleDateString("az-Latn-AZ")}`,pad,pad+190);
+  if(nm||ph){ x.fillText([nm,ph].filter(Boolean).join(" · "),pad,pad+226); }
+  x.fillStyle="rgba(210,169,101,.5)"; x.fillRect(pad,pad+258,W-2*pad,1);
+  let y=pad+330;
+  for(let i=0;i<rows.length;i++){ const l=rows[i], it=SEL[i];
+    x.fillStyle="#ece3d2"; x.font='400 38px "Bodoni Moda",Georgia,serif'; x.fillText(`${i+1}.  ${l.head}`,pad,y);
+    const bx=pad, by=y+26, bw=500, bh=340; await drawUnitPlan(x,it,bx,by,bw,bh);
+    const tx=bx+bw+36, tw=W-pad-tx; let ty=by+30;
+    x.fillStyle="#7f8e92"; x.font='600 18px Jost,system-ui,sans-serif'; x.fillText("SAHƏ",tx,ty); ty+=34;
+    x.fillStyle="#ece3d2"; x.font='400 30px Jost,system-ui,sans-serif'; x.fillText(`${fmt(it.t)} m² ümumi`,tx,ty); ty+=38;
+    x.fillStyle="#b8b0a2"; x.font='400 24px Jost,system-ui,sans-serif'; x.fillText(`${fmt(it.n)} m² daxili · ${it.r} otaq`,tx,ty); ty+=56;
+    x.fillStyle="#7f8e92"; x.font='600 18px Jost,system-ui,sans-serif'; x.fillText("ÖDƏNİŞ",tx,ty); ty+=34;
+    x.fillStyle="#d2a965"; x.font='500 25px Jost,system-ui,sans-serif';
+    wrapText(x,l.pay,tw).forEach(t=>{ x.fillText(t,tx,ty); ty+=34; });
+    y+=RH; }
+  x.fillStyle="#7f8e92"; x.font='400 20px Jost,system-ui,sans-serif';
+  x.fillText(`Tam ödənişdə ${DISC}% endirim. Hissə-hissə: tam qiymətdən ${DOWN}% ilkin ödəniş, qalan məbləğ ${MONTHS} ayadək faizsiz.`,pad,H-150);
+  x.fillText("Qiymətlər ABŞ dolları ilədir və satış ofisi tərəfindən təsdiqlənməlidir.",pad,H-118);
+  return cv;
+}
+$("#sel-pdf").onclick=async()=>{ if(!dlApi||!SEL.length) return; const b=$("#sel-pdf"); b.disabled=true; b.textContent="Hazırlanır…";
+  try{ try{ await document.fonts.ready; }catch(e){}
+    const cv=await offerCanvas(), {jsPDF}=await loadJsPDF(); const pdf=new jsPDF({unit:"px",format:[cv.width,cv.height],hotfixes:["px_scaling"]});
+    pdf.addImage(cv.toDataURL("image/jpeg",.92),"JPEG",0,0,cv.width,cv.height);
+    const fname=`Riviera-secim-${SEL.map(x=>x.u).join("-")}.pdf`, blob=pdf.output("blob"), file=new File([blob],fname,{type:"application/pdf"});
+    if(navigator.canShare && navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file],title:"Riviera Private Residential Club",text:selText()}); toast("Göndərildi"); }catch(e){ if(e&&e.name!=="AbortError") await dlApi.save({filename:fname,data:blob}); } }
+    else { await dlApi.save({filename:fname,data:blob}); toast("PDF yükləndi. WhatsApp-da 📎 ilə göndərin."); }
+  }catch(e){ if(!(e&&(e.code==="dismissed"||e.code==="declined"))) toast("PDF hazırlanmadı. Bir azdan yenidən cəhd edin."); }
+  b.disabled=false; b.textContent="PDF yüklə"; };
+
+// ---- shape editor (owner): drag points, tap a midpoint to add, select + delete
+let SHAPE=null;
+function cleanPts(P){ let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9; P.forEach(([x,y])=>{x0=Math.min(x0,x);x1=Math.max(x1,x);y0=Math.min(y0,y);y1=Math.max(y1,y);}); const tol=Math.max(x1-x0,y1-y0)*.045;
+  const out=[]; for(const q of P){ const l=out[out.length-1]; if(!l||Math.hypot(q[0]-l[0],q[1]-l[1])>tol) out.push([q[0],q[1]]); }
+  if(out.length>3&&Math.hypot(out[0][0]-out[out.length-1][0],out[0][1]-out[out.length-1][1])<=tol) out.pop(); return out.length>=3?out:P.map(q=>[q[0],q[1]]); }
+function startShape(u){ SHAPE={k:u.k,blk,f:cur,u:u.u,pts:cleanPts(u.polys[0]),sel:-1}; closeDrawer(); $("#savebar").classList.remove("show");
+  SHAPE.orig=(byF[cur].units.find(x=>x.k===u.k)||u).polys[0].map(q=>[q[0],q[1]]);
+  $("#sh-title").textContent=`Sərhəd redaktəsi · ${u.u}`;
+  $("#shapebar").classList.add("show"); buildPlan(false); requestAnimationFrame(focusShape); $("#planbox").scrollIntoView({behavior:"smooth",block:"start"}); }
+$("#sh-reset").onclick=()=>{ if(!SHAPE) return; SHAPE.pts=SHAPE.orig.map(q=>[q[0],q[1]]); SHAPE.sel=-1; const s=$("#scroller svg"); if(s) drawShape(s); };
+function endShape(){ SHAPE=null; $("#shapebar").classList.remove("show"); updateSavebar(); buildPlan(false); }
+// plan zoom (+/−)
+const ZOOMS=[1,1.5,2.2,3]; let zi=0;
+function applyZoom(){ const s=$("#scroller svg"); if(!s||s.classList.contains("closeup")) return; const base=$("#scroller").clientWidth; s.style.minWidth = zi ? Math.round(base*ZOOMS[zi])+"px" : ""; }
+function focusShape(){ const sc=$("#scroller"), p=sc.querySelector(".ed-poly"); if(!p) return; const a=p.getBoundingClientRect(), b=sc.getBoundingClientRect(); sc.scrollLeft += (a.left+a.width/2)-(b.left+b.width/2); }
+$("#zin").onclick=()=>{ zi=Math.min(ZOOMS.length-1,zi+1); applyZoom(); if(SHAPE) focusShape(); };
+$("#zout").onclick=()=>{ zi=Math.max(0,zi-1); applyZoom(); if(SHAPE) focusShape(); };
+function drawShape(svg){
+  svg.classList.add("editing"); svg.querySelectorAll(".ed").forEach(e=>e.remove());
+  const vbw=svg.viewBox.baseVal.width||byF[cur].vb[2], r=vbw/110, P=SHAPE.pts, g=el("g",{class:"ed"},1);
+  g.append(el("polygon",{class:"ed-poly",points:P.map(q=>q.join(",")).join(" ")},1));
+  P.forEach((q,i)=>{ const n=P[(i+1)%P.length]; if(Math.hypot(n[0]-q[0],n[1]-q[1])<r*8) return; const m=el("circle",{class:"ed-mid",cx:(q[0]+n[0])/2,cy:(q[1]+n[1])/2,r:r*.95},1);
+    m.addEventListener("pointerdown",e=>{ e.preventDefault(); e.stopPropagation(); P.splice(i+1,0,[(q[0]+n[0])/2,(q[1]+n[1])/2]); SHAPE.sel=i+1; drawShape(svg); drag(svg,i+1); }); g.append(m);
+    const tx=el("text",{class:"ed-mid-t",x:(q[0]+n[0])/2,y:(q[1]+n[1])/2+r*.55,"font-size":r*1.6},1); tx.textContent="+"; g.append(tx); });
+  P.forEach((q,i)=>{ const c=el("circle",{class:"ed-pt"+(i===SHAPE.sel?" sel":""),cx:q[0],cy:q[1],r:i===SHAPE.sel?r*1.25:r},1), h=el("circle",{class:"ed-hit",cx:q[0],cy:q[1],r:r*3},1);
+    const down=e=>{ e.preventDefault(); e.stopPropagation(); SHAPE.sel=i; drawShape(svg); drag(svg,i); }; c.addEventListener("pointerdown",down); h.addEventListener("pointerdown",down); g.append(h,c); });
+  svg.append(g);
+}
+function drag(svg,i){
+  const mv=e=>{ e.preventDefault(); const m=svg.getScreenCTM(); if(!m) return; const p=new DOMPoint(e.clientX,e.clientY).matrixTransform(m.inverse()); SHAPE.pts[i]=[Math.round(p.x*10)/10,Math.round(p.y*10)/10]; drawShape(svg); };
+  const up=()=>{ removeEventListener("pointermove",mv); removeEventListener("pointerup",up); removeEventListener("pointercancel",up); };
+  addEventListener("pointermove",mv,{passive:false}); addEventListener("pointerup",up); addEventListener("pointercancel",up);
+}
+$("#sh-del").onclick=()=>{ if(!SHAPE||SHAPE.sel<0||SHAPE.pts.length<=3) return; SHAPE.pts.splice(SHAPE.sel,1); SHAPE.sel=-1; const s=$("#scroller svg"); if(s) drawShape(s); };
+$("#sh-cancel").onclick=endShape;
+$("#sh-ok").onclick=()=>{ const sh=SHAPE; endShape(); if(sh&&sh.pts.length>=3){ stage(sh.k,{polys:[sh.pts]}); toast("Sərhəd dəyişdi — saxlamaq üçün \"Yadda saxla\" basın."); } };
+
+// ---- blocks
+function setBlock(b){
+  if(!BLK[b] || !BLK[b].length) return;
+  blk=b; FLOORS=BLK[b]; byF={}; FLOORS.forEach(f=>byF[f.f]=f); closeDrawer();
+  document.querySelectorAll(".blocks [data-blk]").forEach(x=>x.setAttribute("aria-selected", +x.dataset.blk===b));
+  setFloor(byF[cur]?cur:5);
+}
+document.querySelectorAll(".blocks [data-blk]").forEach(x=>x.onclick=()=>setBlock(+x.dataset.blk));
+fetch("blocks23.json").then(r=>r.json()).then(j=>{ for(const b of ["2","3"]){ BLK[b]=j[b]; BLK[b].forEach(F=>F.units.forEach(u=>u.k=`${b}-${u.u}`)); } refreshCounts(); }).catch(()=>{
+  document.querySelectorAll('.blocks [data-blk="2"],.blocks [data-blk="3"]').forEach(x=>x.disabled=true); });
+
+// ---- boot
+buildElev(); setFloor(5);
+try{ const p=JSON.parse(sessionStorage.getItem("riv-pending")||"{}"); Object.assign(pending,p); if(sessionStorage.getItem("riv-saved")){ sessionStorage.removeItem("riv-saved"); setTimeout(()=>toast("Yadda saxlanıldı. Dəyişikliklər hamıya görünür."),400); } }catch(e){}
+updateSavebar(); renderSel(); try{ if(sessionStorage.getItem("riv-edit")==="1") setEdit(true); }catch(e){} if(Object.keys(pending).length) rerender();
+$("#sel-pdf").hidden=false;
+if(navigator.canShare){ try{ if(navigator.canShare({files:[new File(["x"],"a.pdf",{type:"application/pdf"})]})) $("#sel-pdf").textContent="PDF-i WhatsApp-a göndər"; }catch(e){} }
+canEdit=true; document.body.classList.add("can-edit");
+fetch(`data/state.json?t=${Date.now()}`,{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{ if(!j||!j.units) return; STATE.units=j.units; STATE.pricing=j.pricing||{}; STATE.updated=j.updated; rerender(); refreshCounts(); }).catch(()=>{});
+</script>
+
+</body>
+</html>
