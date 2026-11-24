@@ -426,7 +426,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <a class="btn solid" id="wa-main" href="#" target="_blank" rel="noopener">WhatsApp ilə yaz</a>
       <a class="btn" href="#explore">Mənzillərə bax</a>
     </div>
-    <p class="phone" style="text-align:left">Telefon: <span class="ph"></span></p>
+    <p class="phone" style="text-align:left">Zəng: <span>*0747</span> · WhatsApp: <span class="ph"></span></p>
   </div>
 </section>
 <footer><div class="wrap"><span>RIVIERA PRIVATE RESIDENTIAL CLUB · <button type="button" class="teambtn" id="teambtn">Satış komandası</button><span id="teamlink" hidden></span></span><span>Vizuallar təqdimat məqsədlidir. Sahələr mərtəbə planlarına əsasən göstərilib.</span></div></footer>
@@ -446,7 +446,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <a class="btn solid" id="dr-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
     <a class="btn" id="dr-call" href="#">Zəng et</a>
   </div>
-  <p class="phone">Telefon: <span class="ph"></span></p>
+  <p class="phone">Zəng: <span>*0747</span> · WhatsApp: <span class="ph"></span></p>
   <div class="dr-nav"><button id="dr-prev">← Əvvəlki</button><button id="dr-next">Növbəti →</button></div>
 </aside>
 <div class="savebar" id="savebar"><div class="wrap"><span><b id="sv-count">0</b> dəyişiklik yadda saxlanmayıb</span><span style="display:flex;gap:8px"><button class="btn" id="sv-undo" type="button">Ləğv et</button><button class="btn solid" id="sv-save" type="button">Yadda saxla</button></span></div></div>
@@ -661,7 +661,7 @@ function waLink(u){
 }
 document.querySelectorAll(".ph").forEach(s=>s.textContent = CONTACT.display);
 $("#wa-main").href = waLink(null);
-$("#dr-call").href = CONTACT.phone ? "tel:+"+CONTACT.phone : "#contact";
+$("#dr-call").href = "tel:*0747";
 
 function openDrawer(num){
   const F = byF[cur], list=F.units.map(U).sort((a,b)=>a.u-b.u), u = list.find(x=>x.u===num); if(!u) return;
