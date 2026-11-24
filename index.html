@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#0f1a20">
 <meta property="og:title" content="Riviera Private Residential Club">
 <meta property="og:description" content="Sea Breeze, Bakı — Xəzər sahilində mənzillər. Mərtəbə planları və ödəniş kalkulyatoru.">
-<meta property="og:image" content="img/r0.webp">
+<meta property="og:image" content="r0.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1a20'/%3E%3Ctext x='32' y='45' font-family='Georgia' font-size='38' fill='%23d2a965' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&amp;family=Jost:wght@300;400;500;600&amp;display=swap">
@@ -58,7 +58,7 @@ h2 em{font-style:italic;color:var(--gilt)}
 
 /* HERO */
 .hero{position:relative;height:min(92svh,860px);min-height:560px;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end}
-.hero .bg{position:absolute;inset:-4%;background:url(img/r0.webp) center 60%/cover no-repeat;animation:drift 26s ease-in-out infinite alternate;z-index:-3}
+.hero .bg{position:absolute;inset:-4%;background:url(r0.webp) center 60%/cover no-repeat;animation:drift 26s ease-in-out infinite alternate;z-index:-3}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
   linear-gradient(180deg,rgba(15,26,32,.55) 0%,rgba(15,26,32,0) 28%,rgba(15,26,32,0) 48%,rgba(15,26,32,.92) 100%)}
 .mist{position:absolute;inset:-20% -40%;z-index:-1;pointer-events:none;opacity:.55;mix-blend-mode:screen;
@@ -190,7 +190,7 @@ h2 em{font-style:italic;color:var(--gilt)}
 
 /* CLOSE */
 .closing{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(90px,14vw,180px)}
-.closing .bg{position:absolute;inset:0;background:url(img/r11.webp) center/cover;z-index:-2;transform:scale(1.06);animation:drift 30s ease-in-out infinite alternate}
+.closing .bg{position:absolute;inset:0;background:url(r11.webp) center/cover;z-index:-2;transform:scale(1.06);animation:drift 30s ease-in-out infinite alternate}
 .closing::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,26,32,.94) 0%,rgba(15,26,32,.7) 45%,rgba(15,26,32,.15) 100%)}
 .closing h2{max-width:14ch}
 .closing .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -517,7 +517,7 @@ const SHOTS = [[1,"Hovuz və giriş"],[2,"Çimərlik zonası"],[3,"Dəniz tərə
 const strip = $("#strip");
 SHOTS.forEach(([i,cap],k) => {
   const f = el("figure");
-  f.innerHTML = `<img src="img/r${i}.webp" alt="Riviera: ${cap}" loading="lazy" width="1600" height="900"><figcaption><span>${cap}</span><i>${String(k+1).padStart(2,"0")} / ${SHOTS.length}</i></figcaption>`;
+  f.innerHTML = `<img src="r${i}.webp" alt="Riviera: ${cap}" loading="lazy" width="1600" height="900"><figcaption><span>${cap}</span><i>${String(k+1).padStart(2,"0")} / ${SHOTS.length}</i></figcaption>`;
   strip.append(f);
 });
 const step = () => strip.querySelector("figure").getBoundingClientRect().width + 16;
@@ -609,7 +609,7 @@ function buildPlan(anim=true){
   if(VB!==F.vb){ s.classList.add("closeup"); }
   s.innerHTML = HATCH;
   const IB = F.W ? [0,0,F.W,F.H] : F.vb;
-  s.append(el("image",{href:F.img||`img/plan-${cur}.webp`,x:IB[0],y:IB[1],width:IB[2],height:IB[3],preserveAspectRatio:"none"},1));
+  s.append(el("image",{href:F.img||`plan-${cur}.webp`,x:IB[0],y:IB[1],width:IB[2],height:IB[3],preserveAspectRatio:"none"},1));
   $("#compass").textContent = `Riviera ${blk} · Mərtəbə planı`;
   const fs = vw/90;
   const lab = el("g",{},1);
@@ -674,7 +674,7 @@ function openDrawer(num){
   const vb=[x0-pad,y0-pad,x1-x0+2*pad,y1-y0+2*pad], [vx,vy,vw,vh]=F.vb;
   const z = el("svg",{viewBox:vb.join(" ")},1);
   const IB = F.W ? [0,0,F.W,F.H] : F.vb;
-  z.append(el("image",{href:F.img||`img/plan-${cur}.webp`,x:IB[0],y:IB[1],width:IB[2],height:IB[3],preserveAspectRatio:"none"},1));
+  z.append(el("image",{href:F.img||`plan-${cur}.webp`,x:IB[0],y:IB[1],width:IB[2],height:IB[3],preserveAspectRatio:"none"},1));
   const mask = el("path",{d:`M${vb[0]-5},${vb[1]-5}h${vb[2]+10}v${vb[3]+10}h-${vb[2]+10}Z`+pathD(u.polys),"fill-rule":"evenodd",fill:"rgba(16,27,33,.72)"},1);
   const ol = el("path",{d:pathD(u.polys),fill:"none","stroke-width":3},1); ol.style.stroke = TCOL[u.r];
   z.append(mask, ol);
@@ -752,10 +752,10 @@ $("#pinform").onsubmit=async e=>{ e.preventDefault(); let h=""; try{ const d=awa
   else { $("#pinerr").textContent="Kod səhvdir"; $("#pin").value=""; } };
 $("#edoff").onclick=()=>{ setEdit(false); toast("Redaktə rejimi bağlandı."); };
 
-// ---- saving: the shared state lives in data/state.json of the GitHub repo (written with the sales team's token)
+// ---- saving: the shared state lives in state.json of the GitHub repo (written with the sales team's token)
 const GH = (()=>{ const h=location.hostname, m=h.match(/^([^.]+)\.github\.io$/i); let owner="__OWNER__", repo="__REPO__";
   if(m){ owner=m[1]; const seg=location.pathname.split("/").filter(Boolean)[0]; repo=(seg && !/\.html?$/i.test(seg))? seg : h; }
-  return { owner, repo, branch: "main", path: "data/state.json" }; })();
+  return { owner, repo, branch: "main", path: "state.json" }; })();
 const tokKey="riv-gh-token";
 const getTok=()=>{ try{ return localStorage.getItem(tokKey)||""; }catch(e){ return ""; } };
 function askToken(){ return new Promise(ok=>{ const box=$("#tokbox"); box.hidden=false; $("#tok").value=""; $("#tokerr").textContent=""; setTimeout(()=>$("#tok").focus(),50);
@@ -876,7 +876,7 @@ function wrapText(x,txt,maxW){ const words=txt.split(" "), out=[]; let line=""; 
 async function drawUnitPlan(x,item,bx,by,bw,bh){
   const F=(BLK[item.blk]||[]).find(f=>f.f===item.f); if(!F) return;
   const base=F.units.find(u=>u.k===item.k); if(!base) return; const u=U(base), P=u.polys&&u.polys[0]; if(!P||P.length<3) return;
-  const im=await loadImg(F.img||`img/plan-${item.f}.webp`); if(!im) return;
+  const im=await loadImg(F.img||`plan-${item.f}.webp`); if(!im) return;
   const IB=F.W?[0,0,F.W,F.H]:F.vb, sx=im.naturalWidth/IB[2], sy=im.naturalHeight/IB[3];
   const pts=P.map(q=>[(q[0]-IB[0])*sx,(q[1]-IB[1])*sy]);
   const xs=pts.map(q=>q[0]), ys=pts.map(q=>q[1]); let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
@@ -980,7 +980,7 @@ updateSavebar(); renderSel(); try{ if(sessionStorage.getItem("riv-edit")==="1") 
 $("#sel-pdf").hidden=false;
 if(navigator.canShare){ try{ if(navigator.canShare({files:[new File(["x"],"a.pdf",{type:"application/pdf"})]})) $("#sel-pdf").textContent="PDF-i WhatsApp-a göndər"; }catch(e){} }
 canEdit=true; document.body.classList.add("can-edit");
-fetch(`data/state.json?t=${Date.now()}`,{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{ if(!j||!j.units) return; STATE.units=j.units; STATE.pricing=j.pricing||{}; STATE.updated=j.updated; rerender(); refreshCounts(); }).catch(()=>{});
+fetch(`state.json?t=${Date.now()}`,{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{ if(!j||!j.units) return; STATE.units=j.units; STATE.pricing=j.pricing||{}; STATE.updated=j.updated; rerender(); refreshCounts(); }).catch(()=>{});
 </script>
 
 </body>
