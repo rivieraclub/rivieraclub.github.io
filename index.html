@@ -9,8 +9,20 @@
 <meta name="theme-color" content="#0f1a20">
 <meta property="og:title" content="Riviera Private Residential Club">
 <meta property="og:description" content="Sea Breeze, Bakı — Xəzər sahilində mənzillər. Mərtəbə planları və ödəniş kalkulyatoru.">
-<meta property="og:image" content="r0.webp">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1a20'/%3E%3Ctext x='32' y='45' font-family='Georgia' font-size='38' fill='%23d2a965' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rivieraclub.github.io/">
+<meta property="og:site_name" content="Riviera Private Residential Club">
+<meta property="og:image" content="https://rivieraclub.github.io/og-image.jpg">
+<meta property="og:image:secure_url" content="https://rivieraclub.github.io/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Riviera Private Residential Club, Sea Breeze, Bakı">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rivieraclub.github.io/og-image.jpg">
+<link rel="canonical" href="https://rivieraclub.github.io/">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&amp;family=Jost:wght@300;400;500;600&amp;display=swap">
 <style>
@@ -79,7 +91,7 @@ h2 em{font-style:italic;color:var(--gilt)}
 /* GALLERY */
 .gallery{padding-block:clamp(64px,10vw,120px) 0}
 .g-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.g-ctrl{display:flex;gap:8px}
+.g-prog{display:flex;align-items:center;gap:14px;min-width:min(320px,100%);color:var(--muted,#9aa7ad);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}.gp-n{font-family:"Bodoni Moda",serif;font-size:1.05rem;letter-spacing:.06em;white-space:nowrap}.gp-n b{color:var(--gilt);font-weight:400;font-size:1.6rem}.gp-bar{flex:1;height:1px;background:var(--line);position:relative;min-width:90px}.gp-bar i{position:absolute;left:0;top:-1px;height:3px;width:8%;background:var(--gilt);transition:width .35s ease}.gp-hint{white-space:nowrap;animation:gpH 2.4s ease-in-out infinite}@keyframes gpH{0%,100%{opacity:.45;transform:translateX(0)}50%{opacity:1;transform:translateX(6px)}}@media (max-width:700px){.g-prog{width:100%;margin-top:6px}}
 .g-ctrl button{width:46px;height:46px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:1.1rem;transition:border-color .2s}
 .g-ctrl button:hover{border-color:var(--gilt)}
 .strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:36px;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:var(--ink-3) transparent;
@@ -389,7 +401,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="eyebrow">Layihə</div>
       <h2>Gün batımı <em>pəncərənizdən</em> görünür</h2>
     </div>
-    <div class="g-ctrl"><button id="gprev" aria-label="Əvvəlki şəkil">←</button><button id="gnext" aria-label="Növbəti şəkil">→</button></div>
+    <div class="g-prog" aria-hidden="true"><span class="gp-n"><b id="gpCur">01</b> / <span id="gpTot">12</span></span><span class="gp-bar"><i id="gpFill"></i></span><span class="gp-hint">Sürüşdürün</span></div><button id="gprev" hidden></button><button id="gnext" hidden></button>
   </div>
   <div class="strip" id="strip"></div>
 </section>
@@ -531,6 +543,7 @@ SHOTS.forEach(([i,cap],k) => {
 const step = () => strip.querySelector("figure").getBoundingClientRect().width + 16;
 $("#gprev").onclick = () => strip.scrollBy({left:-step(), behavior:"smooth"});
 $("#gnext").onclick = () => strip.scrollBy({left: step(), behavior:"smooth"});
+(()=>{const n=strip.querySelectorAll("figure").length,pad=x=>String(x).padStart(2,"0");$("#gpTot").textContent=pad(n);const up=()=>{const max=strip.scrollWidth-strip.clientWidth;const r=max>0?strip.scrollLeft/max:0;const i=Math.min(n,Math.round(r*(n-1))+1);$("#gpCur").textContent=pad(i);$("#gpFill").style.width=Math.max(8,r*100)+"%";};strip.addEventListener("scroll",up,{passive:true});addEventListener("resize",up);up();})();
 
 // ---- elevation (shown on desktop and phone)
 function buildElev(){
@@ -1009,7 +1022,7 @@ try{const q=new URLSearchParams(location.search).get("lang");const s=localStorag
 window.__lang=L;
 // exact phrases: az -> [ru, en]
 const D={
-"Layihə":["Проект","Project"],"Mənzil seçimi":["Выбор квартиры","Apartments"],"Əlaqə":["Контакты","Contact"],"Mənzil seç":["Выбрать квартиру","Find an apartment"],
+"Layihə":["Проект","Project"],"Sürüşdürün":["Листайте","Swipe"],"Mənzil seçimi":["Выбор квартиры","Apartments"],"Əlaqə":["Контакты","Contact"],"Mənzil seç":["Выбрать квартиру","Find an apartment"],
 "Sea Breeze · Dəniz sahili":["Sea Breeze · Берег моря","Sea Breeze · Seafront"],
 "Dənizin qarşısında, palmalar arasında üç blokdan ibarət yaşayış kompleksi. Hovuz, çimərlik zonası və bulvar evinizin qapısındadır.":["Жилой комплекс из трёх корпусов у моря, среди пальм. Бассейн, пляжная зона и бульвар — прямо у вашего порога.","A three-building residence on the seafront, among the palms. The pool, the beach and the boulevard are right at your door."],
 "Blok":["Корпуса","Buildings"],"Mərtəbə":["Этажей","Floors"],"Mənzil satışda":["Квартир в продаже","Apartments for sale"],
@@ -1171,7 +1184,7 @@ if(nav){const sw=document.createElement("div");sw.className="langsw";sw.setAttri
 .ab-dist{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .ab-dist span{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);padding:9px 14px;font-size:.85rem;color:var(--stone-dim)}
 .ab-dist b{color:var(--gilt);font-weight:500;font-variant-numeric:tabular-nums}
-.ab-map{position:relative;margin-top:clamp(28px,4vw,44px);border:1px solid var(--line);overflow:hidden;background:#0b1418}
+.ab-map{position:relative;margin-left:0;margin-right:0;margin-bottom:0;margin-top:clamp(28px,4vw,44px);border:1px solid var(--line);overflow:hidden;background:#0b1418}
 .ab-map img{display:block;width:100%;height:auto}
 .ab-map .pin{position:absolute;left:53.6%;top:42%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--gilt);box-shadow:0 0 0 3px rgba(15,26,32,.7)}
 .ab-map .pin::before,.ab-map .pin::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid var(--gilt);animation:pinPulse 2.4s ease-out infinite}
@@ -1180,7 +1193,7 @@ if(nav){const sw=document.createElement("div");sw.className="langsw";sw.setAttri
 .ab-map .tag{position:absolute;left:53.6%;top:42%;transform:translate(-50%,calc(-100% - 22px));background:var(--ink);color:var(--stone);border:1px solid var(--gilt);padding:7px 12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
 .ab-map .tag::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:14px;background:var(--gilt)}
 .ab-map figcaption{position:absolute;right:10px;bottom:8px;font-size:.66rem;letter-spacing:.08em;color:#e9eef0;text-shadow:0 1px 4px rgba(0,0,0,.7)}
-@media (max-width:600px){.ab-map{overflow-x:auto}.ab-map img{width:640px;max-width:none}.ab-map .pin,.ab-map .tag{left:343px}.ab-map figcaption{display:none}}
+@media (max-width:600px){.ab-map{overflow-x:auto}.ab-map img{width:820px;max-width:none}.ab-map .pin,.ab-map .tag{left:440px}.ab-map figcaption{display:none}}
 .ab-sub{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:clamp(48px,7vw,84px);border-bottom:1px solid var(--line);padding-bottom:14px;flex-wrap:wrap}
 .ab-sub h3{font-family:var(--f-display);font-weight:400;font-size:clamp(1.6rem,3.4vw,2.4rem);margin:0}
 .ab-sub h3 em{color:var(--gilt)}
@@ -1275,7 +1288,7 @@ s.innerHTML=`<div class="wrap">
  <div class="ab-future">${fut.map(f=>`<div data-rv><b>${f[0]}</b><span>${f[1]}</span></div>`).join("")}</div>
 </div>`;
 const ex=document.getElementById("explore");if(ex)ex.before(s);
-const mp=s.querySelector(".ab-map");const centerMap=()=>{if(mp.scrollWidth>mp.clientWidth+4)mp.scrollLeft=343-mp.clientWidth/2;};requestAnimationFrame(centerMap);addEventListener("resize",centerMap);
+const mp=s.querySelector(".ab-map");const centerMap=()=>{if(mp.scrollWidth>mp.clientWidth+4)mp.scrollLeft=440-mp.clientWidth/2;};requestAnimationFrame(centerMap);addEventListener("resize",centerMap);
 // nav link
 const nv=document.querySelector(".nav nav");if(nv){const a=document.createElement("a");a.href="#about";a.textContent=T("Haqqında","О проекте","About");const ms=nv.querySelector('a[href="#explore"]');nv.insertBefore(a,ms||null);}
 
@@ -1559,6 +1572,136 @@ if(!RM){
 addEventListener("scroll",()=>requestAnimationFrame(scrubAll),{passive:true});addEventListener("resize",scrubAll);
 setTimeout(()=>{scrubAll();heroScrub();},50);
 document.querySelector("#strip")?.addEventListener("scroll",()=>requestAnimationFrame(scrubAll),{passive:true});
+})();
+</script>
+
+<style id="extra-css">
+/* mobile menu */
+.burger{display:none;width:44px;height:44px;border:1px solid rgba(236,227,210,.35);background:rgba(15,26,32,.35);border-radius:50%;cursor:pointer;align-items:center;justify-content:center;flex:0 0 auto;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.burger span{display:block;width:18px;height:1.5px;background:var(--stone);position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--stone);transition:transform .3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+@media (max-width:760px){.burger{display:inline-flex}}
+.mnav{position:fixed;inset:0;z-index:120;background:rgba(10,18,22,.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;flex-direction:column;
+  padding:calc(env(safe-area-inset-top,0px) + 18px) max(22px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 26px) max(22px,env(safe-area-inset-left,0px));
+  opacity:0;pointer-events:none;transition:opacity .35s}
+.mnav.open{opacity:1;pointer-events:auto}
+.mnav .mtop{display:flex;justify-content:space-between;align-items:center}
+.mnav .mtop img{width:34px;height:auto}
+.mnav .mclose{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--stone);font-size:1.2rem;cursor:pointer}
+.mnav nav{display:grid;gap:4px;margin-top:clamp(30px,8vh,64px)}
+.mnav nav a{font-family:var(--f-display);font-size:clamp(2rem,9vw,2.6rem);color:var(--stone);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--line);
+  transform:translateY(16px);opacity:0;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s,color .2s}
+.mnav.open nav a{transform:none;opacity:1}
+.mnav nav a:nth-child(2){transition-delay:.05s}.mnav nav a:nth-child(3){transition-delay:.1s}.mnav nav a:nth-child(4){transition-delay:.15s}.mnav nav a:nth-child(5){transition-delay:.2s}
+.mnav nav a:active{color:var(--gilt)}
+.mnav .macts{display:grid;gap:10px;margin-top:auto}
+.mnav .macts .btn{justify-content:center;min-height:50px}
+.mnav .mcontact{font-size:.85rem;color:var(--stone-dim);text-align:center;margin-top:8px}
+.mnav .mcontact a{color:var(--gilt)}
+/* bigger language buttons on phones */
+@media (max-width:760px){.langsw button{min-width:38px;min-height:40px;padding:0 .55em;font-size:.72rem}.nav .wrap>div:last-child{gap:8px!important}.langsw{margin-right:0}}
+@media (max-width:470px){.nav .mark .mk-t small{display:none}.nav .mark{gap:9px}}
+@media (max-width:370px){.nav .langsw{display:none}.mnav .langsw{display:inline-flex}}
+.mnav .mlang{display:flex;justify-content:center;margin-top:18px}.mnav .langsw{display:none}
+/* callback modal */
+.cbk{position:fixed;inset:0;z-index:130;display:grid;place-items:center;background:rgba(6,11,14,.75);padding:16px;opacity:0;pointer-events:none;transition:opacity .3s}
+.cbk.open{opacity:1;pointer-events:auto}
+.cbk form{background:var(--ink-2);border-top:3px solid var(--gilt);width:min(440px,100%);padding:clamp(22px,4vw,32px);display:grid;gap:13px;max-height:92svh;overflow:auto;transform:translateY(14px);transition:transform .35s}
+.cbk.open form{transform:none}
+.cbk h4{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(1.7rem,6vw,2.1rem)}
+.cbk p{margin:0;color:var(--stone-dim);font-size:.92rem}
+.cbk label{display:grid;gap:6px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.cbk input,.cbk select,.cbk textarea{background:var(--ink);border:1px solid var(--line);color:var(--stone);padding:12px;font:inherit;font-size:16px;letter-spacing:0;text-transform:none;width:100%;min-width:0}
+.cbk input:focus,.cbk select:focus,.cbk textarea:focus{outline:none;border-color:var(--gilt)}
+.cbk .err{min-height:1.1em;color:#e0876f;font-size:.85rem}
+.cbk .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cbk .btn{justify-content:center;min-height:48px}
+.cbk .units{font-size:.85rem;color:var(--gilt)}
+.cbk .done{display:grid;gap:12px;text-align:center;justify-items:center;background:var(--ink-2);border-top:3px solid var(--gilt);width:min(440px,100%);padding:clamp(26px,5vw,36px)}
+.cbk .done b{font-family:var(--f-display);font-weight:400;font-size:1.8rem}
+.cbk .done svg{width:54px;height:54px;color:var(--gilt)}
+.cbk .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+</style>
+<script id="extra-js">
+(()=>{
+const L=window.__lang||"az";const T=(az,ru,en)=>L==="ru"?ru:L==="en"?en:az;
+/* ===== settings ===== */
+const STATS_CODE="rivieraclub";      // GoatCounter kodu (məs. "rivieraclub") — hesab açılandan sonra yazılır
+const LEAD={type:"",to:""}; // zəng sifarişləri: {type:"formsubmit",to:"email"} və ya {type:"telegram",to:"BOT_TOKEN|CHAT_ID"}
+/* ===== statistics (admin-only dashboard) ===== */
+function ev(name){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:name,title:name,event:true});}catch(e){}}
+window.__ev=ev;
+if(STATS_CODE){const s=document.createElement("script");s.async=true;s.src="https://gc.zgo.at/count.js";s.dataset.goatcounter=`https://${STATS_CODE}.goatcounter.com/count`;document.head.appendChild(s);}
+document.addEventListener("click",e=>{const a=e.target.closest("a,button");if(!a)return;const h=a.getAttribute("href")||"";
+  if(/wa\.me/.test(h))ev(a.id==="sel-wa"?"whatsapp-selection":"whatsapp");else if(/^tel:/.test(h))ev("call");else if(/instagram\.com/.test(h))ev("instagram");
+  else if(a.id==="sel-pdf")ev("pdf");else if(a.dataset&&a.dataset.l)ev("lang-"+a.dataset.l);},true);
+if(typeof openDrawer==="function"){const _o=openDrawer;openDrawer=function(num){const r=_o.apply(this,arguments);try{ev(`unit/riviera-${blk}/${num}`);}catch(e){}return r;};}
+/* ===== mobile menu ===== */
+const navWrap=document.querySelector(".nav .wrap");
+const LINKS=[["#gallery",T("Layihə","Проект","Project")],["#about",T("Haqqında","О проекте","About")],["#explore",T("Mənzil seçimi","Выбор квартиры","Apartments")],["#contact",T("Əlaqə","Контакты","Contact")]];
+if(navWrap){
+  const bt=document.createElement("button");bt.type="button";bt.className="burger";bt.setAttribute("aria-label",T("Menyu","Меню","Menu"));bt.setAttribute("aria-expanded","false");bt.innerHTML="<span></span>";
+  const right=navWrap.querySelector(":scope > div:last-child");(right||navWrap).append(bt);
+  const m=document.createElement("div");m.className="mnav";m.setAttribute("role","dialog");m.setAttribute("aria-modal","true");m.setAttribute("aria-hidden","true");
+  m.innerHTML=`<div class="mtop"><img src="riviera-emblem.webp" alt="" width="300" height="440"><button type="button" class="mclose" aria-label="${T("Bağla","Закрыть","Close")}">✕</button></div>
+   <nav>${LINKS.map(l=>`<a href="${l[0]}">${l[1]}</a>`).join("")}</nav>
+   <div class="macts"><a class="btn solid" href="#explore">${T("Mənzil seç","Выбрать квартиру","Find an apartment")}</a>
+   <p class="mcontact">${T("Zəng","Звонок","Call")}: <a href="tel:*0747">*0747</a> · WhatsApp: <a href="https://wa.me/994508000747" target="_blank" rel="noopener">+994 50 800 07 47</a></p></div>`;
+  document.body.append(m);
+  const ls=document.querySelector('.nav .langsw');if(ls){const w=document.createElement('div');w.className='mlang';const c=ls.cloneNode(true);c.addEventListener('click',e=>{const b=e.target.closest('button');if(b){const o=ls.querySelector(`[data-l="${b.dataset.l}"]`);o&&o.click();}});w.append(c);m.querySelector('.macts').append(w);}
+  const open=v=>{m.classList.toggle("open",v);m.setAttribute("aria-hidden",String(!v));bt.setAttribute("aria-expanded",String(v));document.documentElement.style.overflow=v?"hidden":"";};
+  bt.addEventListener("click",()=>open(true));m.querySelector(".mclose").addEventListener("click",()=>open(false));
+  m.addEventListener("click",e=>{if(e.target.closest("nav a,.macts a"))open(false);});
+  addEventListener("keydown",e=>{if(e.key==="Escape")open(false);});
+  window.__closeMenu=()=>open(false);
+}
+/* ===== callback request ===== */
+const C=document.createElement("div");C.className="cbk";C.setAttribute("aria-hidden","true");
+C.innerHTML=`<form novalidate><h4>${T("Zəng sifarişi","Заказать звонок","Request a call")}</h4>
+ <p>${T("Nömrənizi yazın — satış ofisi sizə zəng edəcək.","Оставьте номер — отдел продаж вам перезвонит.","Leave your number and the sales office will call you back.")}</p>
+ <p class="units" hidden></p>
+ <label>${T("Adınız","Ваше имя","Your name")}<input name="name" autocomplete="name" required></label>
+ <label>${T("Telefon","Телефон","Phone")}<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+994" required></label>
+ <label>${T("Nə vaxt zəng edək?","Когда позвонить?","When should we call?")}<select name="when"><option>${T("İndi","Сейчас","Now")}</option><option>${T("Bu gün","Сегодня","Today")}</option><option>${T("Sabah","Завтра","Tomorrow")}</option><option>${T("Axşam","Вечером","In the evening")}</option></select></label>
+ <label>${T("Qeyd (istəyə bağlı)","Комментарий (необязательно)","Note (optional)")}<textarea name="note" rows="2"></textarea></label>
+ <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+ <div class="err" role="alert"></div>
+ <div class="two"><button type="button" class="btn" data-x>${T("Bağla","Закрыть","Close")}</button><button type="submit" class="btn solid">${T("Göndər","Отправить","Send")}</button></div></form>`;
+document.body.append(C);
+const F=C.querySelector("form"),ER=C.querySelector(".err"),UN=C.querySelector(".units");
+function selUnits(){try{return (typeof SEL!=="undefined"&&SEL.length)?SEL.map(x=>`Riviera ${x.blk} · №${x.u}`):[];}catch(e){return[];}}
+let unitCtx=null;
+function openC(ctx){unitCtx=ctx||null;const us=unitCtx?[unitCtx]:selUnits();UN.hidden=!us.length;UN.textContent=us.length?T("Mənzil: ","Квартира: ","Apartment: ")+us.join(", "):"";ER.textContent="";
+  if(!F.isConnected){C.innerHTML="";C.append(F);}C.classList.add("open");C.setAttribute("aria-hidden","false");setTimeout(()=>F.name.focus(),80);ev("callback-open");}
+function closeC(){C.classList.remove("open");C.setAttribute("aria-hidden","true");}
+C.addEventListener("click",e=>{if(e.target===C||e.target.closest("[data-x]"))closeC();});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-cbk]");if(!b)return;e.preventDefault();window.__closeMenu&&window.__closeMenu();
+  let ctx=null;try{if(b.closest("#drawer")&&typeof openUnit!=="undefined"&&openUnit)ctx=`Riviera ${blk} · №${openUnit}`;}catch(err){}openC(ctx);});
+async function sendLead(d){
+  const txt=`📞 Zəng sifarişi (riviera sayt)\nAd: ${d.name}\nTelefon: ${d.phone}\nVaxt: ${d.when}${d.units?`\nMənzil: ${d.units}`:""}${d.note?`\nQeyd: ${d.note}`:""}\nDil: ${L.toUpperCase()}`;
+  if(LEAD.type==="formsubmit"){const r=await fetch(`https://formsubmit.co/ajax/${LEAD.to}`,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({_subject:"Riviera: zəng sifarişi",Ad:d.name,Telefon:d.phone,Vaxt:d.when,Mənzil:d.units||"-",Qeyd:d.note||"-",Dil:L.toUpperCase(),_template:"table",_captcha:"false"})});if(!r.ok)throw 0;return "sent";}
+  if(LEAD.type==="telegram"){const [tok,chat]=LEAD.to.split("|");const r=await fetch(`https://api.telegram.org/bot${tok}/sendMessage`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chat_id:chat,text:txt})});if(!r.ok)throw 0;return "sent";}
+  // not configured yet: hand over to WhatsApp with the request filled in
+  window.open(`https://wa.me/994508000747?text=${encodeURIComponent(txt)}`,"_blank","noopener");return "wa";
+}
+F.addEventListener("submit",async e=>{e.preventDefault();if(F.website.value)return;
+  const d={name:F.name.value.trim(),phone:F.phone.value.trim(),when:F.when.value,note:F.note.value.trim(),units:UN.hidden?"":UN.textContent.replace(/^[^:]+:\s*/,"")};
+  if(!d.name){ER.textContent=T("Adınızı yazın.","Укажите имя.","Please enter your name.");F.name.focus();return;}
+  if(d.phone.replace(/\D/g,"").length<9){ER.textContent=T("Telefon nömrəsini tam yazın.","Укажите номер полностью.","Please enter a full phone number.");F.phone.focus();return;}
+  const sb=F.querySelector('[type=submit]');sb.disabled=true;sb.textContent=T("Göndərilir…","Отправка…","Sending…");
+  try{const how=await sendLead(d);ev("callback-sent");
+    const done=document.createElement("div");done.className="done";done.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.2 3L17 9"/></svg><b>${T("Təşəkkürlər!","Спасибо!","Thank you!")}</b><p>${how==="wa"?T("Sorğunuz WhatsApp-da hazırdır — göndər düyməsini basın.","Заявка готова в WhatsApp — нажмите «Отправить».","Your request is ready in WhatsApp — just press send."):T("Satış ofisi tezliklə sizə zəng edəcək.","Отдел продаж скоро вам перезвонит.","The sales office will call you shortly.")}</p><button type="button" class="btn" data-x>${T("Bağla","Закрыть","Close")}</button>`;
+    F.reset();C.innerHTML="";C.append(done);}
+  catch(err){ER.textContent=T("Göndərilmədi. WhatsApp və ya zənglə əlaqə saxlayın.","Не отправлено. Напишите в WhatsApp или позвоните.","Couldn't send. Please use WhatsApp or call.");}
+  finally{sb.disabled=false;sb.textContent=T("Göndər","Отправить","Send");}
+});
+// buttons: contact section, unit drawer, selection drawer
+const mk=(cls)=>{const b=document.createElement("button");b.type="button";b.className="btn "+(cls||"");b.dataset.cbk="";b.textContent=T("Zəng sifariş et","Заказать звонок","Request a call");return b;};
+const CALLBACK_ON=false;
+const row=document.querySelector("#contact .row");if(CALLBACK_ON&&row)row.insertBefore(mk(),row.children[1]||null);
+const sa=document.querySelector("#seldrawer .selacts");if(CALLBACK_ON&&sa)sa.insertBefore(mk(),sa.children[1]||null);
+const drc=document.querySelector("#drawer .dr-cta");if(CALLBACK_ON&&drc){const b=mk();b.style.gridColumn="1/-1";drc.append(b);}
 })();
 </script>
 
