@@ -473,7 +473,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <div class="toast" id="toast" role="status"></div>
 `;
 // ===== Satış əlaqəsi: nömrəni buraya yazın (məs. "994501234567") =====
-const CONTACT = { phone: "", display: "+994 __ ___ __ __" };
+const CONTACT = { phone: "994508000747", display: "+994 50 800 07 47" };
 
 document.getElementById("root").innerHTML = BODY;
 
@@ -659,7 +659,7 @@ function waLink(u){
   const msg = encodeURIComponent(u ? `Salam! Riviera ${blk}, ${u.u} nömrəli mənzil (${roomTxt(u.r)}, ${fmt(u.t)} m²) ilə maraqlanıram.` : "Salam! Riviera Private Residential Club layihəsi ilə maraqlanıram.");
   return CONTACT.phone ? `https://wa.me/${CONTACT.phone}?text=${msg}` : `https://wa.me/?text=${msg}`;
 }
-document.querySelectorAll(".ph").forEach(s=>s.textContent = CONTACT.phone ? "+"+CONTACT.phone : CONTACT.display);
+document.querySelectorAll(".ph").forEach(s=>s.textContent = CONTACT.display);
 $("#wa-main").href = waLink(null);
 $("#dr-call").href = CONTACT.phone ? "tel:+"+CONTACT.phone : "#contact";
 
