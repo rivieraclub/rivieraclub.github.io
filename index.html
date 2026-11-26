@@ -913,8 +913,8 @@ async function drawUnitPlan(x,item,bx,by,bw,bh){
   x.lineWidth=3/sc; x.strokeStyle="#d2a965"; x.stroke(); x.restore();
 }
 async function offerCanvas(){
-  const W=1240, pad=90, RH=440, nm=$("#sel-name").value.trim(), ph=$("#sel-phone").value.trim();
-  const rows=SEL.map(lineFor), H=Math.max(1754, 520+rows.length*RH+220);
+  const W=1240, pad=90, RH=1180, nm=$("#sel-name").value.trim(), ph=$("#sel-phone").value.trim();
+  const rows=SEL.map(lineFor), H=Math.max(1754, 520+rows.length*RH+200);
   const cv=document.createElement("canvas"); cv.width=W; cv.height=H; const x=cv.getContext("2d");
   x.fillStyle="#0f1a20"; x.fillRect(0,0,W,H); x.strokeStyle="rgba(210,169,101,.6)"; x.lineWidth=2; x.strokeRect(40,40,W-80,H-80);
   x.fillStyle="#ece3d2"; x.font='400 72px "Bodoni Moda",Georgia,serif'; x.fillText("RIVIERA",pad,pad+90);
@@ -924,15 +924,18 @@ async function offerCanvas(){
   x.fillStyle="rgba(210,169,101,.5)"; x.fillRect(pad,pad+258,W-2*pad,1);
   let y=pad+330;
   for(let i=0;i<rows.length;i++){ const l=rows[i], it=SEL[i];
-    x.fillStyle="#ece3d2"; x.font='400 38px "Bodoni Moda",Georgia,serif'; x.fillText(`${i+1}.  ${l.head}`,pad,y);
-    const bx=pad, by=y+26, bw=500, bh=340; await drawUnitPlan(x,it,bx,by,bw,bh);
-    const tx=bx+bw+36, tw=W-pad-tx; let ty=by+30;
-    x.fillStyle="#7f8e92"; x.font='600 18px Jost,system-ui,sans-serif'; x.fillText("SAHƏ",tx,ty); ty+=34;
-    x.fillStyle="#ece3d2"; x.font='400 30px Jost,system-ui,sans-serif'; x.fillText(`${fmt(it.t)} m² ümumi`,tx,ty); ty+=38;
-    x.fillStyle="#b8b0a2"; x.font='400 24px Jost,system-ui,sans-serif'; x.fillText(`${fmt(it.n)} m² daxili · ${it.r} otaq`,tx,ty); ty+=56;
-    x.fillStyle="#7f8e92"; x.font='600 18px Jost,system-ui,sans-serif'; x.fillText("ÖDƏNİŞ",tx,ty); ty+=34;
-    x.fillStyle="#d2a965"; x.font='500 25px Jost,system-ui,sans-serif';
-    wrapText(x,l.pay,tw).forEach(t=>{ x.fillText(t,tx,ty); ty+=34; });
+    x.fillStyle="#ece3d2"; x.font='400 40px "Bodoni Moda",Georgia,serif'; x.fillText(`${i+1}.  ${l.head}`,pad,y);
+    const bx=pad, by=y+30, bw=W-2*pad, bh=720;
+    x.fillStyle="rgba(236,227,210,.04)"; x.fillRect(bx,by,bw,bh); x.strokeStyle="rgba(210,169,101,.35)"; x.lineWidth=1; x.strokeRect(bx,by,bw,bh);
+    await drawUnitPlan(x,it,bx+20,by+20,bw-40,bh-40);
+    let ty=by+bh+60; const cw=(W-2*pad)/3;
+    [["ÜMUMİ SAHƏ",`${fmt(it.t)} m²`],["DAXİLİ SAHƏ",`${fmt(it.n)} m²`],["OTAQ SAYI",`${it.r}`]].forEach(([k,v],j)=>{ const cx=pad+j*cw;
+      x.fillStyle="#7f8e92"; x.font='600 20px Jost,system-ui,sans-serif'; x.fillText(k,cx,ty);
+      x.fillStyle=j?"#ece3d2":"#d2a965"; x.font='400 68px "Bodoni Moda",Georgia,serif'; x.fillText(v,cx,ty+76); });
+    ty+=150; x.fillStyle="rgba(210,169,101,.35)"; x.fillRect(pad,ty-20,W-2*pad,1);
+    x.fillStyle="#7f8e92"; x.font='600 20px Jost,system-ui,sans-serif'; x.fillText("ÖDƏNİŞ",pad,ty+20); ty+=60;
+    x.fillStyle="#d2a965"; x.font='500 30px Jost,system-ui,sans-serif';
+    wrapText(x,l.pay,W-2*pad).forEach(t=>{ x.fillText(t,pad,ty); ty+=40; });
     y+=RH; }
   x.fillStyle="#7f8e92"; x.font='400 20px Jost,system-ui,sans-serif';
   x.fillText(`Tam ödənişdə ${DISC}% endirim. Hissə-hissə: tam qiymətdən ${DOWN}% ilkin ödəniş, qalan məbləğ ${MONTHS} ayadək faizsiz.`,pad,H-150);
