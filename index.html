@@ -10,17 +10,17 @@
 <meta property="og:title" content="Riviera Private Residential Club">
 <meta property="og:description" content="Sea Breeze, Bakı — Xəzər sahilində mənzillər. Mərtəbə planları və ödəniş kalkulyatoru.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://rivieraclub.github.io/">
+<meta property="og:url" content="https://rivieraresidence.az/">
 <meta property="og:site_name" content="Riviera Private Residential Club">
-<meta property="og:image" content="https://rivieraclub.github.io/og-image.jpg">
-<meta property="og:image:secure_url" content="https://rivieraclub.github.io/og-image.jpg">
+<meta property="og:image" content="https://rivieraresidence.az/og-image.jpg">
+<meta property="og:image:secure_url" content="https://rivieraresidence.az/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Riviera Private Residential Club, Sea Breeze, Bakı">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://rivieraclub.github.io/og-image.jpg">
-<link rel="canonical" href="https://rivieraclub.github.io/">
+<meta name="twitter:image" content="https://rivieraresidence.az/og-image.jpg">
+<link rel="canonical" href="https://rivieraresidence.az/">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -778,7 +778,7 @@ $("#pinform").onsubmit=async e=>{ e.preventDefault(); let h=""; try{ const d=awa
 $("#edoff").onclick=()=>{ setEdit(false); toast("Redaktə rejimi bağlandı."); };
 
 // ---- saving: the shared state lives in state.json of the GitHub repo (written with the sales team's token)
-const GH = (()=>{ const h=location.hostname, m=h.match(/^([^.]+)\.github\.io$/i); let owner="__OWNER__", repo="__REPO__";
+const GH = (()=>{ const h=location.hostname, m=h.match(/^([^.]+)\.github\.io$/i); let owner="rivieraclub", repo="rivieraclub.github.io";
   if(m){ owner=m[1]; const seg=location.pathname.split("/").filter(Boolean)[0]; repo=(seg && !/\.html?$/i.test(seg))? seg : h; }
   return { owner, repo, branch: "main", path: "state.json" }; })();
 const tokKey="riv-gh-token";
