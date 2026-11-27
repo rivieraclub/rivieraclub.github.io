@@ -1287,7 +1287,7 @@ s.innerHTML=`<div class="wrap">
   <div><p class="lede">${T("Riviera Private Residential Club Sea Breeze şəhər-kurortunun tam mərkəzində, Xəzərin birinci sahil xəttində, Yacht Club-un yanında yerləşir. Üç müasir bina prestijli ünvanı kurort həyat tərzi ilə birləşdirir.","Riviera Private Residential Club расположен в самом центре курортного города Sea Breeze, на первой береговой линии Каспия, рядом с Yacht Club. Три современных корпуса объединяют престижный адрес и курортный образ жизни.","Riviera Private Residential Club stands in the very centre of the Sea Breeze resort town, on the Caspian's first coastline next to the Yacht Club. Three modern buildings combine a prestigious address with a resort lifestyle.")}</p>
   <div class="ab-dist"><span>✈ ${T("Hava limanı","Аэропорт","Airport")} <b>30 ${T("dəq","мин","min")}</b></span><span>🛣 ${T("Yeni magistralla","По новой трассе","Via the new highway")} <b>22 ${T("dəq","мин","min")}</b></span><span>⚓ Yacht Club <b>${T("yanında","рядом","next door")}</b></span></div></div>
  </div>
- <figure class="ab-map"><div class="mapin"><img src="seabreeze-map.webp" alt="${T("Sea Breeze baş planı: Riviera və Harbour Residence-in yeri","Генплан Sea Breeze: место Riviera и Harbour Residence","Sea Breeze master plan with Riviera and Harbour Residence")}" width="1172" height="512" loading="lazy"><span class="pin" style="left:53.6%;top:42%" aria-hidden="true"></span><span class="lead" style="left:53.6%;height:calc(42% - 30% - 4px)"></span><span class="tag" style="left:53.6%" lang="en">RIVIERA</span><span class="pin alt" style="left:36%;top:52.5%" aria-hidden="true"></span><span class="lead alt" style="left:36%;height:calc(52.5% - 30% - 4px)"></span><span class="tag alt" style="left:36%" lang="en">HARBOUR</span></div><figcaption>${T("Sea Breeze baş planı","Генплан Sea Breeze","Sea Breeze master plan")}</figcaption></figure>
+ <figure class="ab-map"><div class="mapin"><img src="seabreeze-masterplan.jpg" alt="${T("Sea Breeze baş planı: Riviera və Harbour Residence-in yeri","Генплан Sea Breeze: место Riviera и Harbour Residence","Sea Breeze master plan with Riviera and Harbour Residence")}" width="2576" height="1606" loading="lazy"><span class="pin" style="left:53.53%;top:43.69%" aria-hidden="true"></span><span class="lead" style="left:53.53%;height:calc(43.69% - 30% - 4px)"></span><span class="tag" style="left:53.53%" lang="en">RIVIERA</span><span class="pin alt" style="left:36.08%;top:50.99%" aria-hidden="true"></span><span class="lead alt" style="left:36.08%;height:calc(50.99% - 30% - 4px)"></span><span class="tag alt" style="left:36.08%" lang="en">HARBOUR</span></div><figcaption>${T("Sea Breeze baş planı","Генплан Sea Breeze","Sea Breeze master plan")}</figcaption></figure>
  <div class="ab-sub"><h3>${T("Riviera-<em>da</em>","В <em>Riviera</em>","At <em>Riviera</em>")}</h3></div>
  <div class="ab-feat">${feat.map(f=>`<div data-rv>${svg(f[0])}<b>${f[1]}</b><span>${f[2]}</span></div>`).join("")}</div>
  <div class="ab-sub"><h3>${T("Ətrafınızda — <em>Sea Breeze</em>","Вокруг — <em>Sea Breeze</em>","Around you — <em>Sea Breeze</em>")}</h3></div>
@@ -1457,6 +1457,72 @@ const upd=()=>{tick=false;const vh=innerHeight;for(const e of els){const r=e.get
 if(!RM){addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});addEventListener("resize",upd);upd();}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}}),{threshold:.35});
 io.observe(vs);
+})();
+</script>
+<style id="mapzoom-css">
+.ab-map .mapin{cursor:zoom-in}
+.ab-map .mz-hint{position:absolute;left:10px;top:10px;z-index:3;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(7,13,24,.6);border:1px solid rgba(236,227,210,.35);padding:5px 9px;pointer-events:none;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.mzoom{position:fixed;inset:0;z-index:200;background:rgba(5,10,14,.96);display:none}
+.mzoom.open{display:block}
+.mz-view{position:absolute;inset:0;overflow:auto;cursor:grab;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scrollbar-width:none}
+.mz-view::-webkit-scrollbar{display:none}
+.mz-view.drag{cursor:grabbing}
+.mz-in{position:relative;margin:auto}
+.mz-in .mapin{animation:none!important;cursor:inherit}
+.mz-in .mapin img{width:100%!important;max-width:none!important;height:auto;display:block}
+.mz-in .pin{position:absolute;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:var(--gilt);box-shadow:0 0 0 2px rgba(7,13,24,.8);z-index:2}
+.mz-in .pin::before,.mz-in .pin::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gilt);animation:pinPulse 2.4s ease-out infinite}
+.mz-in .pin::after{animation-delay:1.2s}
+.mz-in .pin.alt{background:#ece3d2}.mz-in .pin.alt::before,.mz-in .pin.alt::after{border-color:#ece3d2}
+.mz-in .tag{position:absolute;z-index:2;top:30%;transform:translate(-50%,-100%);background:rgba(7,13,24,.78);color:#ece3d2;border:1px solid rgba(210,169,101,.85);padding:4px 10px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.mz-in .tag.alt{border-color:rgba(236,227,210,.6)}
+.mz-in .lead{position:absolute;z-index:2;top:30%;width:1px;transform:translateX(-50%);background:linear-gradient(var(--gilt),rgba(210,169,101,.35));pointer-events:none}
+.mz-in .lead.alt{background:linear-gradient(rgba(236,227,210,.8),rgba(236,227,210,.3))}
+.mz-in .mapin::after{display:none}
+.mz-ctl{position:absolute;right:max(14px,env(safe-area-inset-right,0px));top:calc(env(safe-area-inset-top,0px) + 14px);display:flex;flex-direction:column;gap:8px;z-index:2}
+.mz-ctl button{width:46px;height:46px;border-radius:50%;background:rgba(7,13,24,.85);border:1px solid rgba(236,227,210,.35);color:#ece3d2;font-size:1.35rem;line-height:1;cursor:pointer}
+.mz-ctl button:hover{border-color:var(--gilt)}
+.mz-ctl .x{margin-bottom:8px}
+</style>
+<script id="mapzoom-js">
+(()=>{
+const L=window.__lang||"az",T=(a,r,e)=>L==="ru"?r:L==="en"?e:a;
+const fig=document.querySelector(".ab-map"),src=fig&&fig.querySelector(".mapin");if(!src)return;
+const h=document.createElement("span");h.className="mz-hint";h.textContent=T("Böyütmək üçün toxunun","Нажмите, чтобы увеличить","Tap to zoom");fig.append(h);
+const ov=document.createElement("div");ov.className="mzoom";ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");ov.setAttribute("aria-label",T("Baş plan","Генплан","Master plan"));
+ov.innerHTML=`<div class="mz-view"><div class="mz-in"></div></div><div class="mz-ctl"><button type="button" class="x" aria-label="×">×</button><button type="button" class="p" aria-label="+">+</button><button type="button" class="m" aria-label="−">−</button></div>`;
+document.body.append(ov);
+const view=ov.querySelector(".mz-view"),inn=ov.querySelector(".mz-in");
+inn.append(src.cloneNode(true));
+const NW=2576,NH=1606;let z=1;
+const base=()=>Math.min(view.clientWidth/NW,view.clientHeight/NH);
+const apply=(cx,cy)=>{const fx=cx!=null?(view.scrollLeft+cx)/inn.offsetWidth:.5,fy=cy!=null?(view.scrollTop+cy)/inn.offsetHeight:.5;
+ const w=NW*base()*z,hh=NH*base()*z;inn.style.width=w+"px";inn.style.height=hh+"px";
+ inn.style.marginTop=Math.max(0,(view.clientHeight-hh)/2)+"px";
+ view.scrollLeft=fx*w-(cx!=null?cx:view.clientWidth/2);view.scrollTop=fy*hh-(cy!=null?cy:view.clientHeight/2);};
+const maxZ=()=>Math.max(1,1.2/base());
+const setZ=(nz,cx,cy)=>{z=Math.max(1,Math.min(maxZ(),nz));apply(cx,cy);};
+const open=()=>{ov.classList.add("open");document.documentElement.style.overflow="hidden";requestAnimationFrame(()=>{z=Math.min(maxZ(),innerWidth<700?2.6:1.6);apply();
+ const w=inn.offsetWidth,hh=inn.offsetHeight;view.scrollLeft=.45*w-view.clientWidth/2;view.scrollTop=.40*hh-view.clientHeight/2;});};
+const close=()=>{ov.classList.remove("open");document.documentElement.style.overflow="";};
+let moved=false;
+src.addEventListener("click",()=>{if(!moved)open();});
+fig.addEventListener("pointerdown",()=>{moved=false});fig.addEventListener("scroll",()=>{moved=true},{passive:true});
+setTimeout(()=>{moved=false},0);
+ov.querySelector(".x").onclick=close;ov.querySelector(".p").onclick=()=>setZ(z*1.5);ov.querySelector(".m").onclick=()=>setZ(z/1.5);
+addEventListener("keydown",e=>{if(ov.classList.contains("open")&&e.key==="Escape")close();});
+addEventListener("resize",()=>{if(ov.classList.contains("open"))apply();});
+view.addEventListener("wheel",e=>{if(e.ctrlKey||Math.abs(e.deltaY)>0){e.preventDefault();const r=view.getBoundingClientRect();setZ(z*(e.deltaY<0?1.15:1/1.15),e.clientX-r.left,e.clientY-r.top);}},{passive:false});
+view.addEventListener("dblclick",e=>{const r=view.getBoundingClientRect();setZ(z<2.5?z*2:1,e.clientX-r.left,e.clientY-r.top);});
+/* drag (mouse) + pinch (touch) */
+const pts=new Map();let last=null,pd=0;
+view.addEventListener("pointerdown",e=>{view.setPointerCapture(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});last={x:e.clientX,y:e.clientY};if(pts.size===2){const [a,b]=[...pts.values()];pd=Math.hypot(a.x-b.x,a.y-b.y);}view.classList.add("drag");});
+view.addEventListener("pointermove",e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pts.size===2){const [a,b]=[...pts.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);if(pd){const r=view.getBoundingClientRect();setZ(z*d/pd,(a.x+b.x)/2-r.left,(a.y+b.y)/2-r.top);}pd=d;e.preventDefault();return;}
+ if(last){view.scrollLeft-=e.clientX-last.x;view.scrollTop-=e.clientY-last.y;last={x:e.clientX,y:e.clientY};}});
+const up=e=>{pts.delete(e.pointerId);if(pts.size<2)pd=0;if(!pts.size){last=null;view.classList.remove("drag");}};
+view.addEventListener("pointerup",up);view.addEventListener("pointercancel",up);
+view.style.touchAction="none";
 })();
 </script>
 
